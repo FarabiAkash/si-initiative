@@ -33,23 +33,18 @@ const Header = () => {
 
         {/* Hero Image Container */}
         <div className='relative h-[550px] w-[550px] overflow-hidden'>
-          {/* Hero Background */}
           <Image
             className='pt-28'
             src={HeroBg}
             alt='Hero Background'
-            // layout='fill'
-            objectFit='contain'
-            width={550}
-            height={550}
+            width={540}
+            height={540}
           />
-          {/* Hero Image */}
           <Image
             src={HeroImg}
             alt='Hero Image'
             layout='fill'
             objectFit='contain'
-            className='absolute bottom-0'
           />
         </div>
 

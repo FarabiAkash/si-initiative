@@ -10,7 +10,7 @@ const Nav = () => {
   const pathname = usePathname()
 
   const isActive = path =>
-    pathname === path ? 'text-secondary' : 'text-gray-700'
+    pathname === path ? 'text-secondary' : 'text-[#6D787B]'
 
   return (
     <>
