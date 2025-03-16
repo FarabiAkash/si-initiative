@@ -9,10 +9,10 @@ const Header = () => {
       className='w-full flex items-center bg-cover bg-center bg-no-repeat relative'
       style={{ backgroundImage: `url(${HeaderBg.src})` }}
     >
-      <div className='flex gap-4 items-center justify-center px-12 w-full'>
-        {/* Left Content */}
-        <div className='flex flex-col justify-start items-start gap-6 max-w-lg'>
-          <h2 className='text-[#0B3641] text-[42px] font-bold leading-[54px]'>
+      <div className='xl:flex flex flex-wrap-reverse  gap-4 items-center justify-center px-12 xl:px-36 w-full'>
+        {/* left */}
+        <div className='flex flex-col justify-start items-start gap-6 max-w-lg pb-6 xl:pb-0'>
+          <h2 className='text-[#0B3641] text-[48px] font-bold leading-[64px]'>
             Developing Solutions <br />
             for Your Business
           </h2>
@@ -32,41 +32,43 @@ const Header = () => {
         </div>
 
         {/* Hero Image Container */}
-        <div className='relative h-[550px] w-[550px] overflow-hidden'>
-          <Image
-            className='pt-28'
-            src={HeroBg}
-            alt='Hero Background'
-            width={540}
-            height={540}
-          />
-          <Image
-            src={HeroImg}
-            alt='Hero Image'
-            layout='fill'
-            objectFit='contain'
-          />
-        </div>
+        <div className='relative'>
+          <div className='h-[530px] w-[530px] overflow-hidden'>
+            <Image
+              className='pt-28'
+              src={HeroBg}
+              alt='Hero Background'
+              width={550}
+              height={550}
+            />
+            <Image
+              src={HeroImg}
+              alt='Hero Image'
+              layout='fill'
+              objectFit='contain'
+            />
+          </div>
 
-        {/* stats section */}
-        <div className='absolute bottom-10 right-20 flex justify-between items-center gap-12 bg-white rounded-[16px] bg-white/90 shadow-[0px_4px_4px_0px_rgba(28,136,163,0.05)] px-12 py-4'>
-          <div className='text-center'>
-            <h3 className='text-primary text-[32px] font-[700]'>6+</h3>
-            <p className='text-[#677A7E] text-[16px] font-[400]'>
-              Years of Experience
-            </p>
-          </div>
-          <div className='text-center'>
-            <h3 className='text-primary text-[32px] font-[700]'>25+</h3>
-            <p className='text-[#677A7E] text-[16px] font-[400]'>
-              IT Professionals
-            </p>
-          </div>
-          <div className='text-center'>
-            <h3 className='text-primary text-[32px] font-[700]'>50+</h3>
-            <p className='text-[#677A7E] text-[16px] font-[400]'>
-              Projects Completed
-            </p>
+          {/* stats section */}
+          <div className='absolute xl:w-[45vw] bottom-4 xl:bottom-10  flex justify-between items-center gap-[30px] rounded-[16px] bg-white/90 shadow-[0px_4px_4px_0px_rgba(28,136,163,0.05)] px-12 py-4'>
+            <div className='text-center'>
+              <h3 className='text-primary text-[32px] font-[700]'>6+</h3>
+              <p className='text-[#677A7E] text-[16px] font-[400]'>
+                Years of Experience
+              </p>
+            </div>
+            <div className='text-center'>
+              <h3 className='text-primary text-[32px] font-[700]'>25+</h3>
+              <p className='text-[#677A7E] text-[16px] font-[400]'>
+                IT Professionals
+              </p>
+            </div>
+            <div className='text-center'>
+              <h3 className='text-primary text-[32px] font-[700]'>50+</h3>
+              <p className='text-[#677A7E] text-[16px] font-[400]'>
+                Projects Completed
+              </p>
+            </div>
           </div>
         </div>
       </div>
