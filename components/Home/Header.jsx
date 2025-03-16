@@ -13,13 +13,15 @@ const Header = () => {
       <div className='xl:flex flex flex-wrap-reverse items-center justify-center xl:justify-between px-12 xl:px-36 w-full'>
         {/* left */}
         <div className='flex flex-col justify-start items-start gap-6 max-w-lg pt-10 xl:pt-0 pb-10 xl:pb-0'>
-          <h2 className='text-[#0B3641] text-[48px] font-[700] leading-[64px]'>
+          <h2 className='text-[#0B3641] text-[38px] md:text-[48px] font-[700] leading-[40px] xl:leading-[64px] text-center xl:text-start'>
             Developing Solutions <br />
             for Your Business
           </h2>
-          <p className='text-[#677A7E] font-poppins text-[20px] font-[400] leading-[32px]'>
-            Empowering your business with innovative, tailored <br /> solutions
-            to drive growth, efficiency, and success.
+          <p className='text-[#677A7E] font-poppins text-[20px] font-[400] leading-[32px] text-center xl:text-start'>
+            <span>
+              Empowering your business with innovative, tailored <br />
+            </span>
+            <span>solutions to drive growth, efficiency, and success.</span>
           </p>
           {/* Buttons */}
           <div className='flex gap-4'>
@@ -37,13 +39,11 @@ const Header = () => {
           className='relative bg-cover bg-center bg-no-repeat'
           style={{ backgroundImage: `url(${LinesBg.src})` }}
         >
-          <div className='h-[500px] w-[500px] xl:h-[600px] xl:w-[650px]  overflow-hidden'>
+          <div className='h-[350px] w-[350px] sm:w-[500px] xl:h-[600px] xl:w-[650px]  overflow-hidden'>
             <Image
-              className='pt-28'
+              className='pt-28 h-[450px] w-[350px] sm:w-[500px] xl:h-[800px] 2xl:h-[900px] xl:w-[650px]'
               src={HeroBg}
               alt='Hero Background'
-              height={650}
-              width={650}
             />
             <Image
               src={HeroImg}
@@ -54,7 +54,7 @@ const Header = () => {
           </div>
 
           {/* stats section */}
-          <div className='absolute xl:w-[45vw] bottom-4 xl:bottom-10  flex justify-between items-center gap-[30px] rounded-[16px] bg-white/90 shadow-[0px_4px_4px_0px_rgba(28,136,163,0.05)] px-12 py-4'>
+          <div className='absolute 2xl:w-[35vw] w-[350px]  sm:w-[45vw] bottom-4 xl:bottom-10  flex justify-between items-center gap-[30px] rounded-[16px] bg-white/90 shadow-[0px_4px_4px_0px_rgba(28,136,163,0.05)] px-1 sm:px-12 py-4'>
             <div className='text-center'>
               <h3 className='text-primary text-[32px] font-[700]'>6+</h3>
               <p className='text-[#677A7E] text-[16px] font-[400]'>
