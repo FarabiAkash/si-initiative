@@ -15,7 +15,9 @@ module.exports = {
                 skyBlueTeal: "#70B1C2",
                 pastelBlue: "#111827",
                 offWhite: "#F1F3F4",
-                white: "#FFFFFF"
+                white: "#FFFFFF",
+                titleSubtitle: "#0B3641",
+                paragraph: "#677A7E"
             },
         },
     },
