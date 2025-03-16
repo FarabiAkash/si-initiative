@@ -2,6 +2,7 @@ import Image from 'next/image'
 import HeaderBg from '../../public/assets/home/header-bg.png'
 import HeroImg from '../../public/assets/home/hero.png'
 import HeroBg from '../../public/assets/home/hero-background.png'
+import LinesBg from '../../public/assets/home/Lines.png'
 
 const Header = () => {
   return (
@@ -32,7 +33,10 @@ const Header = () => {
         </div>
 
         {/* Hero Image Container */}
-        <div className='relative'>
+        <div
+          className='relative bg-cover bg-center bg-no-repeat'
+          style={{ backgroundImage: `url(${LinesBg.src})` }}
+        >
           <div className='h-[500px] w-[500px] xl:h-[600px] xl:w-[650px]  overflow-hidden'>
             <Image
               className='pt-28'
