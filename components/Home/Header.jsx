@@ -9,14 +9,14 @@ const Header = () => {
       className='w-full flex items-center bg-cover bg-center bg-no-repeat relative'
       style={{ backgroundImage: `url(${HeaderBg.src})` }}
     >
-      <div className='xl:flex flex flex-wrap-reverse  gap-4 items-center justify-center px-12 xl:px-36 w-full'>
+      <div className='xl:flex flex flex-wrap-reverse items-center justify-center xl:justify-between px-12 xl:px-36 w-full'>
         {/* left */}
-        <div className='flex flex-col justify-start items-start gap-6 max-w-lg pb-6 xl:pb-0'>
-          <h2 className='text-[#0B3641] text-[48px] font-bold leading-[64px]'>
+        <div className='flex flex-col justify-start items-start gap-6 max-w-lg pt-10 xl:pt-0 pb-10 xl:pb-0'>
+          <h2 className='text-[#0B3641] text-[48px] font-[700] leading-[64px]'>
             Developing Solutions <br />
             for Your Business
           </h2>
-          <p className='text-[#677A7E] font-poppins text-[20px] font-normal leading-[32px]'>
+          <p className='text-[#677A7E] font-poppins text-[20px] font-[400] leading-[32px]'>
             Empowering your business with innovative, tailored <br /> solutions
             to drive growth, efficiency, and success.
           </p>
@@ -33,13 +33,13 @@ const Header = () => {
 
         {/* Hero Image Container */}
         <div className='relative'>
-          <div className='h-[530px] w-[530px] overflow-hidden'>
+          <div className='h-[500px] w-[500px] xl:h-[600px] xl:w-[650px]  overflow-hidden'>
             <Image
               className='pt-28'
               src={HeroBg}
               alt='Hero Background'
-              width={550}
-              height={550}
+              height={650}
+              width={650}
             />
             <Image
               src={HeroImg}
