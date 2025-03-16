@@ -24,32 +24,39 @@ const OurPartners = () => {
         <div className='flex flex-wrap justify-center items-center gap-3 lg:gap-14 2xl:gap-20'>
           <Image
             src={dwsPartner}
+            alt='Partner Logo'
             className='w-[120px] lg:w-[180px] h-full lg:h-[64px]'
           />
           <Image
             src={stripPartner}
+            alt='Partner Logo'
             className='w-[120px] lg:w-[180px] h-full lg:h-[64px]'
           />
           <Image
             src={tropicPartner}
+            alt='Partner Logo'
             className='w-[120px] lg:w-[180px] h-full lg:h-[64px]'
           />
         </div>
         <div className='flex flex-wrap justify-center items-center gap-3 lg:gap-14 2xl:gap-20'>
           <Image
             src={ventuzPartner}
+            alt='Partner Logo'
             className='w-[120px] lg:w-[180px] h-full lg:h-[64px]'
           />
           <Image
             src={grandJournalPartner}
+            alt='Partner Logo'
             className='w-[120px] lg:w-[180px] h-full lg:h-[64px]'
           />
           <Image
             src={irexPartner}
+            alt='Partner Logo'
             className='w-[120px] lg:w-[180px] h-full lg:h-[64px]'
           />
           <Image
             src={diePartner}
+            alt='Partner Logo'
             className='w-[120px] lg:w-[180px] h-full lg:h-[64px]'
           />
         </div>
