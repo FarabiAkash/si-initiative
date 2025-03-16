@@ -2,7 +2,7 @@
 import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'
-import Logo from '../../assets/logo.png'
+import Logo from '../../public/assets/logo.png'
 import { usePathname } from 'next/navigation'
 
 const Nav = () => {
@@ -13,7 +13,7 @@ const Nav = () => {
     pathname === path ? 'text-secondary' : 'text-gray-700'
 
   return (
-    <div className='min-h-screen'>
+    <>
       <nav className='flex items-center justify-between px-12 py-5'>
         {/* Logo */}
         <div className='w-[111.613px] h-[40px]'>
@@ -139,7 +139,7 @@ const Nav = () => {
           </button>
         </div>
       )}
-    </div>
+    </>
   )
 }
 
