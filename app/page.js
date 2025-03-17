@@ -1,6 +1,7 @@
 import CoreServices from "@/components/Home/CoreServices";
 import Header from "@/components/Home/Header";
 import OurPartners from "@/components/Home/OurPartners";
+import SpecializedService from "@/components/Home/SpecializedService";
 import WhatWeDo from "@/components/Home/WhatWeDo";
 import WhyChooseUs from "@/components/Home/WhyChooseUs";
 
@@ -12,6 +13,7 @@ export default function Home() {
       <WhyChooseUs />
       <OurPartners />
       <CoreServices />
+      <SpecializedService />
     </>
   );
 }
