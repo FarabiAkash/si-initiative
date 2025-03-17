@@ -40,58 +40,62 @@ const coreServices = [
 
 const CoreServices = () => {
   return (
-    <div className='flex items-start justify-between gap-4 px-12 xl:px-36  pt-16 py-[100px]'>
-      {/* Hero Image Section */}
-      <div className='relative hidden lg:block'>
+    <div className=' px-12 xl:px-36  pt-16 py-[100px]'>
+      <div className='flex flex-col justify-center xl:justify-start items-center xl:items-start'>
         <h1 className='text-titleSubtitle text-[32px] font-[700] leading-[40px]'>
           Core Services
         </h1>
-        <p className='text-paragraph text-[18px] font-[400] leading-[24px] py-3'>
+        <p className='text-paragraph text-[18px] font-[400] leading-[24px] pt-3'>
           Revolutionizing Healthcare with Cutting-edge Technological Solutions.
         </p>
-        <div className='h-[400px] xl:h-[500px] w-[400px] xl:w-[500px] overflow-hidden'>
-          <Image
-            className='pt-36 h-[500px] xl:h-[700px] w-[480px]'
-            src={HeroBg}
-            alt='Hero Background'
-          />
-          <Image
-            src={HeroImg}
-            alt='Hero Image'
-            layout='fill'
-            objectFit='contain'
-          />
-        </div>
       </div>
+      <div className='flex items-center xl:items-end justify-center xl:justify-between gap-4'>
+        {/* Hero Image Section */}
+        <div className='relative hidden xl:block'>
+          <div className='h-[400px] w-[550px] overflow-hidden'>
+            <Image
+              className='h-[430px] w-[600px]'
+              src={HeroBg}
+              alt='Hero Background'
+            />
+            <Image
+              src={HeroImg}
+              alt='Hero Image'
+              layout='fill'
+              objectFit='contain'
+            />
+          </div>
+        </div>
 
-      {/* Right Section */}
-      <div className='grid grid-cols-2 gap-[24px] pt-10'>
-        {coreServices.map((service, index) => (
-          <div
-            key={index}
-            className='group rounded-xl border border-[#F1F3F4] shadow-md shadow-[rgba(15,72,87,0.10)] 
+        {/* Right Section */}
+        <div className='grid grid-cols-1 sm:grid-cols-2 gap-[24px] pt-10'>
+          {coreServices.map((service, index) => (
+            <div
+              key={index}
+              className='group rounded-xl border border-[#F1F3F4] shadow-md shadow-[rgba(15,72,87,0.10)] 
         bg-[#F1F3F4] hover:bg-white hover:shadow-lg transition-all duration-300 
         w-[288px] h-[248px] flex flex-col justify-start items-start gap-4 p-[24px]'
-          >
-            <div
-              className='rounded-full w-[64px] h-[64px] bg-white group-hover:bg-[#F1F3F4] 
-        flex items-center justify-center transition-all duration-300'
             >
-              <Image
-                src={service.icon}
-                alt={service.title}
-                width={40}
-                height={40}
-              />
+              <div
+                className='rounded-full w-[64px] h-[64px] bg-white group-hover:bg-[#F1F3F4] 
+        flex items-center justify-center transition-all duration-300'
+              >
+                <Image
+                  src={service.icon}
+                  alt={service.title}
+                  width={40}
+                  height={40}
+                />
+              </div>
+              <h2 className='text-titleSubtitle text-[18px] font-[500] leading-[20px]'>
+                {service.title}
+              </h2>
+              <p className='text-paragraph text-[16px] font-[400] leading-[24px]'>
+                {service.description}
+              </p>
             </div>
-            <h2 className='text-titleSubtitle text-[18px] font-[500] leading-[20px]'>
-              {service.title}
-            </h2>
-            <p className='text-paragraph text-[16px] font-[400] leading-[24px]'>
-              {service.description}
-            </p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   )
