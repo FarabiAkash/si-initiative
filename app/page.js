@@ -1,5 +1,6 @@
 import CaseStudies from "@/components/Home/CaseStudies";
 import CoreServices from "@/components/Home/CoreServices";
+import FAQ from "@/components/Home/FAQ";
 import Header from "@/components/Home/Header";
 import InnovationCard from "@/components/Home/InnovationCard";
 import Innovations from "@/components/Home/Innovations";
@@ -22,6 +23,7 @@ export default function Home() {
       <SuccessStories />
       <InnovationCard />
       <Innovations />
+      <FAQ />
     </>
   );
 }
