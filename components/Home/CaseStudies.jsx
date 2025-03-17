@@ -41,7 +41,7 @@ const CaseStudies = () => {
         </p>
       </div>
 
-      {/* Cards Grid */}
+      {/* Cards */}
       <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
         {caseStudies.map((study, index) => (
           <div
@@ -73,6 +73,10 @@ const CaseStudies = () => {
           </div>
         ))}
       </div>
+
+      <button className='text-[14px] rounded-[28px] bg-primary text-white font-[600] leading-[24px] tracking-[1.4px] shadow-[0px_16px_16px_0px_rgba(25,188,229,0.20)] px-[40px] py-[16px] uppercase mt-6'>
+        See all case studies
+      </button>
     </div>
   )
 }
