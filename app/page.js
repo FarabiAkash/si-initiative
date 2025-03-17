@@ -1,4 +1,5 @@
 import CaseStudies from "@/components/Home/CaseStudies";
+import ContactUs from "@/components/Home/ContactUs";
 import CoreServices from "@/components/Home/CoreServices";
 import FAQ from "@/components/Home/FAQ";
 import Header from "@/components/Home/Header";
@@ -24,6 +25,7 @@ export default function Home() {
       <InnovationCard />
       <Innovations />
       <FAQ />
+      <ContactUs />
     </>
   );
 }
