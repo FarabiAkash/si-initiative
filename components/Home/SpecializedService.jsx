@@ -40,7 +40,7 @@ const SpecializedService = () => {
           Tailored Innovations for Targeted Healthcare Needs.
         </p>
       </div>
-      <div className='flex flex-wrap justify-center items-center gap-4 pt-10 pb-20'>
+      <div className='flex flex-wrap xl:flex-nowrap justify-center items-center gap-4 pt-10 pb-20'>
         {specializedServices.map(service => (
           <div
             key={service.id}
