@@ -56,7 +56,7 @@ const WhyChooseUs = () => {
         <div className='grid grid-cols-1 sm:grid-cols-2 pb-6'>
           {features.map((feature, index) => (
             <div
-              className={`flex flex-col justify-center items-start gap-4 pt-4 pr-0 sm:pr-[24px] w-full 2xl:w-[400px] pb-[32px] sm:border-offWhite border-white 
+              className={`flex flex-col justify-center items-start gap-4 pt-4 pr-[24px] w-full 2xl:w-[400px] pb-[32px] sm:border-offWhite border-white 
                  ${index % 2 === 0 ? 'border-r-[1px]' : 'pl-0 sm:pl-4'}
                  ${index < 4 ? 'border-b-[1px]' : ''} `}
               key={index}

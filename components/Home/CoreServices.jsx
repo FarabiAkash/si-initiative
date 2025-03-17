@@ -40,7 +40,7 @@ const coreServices = [
 
 const CoreServices = () => {
   return (
-    <div className=' px-12 xl:px-36  pt-16 py-[100px]'>
+    <div className=' px-12 xl:px-36 pt-[100px]'>
       <div className='flex flex-col justify-center xl:justify-start items-center xl:items-start'>
         <h1 className='text-titleSubtitle text-[32px] font-[700] leading-[40px]'>
           Core Services
@@ -68,7 +68,7 @@ const CoreServices = () => {
         </div>
 
         {/* Right Section */}
-        <div className='grid grid-cols-1 sm:grid-cols-2 gap-[24px] pt-10'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 gap-[24px] pt-10 pb-20'>
           {coreServices.map((service, index) => (
             <div
               key={index}
