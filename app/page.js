@@ -1,3 +1,4 @@
+import CaseStudies from "@/components/Home/CaseStudies";
 import CoreServices from "@/components/Home/CoreServices";
 import Header from "@/components/Home/Header";
 import OurPartners from "@/components/Home/OurPartners";
@@ -14,6 +15,7 @@ export default function Home() {
       <OurPartners />
       <CoreServices />
       <SpecializedService />
+      <CaseStudies />
     </>
   );
 }
