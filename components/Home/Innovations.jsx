@@ -59,7 +59,11 @@ const Innovations = () => {
             }`}
             onClick={() => setSelectedTab(index)}
           >
-            <div className='bg-[#F1F3F4] w-[32px] h-[32px] rounded-full' />
+            <div
+              className={` w-[32px] h-[32px] rounded-full ${
+                selectedTab === index ? 'bg-titleSubtitle' : 'bg-[#F1F3F4]'
+              }`}
+            />
             <span className='text-[16px]'>{item.title}</span>
           </div>
         ))}
