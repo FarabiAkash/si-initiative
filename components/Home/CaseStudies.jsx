@@ -1,5 +1,8 @@
 import Image from 'next/image'
 import caseImg from '../../public/assets/home/caseStudiesImg.png'
+import caseImg2 from '../../public/assets/home/Blogs/blog1.png'
+import caseImg3 from '../../public/assets/home/Blogs/blog2.png'
+import caseImg4 from '../../public/assets/home/Blogs/blog3.png'
 
 const caseStudies = [
   {
@@ -9,19 +12,19 @@ const caseStudies = [
       'AI is revolutionizing healthcare, from early disease detection to personalized treatment plans. With machine learning and predictiv...'
   },
   {
-    image: caseImg,
+    image: caseImg2,
     title: 'The Future of AI in Healthcare: Transforming Patient Care',
     description:
       'AI is revolutionizing healthcare, from early disease detection to personalized treatment plans. With machine learning and predictiv...'
   },
   {
-    image: caseImg,
+    image: caseImg3,
     title: 'The Future of AI in Healthcare: Transforming Patient Care',
     description:
       'AI is revolutionizing healthcare, from early disease detection to personalized treatment plans. With machine learning and predictiv...'
   },
   {
-    image: caseImg,
+    image: caseImg4,
     title: 'The Future of AI in Healthcare: Transforming Patient Care',
     description:
       'AI is revolutionizing healthcare, from early disease detection to personalized treatment plans. With machine learning and predictiv...'

@@ -1,3 +1,4 @@
+import Blogs from "@/components/Home/Blogs";
 import CaseStudies from "@/components/Home/CaseStudies";
 import ContactUs from "@/components/Home/ContactUs";
 import CoreServices from "@/components/Home/CoreServices";
@@ -26,6 +27,7 @@ export default function Home() {
       <Innovations />
       <FAQ />
       <ContactUs />
+      <Blogs />
     </>
   );
 }

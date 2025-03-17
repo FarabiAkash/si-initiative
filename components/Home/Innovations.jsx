@@ -2,6 +2,9 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import img1 from '../../public/assets/home/caseStudiesImg.png'
+import img2 from '../../public/assets/home/Blogs/blog1.png'
+import img3 from '../../public/assets/home/Blogs/blog2.png'
+import img4 from '../../public/assets/home/Blogs/blog3.png'
 
 const data = [
   {
@@ -16,7 +19,7 @@ const data = [
   {
     title: 'Virtual Eye Doc',
     heading: 'Virtual Eye Doc: AI-driven Vision Care',
-    img: img1,
+    img: img2,
     description: [
       'With interactive learning modules, adaptive communication tools, and AI-driven insights, Autism Barta fosters independence and development, making life easier for both individuals with autism and their caregivers. Our goal is to create an inclusive digital environment where every voice is heard and understood.',
       'Autism Barta is an AI-powered application designed to assist autistic children and individuals in enhancing their communication skills and daily interactions. By leveraging advanced speech, text, and visual recognition technologies, the app provides personalized support, helping users express themselves more effectively and build social connections.'
@@ -25,7 +28,7 @@ const data = [
   {
     title: 'Tele-dentistry',
     heading: 'Tele-dentistry: The Future of Dental Care',
-    img: img1,
+    img: img3,
     description: [
       'Autism Barta is an AI-powered application designed to assist autistic children and individuals in enhancing their communication skills and daily interactions. By leveraging advanced speech, text, and visual recognition technologies, the app provides personalized support, helping users express themselves more effectively and build social connections.',
       'With interactive learning modules, adaptive communication tools, and AI-driven insights, Autism Barta fosters independence and development, making life easier for both individuals with autism and their caregivers. Our goal is to create an inclusive digital environment where every voice is heard and understood.'
@@ -34,7 +37,7 @@ const data = [
   {
     title: 'Market Brain',
     heading: 'Market Brain: Data-driven Business Insights',
-    img: img1,
+    img: img4,
     description: [
       'With interactive learning modules, adaptive communication tools, and AI-driven insights, Autism Barta fosters independence and development, making life easier for both individuals with autism and their caregivers. Our goal is to create an inclusive digital environment where every voice is heard and understood.',
       'Autism Barta is an AI-powered application designed to assist autistic children and individuals in enhancing their communication skills and daily interactions. By leveraging advanced speech, text, and visual recognition technologies, the app provides personalized support, helping users express themselves more effectively and build social connections.'
