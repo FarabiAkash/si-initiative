@@ -47,7 +47,7 @@ const Blogs = () => {
   }
 
   return (
-    <div className='py-16 px-12 xl:px-36'>
+    <div className='py-16 px-12 xl:px-36 bg-[#FDFDFD]'>
       {/* Section Header */}
       <div className='text-start mb-8'>
         <h1 className='text-titleSubtitle text-[32px] font-bold leading-[40px]'>
