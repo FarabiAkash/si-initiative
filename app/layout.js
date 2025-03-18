@@ -11,8 +11,8 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "SI Initiative",
-  description: "Developing Solutions for Your Business",
+  title: "CMED",
+  description: "Connecting People, Saving Lives.",
 };
 
 export default function RootLayout({ children }) {
