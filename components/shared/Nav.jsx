@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 import Logo from '../../public/assets/logo.png'
 import { usePathname } from 'next/navigation'
+import Link from 'next/link'
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -16,9 +17,9 @@ const Nav = () => {
     <>
       <nav className='flex items-center justify-between px-12 xl:px-36  py-5'>
         {/* Logo */}
-        <div className='w-[111.613px] h-[40px]'>
+        <Link href={'/'} className='w-[111.613px] h-[40px]'>
           <Image src={Logo} alt='SI-Initiative Logo' width={500} height={500} />
-        </div>
+        </Link>
 
         {/* Desktop Menu */}
         <div className='hidden lg:flex space-x-6'>
