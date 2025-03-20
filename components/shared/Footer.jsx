@@ -57,32 +57,38 @@ const Footer = () => {
             </h3>
             <ul className='mt-3 flex flex-col gap-[16px] justify-start items-start text-[16px] font-[400] leading-[24px] text-paragraph'>
               <li>
-                <a href='#' className='hover:text-[#E5533C] transition'>
+                <a href='/' className='hover:text-[#E5533C] transition'>
                   Home
                 </a>
               </li>
               <li>
-                <a href='#' className='hover:text-[#E5533C] transition'>
+                <a href='/services' className='hover:text-[#E5533C] transition'>
                   Services
                 </a>
               </li>
               <li>
-                <a href='#' className='hover:text-[#E5533C] transition'>
+                <a
+                  href='/case-studies'
+                  className='hover:text-[#E5533C] transition'
+                >
                   Case Studies
                 </a>
               </li>
               <li>
-                <a href='#' className='hover:text-[#E5533C] transition'>
+                <a href='/blogs' className='hover:text-[#E5533C] transition'>
                   Blogs
                 </a>
               </li>
               <li>
-                <a href='#' className='hover:text-[#E5533C] transition'>
+                <a href='/about-us' className='hover:text-[#E5533C] transition'>
                   About Us
                 </a>
               </li>
               <li>
-                <a href='#' className='hover:text-[#E5533C] transition'>
+                <a
+                  href='/contact-us'
+                  className='hover:text-[#E5533C] transition'
+                >
                   Contact Us
                 </a>
               </li>
