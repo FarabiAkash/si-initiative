@@ -12,7 +12,7 @@ const Header = () => {
     >
       <div className='xl:flex flex flex-wrap-reverse items-center justify-center xl:justify-between px-12 xl:px-36 w-full'>
         {/* left */}
-        <div className='flex flex-col justify-start items-start gap-6 max-w-lg pt-10 xl:pt-0 pb-10 xl:pb-0'>
+        <div className='flex flex-col justify-center xl:justify-start items-center xl:items-start gap-6 max-w-lg pt-10 xl:pt-0 pb-10 xl:pb-0'>
           <h2 className='text-[#0B3641] text-[38px] md:text-[48px] font-[700] leading-[40px] xl:leading-[64px] text-center xl:text-start'>
             Developing Solutions <br />
             for Your Business
@@ -24,7 +24,7 @@ const Header = () => {
             <span>solutions to drive growth, efficiency, and success.</span>
           </p>
           {/* Buttons */}
-          <div className='flex gap-4'>
+          <div className='flex flex-wrap sm:flex-nowrap justify-center items-center gap-4'>
             <button className='rounded-[28px] bg-primary text-white font-semibold shadow-[0px_16px_16px_0px_rgba(25,188,229,0.20)] px-[40px] py-[16px] uppercase'>
               Learn More
             </button>
