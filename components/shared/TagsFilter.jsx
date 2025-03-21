@@ -22,10 +22,10 @@ const TagsFilter = ({ tags }) => {
   const handleTagClick = tag => {
     setActiveTag(tag)
   }
-  console.log(activeTag)
 
   return (
     <div className='flex items-center justify-end gap-[16px] py-4 w-4/5 overflow-hidden'>
+      {/* tags container */}
       <div className='relative overflow-hidden'>
         <div
           className='flex gap-3 transition-transform duration-300 ease-in-out'
@@ -37,8 +37,8 @@ const TagsFilter = ({ tags }) => {
               className={`h-[40px] flex justify-center items-center border px-[16px] py-2 rounded-[4px] flex-shrink-0 cursor-pointer 
                 ${
                   activeTag === tag
-                    ? 'border-primary text-primary font-semibold' // Active Tag Styling
-                    : 'border-[#F1F3F4] text-[#586A78]' // Default Styling
+                    ? 'border-primary text-primary font-semibold'
+                    : 'border-[#F1F3F4] text-[#586A78]'
                 }`}
               onClick={() => handleTagClick(tag)}
             >
