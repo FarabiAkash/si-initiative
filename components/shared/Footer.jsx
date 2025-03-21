@@ -125,24 +125,28 @@ const Footer = () => {
             <a
               href='#'
               className='text-[#49A7DC] hover:text-[#008FCC] transition'
+              target='_blank'
             >
               <Facebook size={20} />
             </a>
             <a
               href='#'
               className='text-[#49A7DC] hover:text-[#008FCC] transition'
+              target='_blank'
             >
               <Linkedin size={20} />
             </a>
             <a
               href='#'
               className='text-[#49A7DC] hover:text-[#008FCC] transition'
+              target='_blank'
             >
               <Twitter size={20} />
             </a>
             <a
               href='#'
               className='text-[#49A7DC] hover:text-[#008FCC] transition'
+              target='_blank'
             >
               <Youtube size={20} />
             </a>
