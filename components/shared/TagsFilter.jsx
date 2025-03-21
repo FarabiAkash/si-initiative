@@ -30,7 +30,7 @@ const TagsFilter = ({ tags }) => {
             {tags.map((tag, index) => (
               <div
                 key={index}
-                className='flex justify-center items-center border border-[#F1F3F4] px-4 py-2 rounded-[4px] text-[#586A78] flex-shrink-0'
+                className='h-[40px] flex justify-center items-center border border-[#F1F3F4] px-[16px] py-2 rounded-[4px] text-[#586A78] flex-shrink-0'
               >
                 {tag}
               </div>
@@ -39,7 +39,7 @@ const TagsFilter = ({ tags }) => {
         </div>
 
         {/* Buttons */}
-        {startIndex + 5 < tags.length && (
+        {tags.length > 5 && (
           <div className='flex justify-between gap-2'>
             <button
               onClick={handlePrev}
