@@ -7,6 +7,9 @@ const page = () => {
       subtitle={'Explore how our cutting-edge technology has improved patient outcomes, optimized workflows, and driven healthcare innovation'}
       tags={['All', 'AI Solution', 'Digital Healthcare', 'R&D Innovations', 'Global Impact']}
     />
+    <div className="h-[40vh]">
+
+    </div>
   </div>
 }
 export default page

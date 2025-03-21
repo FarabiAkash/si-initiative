@@ -19,6 +19,9 @@ const page = () => {
         'Big Data'
       ]}
     />
+    <div className="h-[40vh]">
+
+    </div>
   </div>
 }
 export default page
