@@ -49,7 +49,7 @@ const Innovations = () => {
   const [selectedTab, setSelectedTab] = useState(0)
 
   return (
-    <div className='px-6 md:px-12 xl:px-36 py-[20px] flex flex-col md:flex-row gap-8'>
+    <div className='px-6 md:px-12 xl:px-36 py-[50px] flex flex-col md:flex-row gap-8'>
       {/* Left Section - Tabs */}
       <div className='flex flex-col gap-2 w-full h-auto md:w-1/3'>
         {data.map((item, index) => (

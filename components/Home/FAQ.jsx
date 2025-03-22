@@ -34,7 +34,7 @@ const FAQ = () => {
   }
 
   return (
-    <div className='bg-gradient-to-bl from-white to-[#F5FDFF] py-[100px] px-12 xl:px-36'>
+    <div className='bg-gradient-to-bl from-white to-[#F5FDFF] py-[50px] px-12 xl:px-36'>
       <div className='text-center'>
         <h1 className='text-titleSubtitle text-[32px] font-bold leading-[40px]'>
           Frequently Asked Questions (FAQ)

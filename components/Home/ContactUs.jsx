@@ -2,7 +2,7 @@ import { Mail, Phone, MapPin } from 'lucide-react'
 
 const ContactUs = () => {
   return (
-    <div className='bg-[#F5FDFF] py-16 px-6 xl:px-36 flex justify-center'>
+    <div className='bg-[#F5FDFF] py-[50px] px-6 xl:px-36 flex justify-center'>
       <div className='bg-white rounded-[16px] border border-[#F1F3F4] p-16 w-[80vw] lg:w-[60vw] flex flex-col justify-start items-start gap-2'>
         <h2 className='text-titleSubtitle text-[32px] font-[700] leading-[40px] '>
           Have More Questions? Let’s Connect!

@@ -31,7 +31,7 @@ const specializedServices = [
 ]
 const SpecializedService = () => {
   return (
-    <div className='bg-gradient-to-bl from-white to-[#F5FDFF]  pt-[100px] pb-[50px] px-12 xl:px-36 flex flex-col justify-center items-center gap-8'>
+    <div className='bg-gradient-to-bl from-white to-[#F5FDFF]  py-[50px] px-12 xl:px-36 flex flex-col justify-center items-center gap-8'>
       <div>
         <h1 className='text-titleSubtitle text-center text-[32px] font-[700] leading-[40px]'>
           Specialized Services
@@ -40,7 +40,7 @@ const SpecializedService = () => {
           Tailored Innovations for Targeted Healthcare Needs.
         </p>
       </div>
-      <div className='flex flex-wrap xl:flex-nowrap justify-center items-center gap-4 pt-10 pb-20'>
+      <div className='flex flex-wrap xl:flex-nowrap justify-center items-center gap-4 pt-10'>
         {specializedServices.map(service => (
           <div
             key={service.id}
