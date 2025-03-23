@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .section-container {
+    @apply px-4 sm:px-12 xl:px-36 py-[35px] sm:py-[100px];
+  }
+}
