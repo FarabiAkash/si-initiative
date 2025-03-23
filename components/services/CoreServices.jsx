@@ -56,22 +56,24 @@ const services = [
 const CoreService = () => {
   return (
     <div className='px-12 xl:px-36 py-16'>
-      <div className='flex flex-col justify-center items-center text-center'>
-        <h1 className='text-gray-800 text-3xl font-bold'>Core Services</h1>
-        <p className='text-gray-600 text-lg pt-3'>
+      <div className='flex flex-col justify-center items-center text-center gap-[16px]'>
+        <h1 className='text-titleSubtitle text-[32px] font-[700] leading-[40px]'>
+          Core Services
+        </h1>
+        <p className='text-paragraph text-[18px] font-[400] leading-[24px]'>
           Revolutionizing Healthcare with Cutting-edge Technological Solutions.
         </p>
       </div>
 
       {/* Services Grid */}
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mt-10'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-6 pt-12'>
         {services.map((service, index) => (
           <div
             key={index}
             className='bg-white p-[32px] rounded-2xl shadow-md hover:shadow-lg transition-all flex flex-col gap-[16px] justify-start items-start'
           >
-            <div className='flex items-center justify-start gap-[16px]'>
-              <div className='w-[72px] h-[72px] rounded-full bg-[#F1F3F4]  flex justify-center items-center'>
+            <div className='flex flex-col lg:flex-row items-center lg:justify-center justify-start gap-[16px]'>
+              <div className='w-[72px] h-[72px] rounded-full bg-[#F1F3F4] flex justify-center items-center'>
                 <Image
                   src={service.icon}
                   alt={service.title}
@@ -90,15 +92,19 @@ const CoreService = () => {
                   key={idx}
                   className='flex items-center justify-center gap-[16px] text-titleSubtitle text-base leading-[20px]'
                 >
-                  <div className='w-[40px] h-[40px] rounded-full bg-[#F1F3F4] flex justify-center items-center'>
-                    <Image src={correctIcon} className='w-[19px] h-[11px]' />
+                  <div className='w-[40px] h-[40px] rounded-full bg-none  lg:bg-[#F1F3F4] flex justify-center items-center'>
+                    <Image
+                      src={correctIcon}
+                      alt='service icon'
+                      className='w-[19px] h-[11px]'
+                    />
                   </div>
                   {feature}
                 </li>
               ))}
             </ul>
-            <button className='mt-4 px-[24px] py-[16px] text-[14px] font-[600] leading-[24px] tracking-[1.4px] uppercase text-[#338499] border-[1px] border-[#C2D2D6] rounded-[28px] h-[24px] flex justify-center items-center'>
-              Explore Projects{' '}
+            <button className='mt-4 px-[24px] py-[16px] text-[14px] font-[600] leading-[24px] tracking-[1.4px] uppercase text-[#338499] border-[1px] border-[#C2D2D6] rounded-[28px] h-[24px] flex justify-center items-center hover:bg-primary hover:text-white hover:border-none'>
+              Explore Projects
             </button>
           </div>
         ))}
