@@ -1,5 +1,8 @@
+import SuccessStories from "@/components/Home/SuccessStories"
 import CoreService from "@/components/services/CoreServices"
+import GetInTouch from "@/components/services/GetInTouch"
 import SpecializedServices from "@/components/services/SpecializedServices"
+import WorkProcess from "@/components/services/WorkProcess"
 import PageHeader from "@/components/shared/PageHeader"
 
 const page = () => {
@@ -11,6 +14,9 @@ const page = () => {
             />
             <CoreService />
             <SpecializedServices />
+            <WorkProcess />
+            <SuccessStories pageName={'services'} />
+            <GetInTouch />
         </>
     )
 }

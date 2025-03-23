@@ -53,10 +53,10 @@ const SpecializedServices = () => {
   return (
     <div className='custom-container bg-gradient-to-bl from-white to-[#F5FDFF]'>
       <div className='flex flex-col justify-center items-center text-center gap-4'>
-        <h1 className='text-gray-800 text-3xl font-bold'>
+        <h1 className='text-titleSubtitle text-[32px] font-[700] leading-[40px]'>
           Specialized Services
         </h1>
-        <p className='text-gray-600 text-lg'>
+        <p className='text-paragraph text-[18px] leading-[24px] font-[400]'>
           Tailored Solutions for Healthcare Challenges
         </p>
       </div>

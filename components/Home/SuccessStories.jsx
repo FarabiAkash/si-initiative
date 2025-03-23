@@ -66,7 +66,7 @@ const reviews = [
     image: '/assets/home/reviews/shahin.png'
   }
 ]
-const SuccessStories = () => {
+const SuccessStories = ({ pageName }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -79,9 +79,12 @@ const SuccessStories = () => {
     prevArrow: <CustomPrevArrow />,
     nextArrow: <CustomNextArrow />
   }
-
   return (
-    <div className='custom-container flex flex-col justify-center items-center gap-8'>
+    <div
+      className={`custom-container flex flex-col justify-center items-center gap-8 ${
+        pageName === 'services' && 'bg-gradient-to-bl from-white to-[#F5FDFF]'
+      }`}
+    >
       {/* Heading */}
       <div className='text-center'>
         <h1 className='text-titleSubtitle text-[32px] font-[700] leading-[40px]'>
@@ -94,7 +97,7 @@ const SuccessStories = () => {
 
       {/* Review Slider */}
       <div className='w-full max-w-3xl relative'>
-        <Slider {...settings}>
+        <Slider {...settings} dotsClass='slick-dots custom-dots'>
           {reviews.map(review => (
             <div key={review.id} className='px-4 mb-8'>
               <div className='relative  p-[48px] rounded-[16px] border border-[#F1F3F4] bg-white shadow-[0px_16px_16px_0px_rgba(15,72,87,0.10)] flex flex-col justify-start items-start text-center'>

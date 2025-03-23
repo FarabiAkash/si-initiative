@@ -22,7 +22,7 @@ export default function Home() {
       <CoreServices />
       <SpecializedService />
       <CaseStudies />
-      <SuccessStories />
+      <SuccessStories pageName={'home'} />
       <InnovationCard />
       <Innovations />
       <FAQ />
