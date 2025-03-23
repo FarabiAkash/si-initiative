@@ -10,7 +10,7 @@ import diePartner from '../../public/assets/home/partners/die.png'
 
 const OurPartners = () => {
   return (
-    <section className='flex flex-col justify-center items-center gap-6 py-[50px] px-12 xl:px-36 bg-gradient-to-bl from-white to-[#F5FDFF]'>
+    <section className='flex flex-col justify-center items-center gap-6 py-[35px] sm:py-[50px] px-12 xl:px-36 bg-gradient-to-bl from-white to-[#F5FDFF]'>
       <h1 className='text-titleSubtitle text-[32px] font-[700] leading-[40px]'>
         Our Partners
       </h1>
@@ -51,6 +51,11 @@ const OurPartners = () => {
           />
           <Image
             src={irexPartner}
+            alt='Partner Logo'
+            className='w-[120px] lg:w-[180px] h-full lg:h-[64px]'
+          />
+          <Image
+            src={forbesPartner}
             alt='Partner Logo'
             className='w-[120px] lg:w-[180px] h-full lg:h-[64px]'
           />
