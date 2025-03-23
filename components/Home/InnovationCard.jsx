@@ -1,6 +1,6 @@
 const InnovationCard = () => {
   return (
-    <div className='bg-primary rounded-lg w-[70vw] mx-auto mt-10 mb-24 shadow-lg relative'>
+    <div className='bg-primary rounded-lg mx-4 sm:w-[70vw] sm:mx-auto mt-10 mb-24 shadow-lg relative'>
       <div className='w-full flex flex-col xl:flex-row justify-center items-center gap-4 py-10 xl:py-16 px-12'>
         <h2 className='text-white font-poppins text-[28px] font-[700] leading-[35px] w-full xl:w-[288px] h-auto xl:h-[120px]'>
           Driving <br /> Innovation Through R&D

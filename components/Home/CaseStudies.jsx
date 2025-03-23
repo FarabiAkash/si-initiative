@@ -33,7 +33,7 @@ const caseStudies = [
 
 const CaseStudies = () => {
   return (
-    <div className='bg-gradient-to-bl from-white to-[#F5FDFF] py-[50px] px-12 xl:px-36 flex flex-col justify-center items-center gap-8'>
+    <div className='bg-gradient-to-bl from-white to-[#F5FDFF] py-[35px] sm:py-[50px] px-4 sm:px-12 xl:px-36 flex flex-col justify-center items-center gap-8'>
       <div>
         <h1 className='text-titleSubtitle text-center text-[32px] font-[700] leading-[40px]'>
           Case Studies

@@ -43,7 +43,7 @@ const features = [
 
 const WhyChooseUs = () => {
   return (
-    <div className='flex items-end justify-between gap-4 px-12 xl:px-36 py-[50px]'>
+    <div className='flex items-end justify-between gap-4 px-4 sm:px-12 xl:px-36 py-[35px] sm:py-[50px]'>
       {/* Left Section */}
 
       <div className='flex flex-col justify-start items-start gap-4'>
@@ -53,10 +53,10 @@ const WhyChooseUs = () => {
         <p className='text-paragraph text-[18px] font-[400] leading-[24px]'>
           Empowering Healthcare with Innovation, Expertise, and Trust.
         </p>
-        <div className='grid grid-cols-1 sm:grid-cols-2 pb-6'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 pb-0 sm:pb-6'>
           {features.map((feature, index) => (
             <div
-              className={`flex flex-col justify-center items-start gap-4 pt-4 pr-[24px] w-full 2xl:w-[400px] pb-[32px] sm:border-offWhite border-white 
+              className={`flex flex-col justify-center items-start gap-4 pt-4 pr-[24px] w-full 2xl:w-[400px] pb-[10px] sm:pb-[32px] sm:border-offWhite border-white 
                  ${index % 2 === 0 ? 'border-r-[1px]' : 'pl-0 sm:pl-4'}
                  ${index < 4 ? 'border-b-[1px]' : ''} `}
               key={index}

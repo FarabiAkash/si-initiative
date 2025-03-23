@@ -15,7 +15,7 @@ const Nav = () => {
 
   return (
     <>
-      <nav className='flex items-center justify-between px-12 xl:px-36  py-5'>
+      <nav className='flex items-center justify-between px-4 sm:px-12 xl:px-36  py-5'>
         {/* Logo */}
         <Link href={'/'} className='w-[111.613px] h-[40px]'>
           <Image src={Logo} alt='SI-Initiative Logo' width={500} height={500} />

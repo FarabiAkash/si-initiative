@@ -81,7 +81,7 @@ const SuccessStories = () => {
   }
 
   return (
-    <div className='py-[50px] px-12 xl:px-36 flex flex-col justify-center items-center gap-8'>
+    <div className='py-[35px] sm:py-[50px] px-4 sm:px-12 xl:px-36 flex flex-col justify-center items-center gap-8'>
       {/* Heading */}
       <div className='text-center'>
         <h1 className='text-titleSubtitle text-[32px] font-[700] leading-[40px]'>

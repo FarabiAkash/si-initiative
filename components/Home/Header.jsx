@@ -7,7 +7,7 @@ import LinesBg from '../../public/assets/home/Lines.png'
 const Header = () => {
   return (
     <div
-      className='w-full flex items-center bg-cover bg-center bg-no-repeat relative px-12 xl:px-36'
+      className='w-full flex items-center bg-cover bg-center bg-no-repeat relative px-4 sm:px-12 xl:px-36'
       style={{ backgroundImage: `url(${HeaderBg.src})` }}
     >
       <div className='xl:flex flex flex-wrap-reverse lg:flex-nowrap items-center justify-center xl:justify-between  w-full'>
@@ -53,21 +53,27 @@ const Header = () => {
           </div>
 
           {/* stats section */}
-          <div className='absolute  w-[300px] md:w-[55vw]  lg:w-[40vw] bottom-4 xl:bottom-10  flex justify-between items-center gap-[30px] rounded-[16px] bg-white/90 shadow-[0px_4px_4px_0px_rgba(28,136,163,0.05)] px-1 sm:px-12 py-4'>
+          <div className='absolute md:w-[55vw] lg:w-[40vw] bottom-4 xl:bottom-10  flex justify-between items-center gap-2 sm:gap-[30px] rounded-[16px] bg-white/90 shadow-[0px_4px_4px_0px_rgba(28,136,163,0.05)] px-1 sm:px-12 py-4 overflow-hidden'>
             <div className='text-center'>
-              <h3 className='text-primary text-[32px] font-[700]'>6+</h3>
+              <h3 className='text-primary text-[18px] sm:text-[32px] font-[700]'>
+                6+
+              </h3>
               <p className='text-[#677A7E] text-[16px] font-[400]'>
                 Years of Experience
               </p>
             </div>
             <div className='text-center'>
-              <h3 className='text-primary text-[32px] font-[700]'>25+</h3>
+              <h3 className='text-primary text-[18px] sm:text-[32px] font-[700]'>
+                25+
+              </h3>
               <p className='text-[#677A7E] text-[16px] font-[400]'>
                 IT Professionals
               </p>
             </div>
             <div className='text-center'>
-              <h3 className='text-primary text-[32px] font-[700]'>50+</h3>
+              <h3 className='text-primary text-[18px] sm:text-[32px] font-[700]'>
+                50+
+              </h3>
               <p className='text-[#677A7E] text-[16px] font-[400]'>
                 Projects Completed
               </p>

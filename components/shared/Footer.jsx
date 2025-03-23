@@ -12,7 +12,7 @@ import Logo from '../../public/assets/logo.png'
 
 const Footer = () => {
   return (
-    <div className='pt-8 pb-4 px-12 xl:px-36 bg-[#FDFDFD]'>
+    <div className='pt-8 pb-4 px-4 sm:px-12 xl:px-36 bg-[#FDFDFD]'>
       <Image src={Logo} alt='CMED Logo' className='w-[178px] h-[64px]' />
       <div className='flex flex-col lg:flex-row gap-4 lg:gap-0 justify-around items-start'>
         {/* Left Section - Company Info */}
