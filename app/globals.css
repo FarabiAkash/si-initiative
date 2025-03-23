@@ -7,3 +7,15 @@
     @apply px-4 sm:px-12 xl:px-36 py-[35px] sm:py-[50px];
   }
 }
+
+/* slider dot style */
+.custom-dots li button:before {
+  font-size: 12px;
+  opacity: 0.5;
+  transition: font-size 0.3s ease, color 0.3s ease;
+}
+.custom-dots li.slick-active button:before {
+  color: #19bce6 !important; /* Active dot color */
+  font-size: 16px; /* Larger size for active dot */
+  opacity: 1;
+}
