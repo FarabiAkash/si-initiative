@@ -1,4 +1,4 @@
 const SpecializedServices = () => {
-  return <div className='section-container'>SpecializedServices</div>
+  return <div className='custom-container'>SpecializedServices</div>
 }
 export default SpecializedServices

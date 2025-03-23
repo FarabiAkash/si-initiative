@@ -43,7 +43,7 @@ const features = [
 
 const WhyChooseUs = () => {
   return (
-    <div className='flex items-end justify-between gap-4 px-4 sm:px-12 xl:px-36 py-[35px] sm:py-[50px]'>
+    <div className='custom-container flex items-end justify-between gap-4'>
       {/* Left Section */}
 
       <div className='flex flex-col justify-start items-start gap-4'>

@@ -37,7 +37,7 @@ const data = [
 
 const WhatWeDo = () => {
   return (
-    <section className='text-center py-[35px] sm:py-[50px] px-4 sm:px-12 xl:px-36 bg-gradient-to-l from-[#F5FDFF] to-white'>
+    <section className='custom-container text-center bg-gradient-to-l from-[#F5FDFF] to-white'>
       <div className='container mx-auto px-4'>
         <h1 className='text-[32px] font-[700] text-[#0B3641] leading-[40px]'>
           What We Do

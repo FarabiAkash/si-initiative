@@ -55,7 +55,7 @@ const services = [
 
 const CoreService = () => {
   return (
-    <div className='section-container'>
+    <div className='custom-container'>
       <div className='flex flex-col justify-center items-center text-center gap-[16px]'>
         <h1 className='text-titleSubtitle text-[32px] font-[700] leading-[40px]'>
           Core Services
