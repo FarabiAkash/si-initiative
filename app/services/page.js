@@ -1,8 +1,8 @@
 import SuccessStories from "@/components/Home/SuccessStories"
-import CoreService from "@/components/services/CoreServices"
-import GetInTouch from "@/components/services/GetInTouch"
-import SpecializedServices from "@/components/services/SpecializedServices"
-import WorkProcess from "@/components/services/WorkProcess"
+import CoreService from "@/components/Services/CoreServices"
+import GetInTouch from "@/components/Services/GetInTouch"
+import SpecializedServices from "@/components/Services/SpecializedServices"
+import WorkProcess from "@/components/Services/WorkProcess"
 import PageHeader from "@/components/shared/PageHeader"
 
 const page = () => {
