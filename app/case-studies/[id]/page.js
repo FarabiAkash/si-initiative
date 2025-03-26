@@ -6,7 +6,7 @@ import caseImg from '../../../public/assets/home/caseStudiesImg.png';
 import caseImg2 from '../../../public/assets/home/Blogs/blog1.png'
 import caseImg3 from '../../../public/assets/home/Blogs/blog2.png'
 import caseImg4 from '../../../public/assets/home/Blogs/blog3.png'
-import CaseStudiesDetails from '@/components/Case-studies/CaseStudiesDetails';
+import CaseStudiesDetails from '../../../components/Case-studies/CaseStudiesDetails';
 
 const data = [
     {

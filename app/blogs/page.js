@@ -1,6 +1,6 @@
-import PageHeader from "@/components/shared/PageHeader"
+import PageHeader from "../../components/shared/PageHeader"
 import AllBlogs from '../../components/Blogs/AllBlogs.jsx'
-import MostReadArticle from "@/components/Blogs/MostReadArticle.jsx"
+import MostReadArticle from "../../components/Blogs/MostReadArticle.jsx"
 
 const page = () => {
   return <div className=''>

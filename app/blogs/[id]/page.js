@@ -13,7 +13,7 @@ import blog9 from '../../../public/assets/blogs/blog9.png';
 import blog10 from '../../../public/assets/blogs/blog10.png';
 import blog11 from '../../../public/assets/blogs/blog11.png';
 import blog12 from '../../../public/assets/blogs/blog12.jpeg';
-import BlogDetails from "@/components/Blogs/BlogDetails";
+import BlogDetails from "../../../components/Blogs/BlogDetails";
 
 const blogs = [
     {

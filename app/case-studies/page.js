@@ -1,6 +1,6 @@
-import CaseStudies from "@/components/Case-studies/CaseStudies"
-import RelatedCase from "@/components/Case-studies/RelatedCase"
-import PageHeader from "@/components/shared/PageHeader"
+import CaseStudies from "../../components/Case-studies/CaseStudies"
+import RelatedCase from "../../components/Case-studies/RelatedCase"
+import PageHeader from "../../components/shared/PageHeader"
 
 const page = () => {
   return (
