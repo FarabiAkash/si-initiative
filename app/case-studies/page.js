@@ -1,4 +1,5 @@
 import CaseStudies from "@/components/Case-studies/CaseStudies"
+import RelatedCase from "@/components/Case-studies/RelatedCase"
 import PageHeader from "@/components/shared/PageHeader"
 
 const page = () => {
@@ -10,6 +11,7 @@ const page = () => {
         tags={['All', 'AI Solution', 'Digital Healthcare', 'R&D Innovations', 'Global Impact']}
       />
       <CaseStudies />
+      <RelatedCase />
     </>
   )
 }
