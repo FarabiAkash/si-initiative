@@ -1,4 +1,5 @@
 import PageHeader from "@/components/shared/PageHeader"
+import AllBlogs from '../../components/Blogs/AllBlogs.jsx'
 
 const page = () => {
   return <div className=''>
@@ -19,9 +20,7 @@ const page = () => {
         'Big Data'
       ]}
     />
-    <div className="h-[40vh]">
-
-    </div>
+    <AllBlogs />
   </div>
 }
 export default page
