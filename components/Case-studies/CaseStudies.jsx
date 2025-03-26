@@ -7,6 +7,55 @@ import caseImg4 from '../../public/assets/home/Blogs/blog3.png'
 
 const data = [
   {
+    title: 'Predictive Analytics for Disease Prevention',
+    description:
+      'Leveraging big data and machine learning, our platform predicts potential disease outbreaks and provides proactive healthcare insights.',
+    img: caseImg4,
+    options: [
+      {
+        title: 'Early Disease Prediction',
+        description: 'AI identifies at-risk individuals before symptoms appear'
+      },
+      {
+        title: 'Personalized Health Recommendations',
+        description: 'Tailored wellness plans based on data insights'
+      },
+      {
+        title: 'Hospital Resource Optimization',
+        description:
+          'Predicting patient influx to improve hospital preparedness'
+      },
+      {
+        title: 'Real-Time Data Processing',
+        description: 'Analyzing millions of health records for patterns'
+      }
+    ]
+  },
+  {
+    title: 'AI-Powered Chatbots for Patient Assistance',
+    description:
+      'A virtual health assistant provides 24/7 support, answering patient queries, booking appointments, and assisting in symptom analysis.',
+    img: caseImg3,
+    options: [
+      {
+        title: '24/7 Patient Support',
+        description: 'Immediate responses to common health queries'
+      },
+      {
+        title: 'Appointment Scheduling',
+        description: 'Seamless booking without human intervention'
+      },
+      {
+        title: 'Symptom Checker',
+        description: 'AI analyzes symptoms and suggests possible conditions'
+      },
+      {
+        title: 'Multilingual Support',
+        description: 'Catering to patients worldwide with language translation'
+      }
+    ]
+  },
+  {
     title: 'AI-Powered Diagnostics for Early Disease Detection',
     description:
       'A leading healthcare provider faced challenges in detecting diseases early due to delayed diagnostics and human error and implemented an AI-driven diagnostic system.',
