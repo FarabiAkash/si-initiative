@@ -478,7 +478,7 @@ const data = [
     }
 ]
 
-const Page = () => {
+const page = () => {
     const params = useParams();
     const id = params?.id;
     const [caseStudy, setCaseStudy] = useState(null);
@@ -512,4 +512,4 @@ const Page = () => {
     );
 };
 
-export default Page;
+export default page;

@@ -7,9 +7,9 @@ const CaseStudiesDetails = ({ caseStudy }) => {
       <Image
         src={caseStudy.img}
         alt={caseStudy.title}
-        className='rounded-lg mb-6 w-[100vw] h-max-[650px]'
+        className='w-full rounded-lg max-h-[800px]'
       />
-      <div className='px-6'>
+      <div className='px-6 pt-6'>
         <h1 className='text-[32px] lg:text-[44px] font-[700] leading-[36px] lg:leading-[64px] mb-3'>
           {caseStudy.title}
         </h1>
