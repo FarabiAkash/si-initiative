@@ -498,6 +498,15 @@ const Page = () => {
 
     return (
         <div className="custom-container">
+            <div className='w-full h-min-[56px]  border-t border-b border-t-[#F1F3F4] border-b-[#F1F3F4] mb-10'>
+                <p className='py-[16px] leading-[24px] text-[16px] font-[500] flex justify-start items-center gap-[16px]'>
+                    <span className='text-[#586A78]'>Home</span>
+                    <span className='text-[#F05232]'>/</span>
+                    <span className='text-[#586A78]'>Case Studies</span>
+                    <span className='text-[#F05232]'>/</span>
+                    <span className='text-primary'>{caseStudy.title}</span>
+                </p>
+            </div>
             <CaseStudiesDetails caseStudy={caseStudy} />
         </div>
     );

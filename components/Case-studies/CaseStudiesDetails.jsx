@@ -3,13 +3,13 @@ import diamondShape from '../../public/assets/diamondShape.svg'
 import Image from 'next/image'
 const CaseStudiesDetails = ({ caseStudy }) => {
   return (
-    <div className='flex flex-col justify-center items-center'>
+    <div className='flex flex-col justify-center items-center w-full'>
       <Image
         src={caseStudy.img}
         alt={caseStudy.title}
-        className='rounded-lg mb-6 w-100 h-[600px]'
+        className='rounded-lg mb-6 w-[100vw] h-max-[650px]'
       />
-      <div className='px-20'>
+      <div className='px-6'>
         <h1 className='text-[44px] font-[700] leading-[64px] mb-3'>
           {caseStudy.title}
         </h1>
