@@ -619,9 +619,8 @@ const AllBlogs = () => {
               <Image
                 src={blog.img}
                 alt={blog.title}
-                layout='fill'
-                objectFit='cover'
-                className='rounded-lg'
+                fill
+                className='rounded-lg object-cover'
               />
             </div>
             <div className='py-4'>

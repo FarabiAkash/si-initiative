@@ -489,9 +489,8 @@ const CaseStudies = () => {
               <Image
                 src={item.img}
                 alt={item.title}
-                className='rounded-[4px]'
-                layout='fill'
-                objectFit='cover'
+                fill
+                className='rounded-[4px] object-cover'
               />
             </div>
             <div className='flex flex-col justify-start items-start gap-[24px]'>

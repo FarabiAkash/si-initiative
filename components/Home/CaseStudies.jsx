@@ -58,8 +58,8 @@ const CaseStudies = () => {
                 <Image
                   src={study.image}
                   alt={study.title}
-                  layout='fill'
-                  objectFit='cover'
+                  fill
+                  className='object-cover'
                 />
               </div>
             </div>

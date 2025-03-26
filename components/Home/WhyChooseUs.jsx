@@ -88,8 +88,8 @@ const WhyChooseUs = () => {
           <Image
             src={HeroImg}
             alt='Hero Image'
-            layout='fill'
-            objectFit='contain'
+            fill
+            className='object-contain'
           />
         </div>
       </div>
