@@ -10,7 +10,7 @@ const CaseStudiesDetails = ({ caseStudy }) => {
         className='rounded-lg mb-6 w-[100vw] h-max-[650px]'
       />
       <div className='px-6'>
-        <h1 className='text-[44px] font-[700] leading-[64px] mb-3'>
+        <h1 className='text-[32px] lg:text-[44px] font-[700] leading-[36px] lg:leading-[64px] mb-3'>
           {caseStudy.title}
         </h1>
         <p className='text-paragraph text-[20px] font-[400] leading-[32px] mb-6'>
@@ -18,7 +18,7 @@ const CaseStudiesDetails = ({ caseStudy }) => {
         </p>
 
         <div className='flex flex-col justify-start items-start'>
-          <h2 className='text-[32px] font-[700] leading-[40px] text-titleSubtitle mb-4'>
+          <h2 className='text-[24px] lg:text-[32px] font-[700] leading-[32px] lg:leading-[40px] text-titleSubtitle mb-4'>
             Challenges
           </h2>
           <div className='mb-6 space-y-2 w-full'>
@@ -45,7 +45,7 @@ const CaseStudiesDetails = ({ caseStudy }) => {
         </div>
 
         <div className='flex flex-col justify-start items-start'>
-          <h2 className='text-[32px] font-[700] leading-[40px] text-titleSubtitle mb-4'>
+          <h2 className='text-[24px] lg:text-[32px] font-[700] leading-[32px] lg:leading-[40px] text-titleSubtitle mb-4'>
             Our Solution
           </h2>
           <div className='mb-6 space-y-2 w-full'>
@@ -71,7 +71,7 @@ const CaseStudiesDetails = ({ caseStudy }) => {
           </div>
         </div>
         <div className='flex flex-col justify-start items-start'>
-          <h2 className='text-[32px] font-[700] leading-[40px] text-titleSubtitle mb-4'>
+          <h2 className='text-[24px] lg:text-[32px] font-[700] leading-[32px] lg:leading-[40px] text-titleSubtitle mb-4'>
             Key Metrics & Impact
           </h2>
           <div className='mb-6 space-y-2 w-full'>
@@ -97,7 +97,7 @@ const CaseStudiesDetails = ({ caseStudy }) => {
           </div>
         </div>
         <div className='flex flex-col justify-start items-start'>
-          <h2 className='text-[32px] font-[700] leading-[40px] text-titleSubtitle mb-4'>
+          <h2 className='text-[24px] lg:text-[32px] font-[700] leading-[32px] lg:leading-[40px] text-titleSubtitle mb-4'>
             Client Testimonial
           </h2>
           <div className='mb-6 space-y-2 w-full'>
@@ -111,7 +111,7 @@ const CaseStudiesDetails = ({ caseStudy }) => {
           </div>
         </div>
         <div className='flex flex-col justify-start items-start'>
-          <h2 className='text-[32px] font-[700] leading-[40px] text-titleSubtitle mb-4'>
+          <h2 className='text-[24px] lg:text-[32px] font-[700] leading-[32px] lg:leading-[40px] text-titleSubtitle mb-4'>
             Conclusion & Next Steps
           </h2>
           <div className='mb-6 space-y-2 w-full'>
