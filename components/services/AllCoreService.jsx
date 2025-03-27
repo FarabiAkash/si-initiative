@@ -53,7 +53,7 @@ const services = [
   }
 ]
 
-const CoreService = () => {
+const AllCoreService = () => {
   return (
     <div className='custom-container'>
       <div className='flex flex-col justify-center items-center text-center gap-[16px]'>
@@ -113,4 +113,4 @@ const CoreService = () => {
   )
 }
 
-export default CoreService
+export default AllCoreService
