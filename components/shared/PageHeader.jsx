@@ -2,6 +2,7 @@
 
 import { usePathname } from 'next/navigation'
 import TagsFilter from './TagsFilter'
+import Link from 'next/link'
 
 const PageHeader = ({ title, subtitle, tags }) => {
   const path = usePathname()
@@ -19,7 +20,9 @@ const PageHeader = ({ title, subtitle, tags }) => {
       </div>
       <div className='w-full h-[56px] flex justify-between gap-4 border-t border-b border-t-[#F1F3F4] border-b-[#F1F3F4]'>
         <p className='w-1/5 py-[16px] leading-[24px] text-[16px] font-[500] flex justify-start items-center gap-[16px]'>
-          <span className='text-paragraph'>Home</span>
+          <Link href={'/'}>
+            <span className='text-paragraph'>Home</span>
+          </Link>
           <span className='text-[#F05232]'>/</span>
           <span className='text-primary'>{formattedPath}</span>
         </p>

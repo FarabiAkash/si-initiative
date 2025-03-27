@@ -1,10 +1,14 @@
+import Link from 'next/link'
+
 const AboutHeader = () => {
   return (
     <div className='custom-container'>
       {/* Breadcrumb */}
       <div className='w-full min-h-[56px] flex items-center border-y border-[#F1F3F4]'>
         <p className='text-[16px] font-medium flex items-center gap-4'>
-          <span className='text-paragraph'>Home</span>
+          <Link href={'/'}>
+            <span className='text-paragraph'>Home</span>
+          </Link>
           <span className='text-[#F05232]'>/</span>
           <span className='text-primary'>About Us</span>
         </p>

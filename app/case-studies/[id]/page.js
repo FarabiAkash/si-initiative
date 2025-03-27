@@ -7,6 +7,7 @@ import caseImg2 from '../../../public/assets/home/Blogs/blog1.png'
 import caseImg3 from '../../../public/assets/home/Blogs/blog2.png'
 import caseImg4 from '../../../public/assets/home/Blogs/blog3.png'
 import CaseStudiesDetails from '../../../components/Case-studies/CaseStudiesDetails';
+import Link from 'next/link';
 
 const data = [
     {
@@ -500,9 +501,9 @@ const page = () => {
         <div className="custom-container">
             <div className='w-full h-min-[56px]  border-t border-b border-t-[#F1F3F4] border-b-[#F1F3F4] mb-10'>
                 <p className='py-[16px] leading-[24px] text-[16px] font-[500] flex justify-start items-center gap-[16px]'>
-                    <span className='text-[#586A78]'>Home</span>
+                    <Link href={'/'}><span className='text-[#586A78]'>Home</span></Link>
                     <span className='text-[#F05232]'>/</span>
-                    <span className='text-[#586A78]'>Case Studies</span>
+                    <Link href={'/case-studies'}><span className='text-[#586A78]'>Case Studies</span></Link>
                     <span className='text-[#F05232]'>/</span>
                     <span className='text-primary'>{caseStudy.title}</span>
                 </p>
