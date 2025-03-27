@@ -1,4 +1,4 @@
-import AllCoreService from "components/Services/AllCoreService"
+import AllCoreService from "../../components/Services/AllCoreService"
 import PageHeader from "../../components/shared/PageHeader"
 
 const page = () => {
