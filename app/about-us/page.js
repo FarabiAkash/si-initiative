@@ -3,6 +3,7 @@ import OurVision from "../../components/About-us/OurVision"
 import OurMission from "../../components/About-us/OurMission"
 import OurJourney from "../../components/About-us/OurJourney"
 import OurAchievements from "../../components/About-us/OurAchievements"
+import LetsConnect from "../../components/About-us/LetsConnect"
 
 const page = () => {
     return (
@@ -12,6 +13,7 @@ const page = () => {
             <OurMission />
             <OurJourney />
             <OurAchievements />
+            <LetsConnect />
         </>
     )
 }
