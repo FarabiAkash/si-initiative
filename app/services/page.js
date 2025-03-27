@@ -1,4 +1,4 @@
-import WorkProcess from "components/Services/WorkProcess.jsx"
+import WorkProcess from "../../components/Services/WorkProcess.jsx"
 import PageHeader from "../../components/shared/PageHeader"
 import SuccessStories from "../../components/Home/SuccessStories.jsx"
 import GetInTouch from "../../components/Services/GetInTouch.jsx"
