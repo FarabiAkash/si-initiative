@@ -10,8 +10,13 @@ const Nav = () => {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
 
-  const isActive = path =>
-    pathname === path ? 'text-secondary' : 'text-[#6D787B]'
+  const isActive = path => {
+    const formattedPath = path === '/' ? path : path.replace(/^\/(.+)/, '$1') // Remove leading "/" except for "/"
+
+    return pathname === path || pathname.startsWith(`${path}/`)
+      ? 'text-secondary'
+      : 'text-[#6D787B]'
+  }
 
   return (
     <>
