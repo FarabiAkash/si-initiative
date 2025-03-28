@@ -10,9 +10,8 @@ const Nav = () => {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
 
-  const isActive = path => {
+  const isActive = path =>
     pathname === path ? 'text-secondary' : 'text-[#6D787B]'
-  }
 
   return (
     <>
