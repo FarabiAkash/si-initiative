@@ -26,7 +26,7 @@ const Nav = () => {
         }`}
       >
         {/* Logo */}
-        <Link href={'/'} className='w-[111.613px] h-[40px]'>
+        <Link href={'/'} className='w-[111.613px] h-[40px] cursor-pointer'>
           <Image src={Logo} alt='SI-Initiative Logo' width={500} height={500} />
         </Link>
 
