@@ -7,7 +7,7 @@ const page = () => {
     return (
         <div className="custom-container bg-[#0B3641] flex flex-col justify-center items-center gap-8 lg:gap-24">
             <div className="w-full h-[56px] flex justify-between gap-4 border-t border-b border-t-[#ffffff33] border-b-[#ffffff33]">
-                <p className="w-1/5 py-[16px] leading-[24px] text-[16px] font-[500] flex justify-start items-center gap-[16px]">
+                <p className="lg:w-1/5 py-[16px] leading-[24px] text-[16px] font-[500] flex justify-start items-center gap-[16px]">
                     <Link href={"/"}>
                         <span className="text-[#ffffffcc]">Home</span>
                     </Link>
@@ -60,7 +60,7 @@ const page = () => {
                 {/* Right Section - Contact Image & Info */}
                 <div className="w-full lg:w-1/2 lg:relative flex flex-col items-end">
                     <div className="w-full h-auto lg:h-[500px] rounded-[8px]  lg:relative lg:mt-[-25%]">
-                        <Image src={contactImg} alt="Contact Us" layout="fill" objectFit="cover" className="rounded-[8px]" />
+                        <Image src={contactImg} alt="Contact Us" className="rounded-[8px] object-cover w-full h-full" />
                     </div>
                     <div className="mt-6 space-y-[25px] w-full">
                         <div className="flex justify-between items-center">
