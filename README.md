@@ -1,6 +1,6 @@
 # SI Initiative
 
-SI Initiative is a modern web application built with Next.js 15 and React 19, designed to deliver an engaging and seamless user experience. The project integrates cutting-edge technologies like Tailwind CSS for styling and React Slick for smooth carousel functionality.
+CMED is a modern web application built with Next.js 15 and React 19, designed to deliver an engaging and seamless user experience. The project integrates cutting-edge technologies like Tailwind CSS for styling and React Slick for smooth carousel functionality.
 
 ## 🚀 Features
 
