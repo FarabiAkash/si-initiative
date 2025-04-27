@@ -18,7 +18,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} antialiased bg-white text-gray-900`}>
+      <body className={`${poppins.variable} antialiased bg-white text-gray-900 xl:max-w-[1200px] mx-auto`}>
         <Nav />
         {children}
         <Footer />

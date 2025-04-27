@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import HeaderBg from '../../public/assets/home/header-bg.png'
 import HeroImg from '../../public/assets/home/hero.png'
-import HeroBg from '../../public/assets/home/hero-background.png'
+import HeroBg from '../../public/assets/home/hero-background2.png'
 import LinesBg from '../../public/assets/home/Lines.png'
 
 const Header = () => {
@@ -13,9 +13,12 @@ const Header = () => {
       <div className='xl:flex flex flex-wrap-reverse lg:flex-nowrap items-center justify-center xl:justify-between  w-full'>
         {/* left */}
         <div className='flex flex-col justify-center lg:justify-start items-center lg:items-start gap-6 max-w-lg pt-10 xl:pt-0 pb-10 xl:pb-0'>
-          <h2 className='text-[#0B3641] text-[38px] md:text-[48px] font-[700] leading-[64px] text-center lg:text-start'>
+          <h2 className='text-[#0B3641] text-[38px] font-extrabold text-center lg:text-start'>
             Developing Solutions for Your Business
           </h2>
+          {/* <h2 className='text-[#0B3641] text-[38px] md:text-[48px] font-[700] leading-[64px] text-center lg:text-start'>
+            Developing Solutions for Your Business
+          </h2> */}
           <p className='text-[#677A7E] font-poppins text-[20px] font-[400] leading-[32px] text-center lg:text-start'>
             <span>
               Empowering your business with innovative, tailored <br />
@@ -38,9 +41,9 @@ const Header = () => {
           className='relative bg-cover bg-center bg-no-repeat lg:w-1/2'
           style={{ backgroundImage: `url(${LinesBg.src})` }}
         >
-          <div className='overflow-hidden h-[52vh] sm:h-[400px] xl:h-[500px] '>
+          <div className='overflow-hidden  sm:w-[500px] flex flex-col justify-end items-end'>
             <Image
-              className='pt-28 h-[80vh] sm:h-[600px] lg:h-[600px] w-full'
+              className='pt-28 max-h-[634px]'
               src={HeroBg}
               alt='Hero Background'
             />
@@ -48,12 +51,12 @@ const Header = () => {
               src={HeroImg}
               alt='Hero Image'
               fill
-              className='object-contain'
+              className='flex justify-end items-end object-cover'
             />
           </div>
 
-          {/* stats section */}
-          <div className='absolute md:w-[55vw] lg:w-[40vw] bottom-4 xl:bottom-10  flex justify-between items-center gap-2 sm:gap-[30px] rounded-[16px] bg-white/90 shadow-[0px_4px_4px_0px_rgba(28,136,163,0.05)] px-1 sm:px-12 py-4 overflow-hidden'>
+          {/* stats section   md:w-[55vw] lg:w-[40vw] */}
+          <div className='absolute w-[520px] bottom-4 xl:bottom-10  flex justify-between items-center gap-2 sm:gap-[30px] rounded-[16px] bg-white/90 shadow-[0px_4px_4px_0px_rgba(28,136,163,0.05)] px-1 sm:px-12 py-4 overflow-hidden'>
             <div className='text-center'>
               <h3 className='text-primary text-[18px] sm:text-[32px] font-[700]'>
                 6+
