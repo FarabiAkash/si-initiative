@@ -19,6 +19,9 @@ module.exports = {
                 titleSubtitle: "#0B3641",
                 paragraph: "#677A7E"
             },
+            screens: {
+                '2xl-custom': '1700px',
+            },
         },
     },
     plugins: [],

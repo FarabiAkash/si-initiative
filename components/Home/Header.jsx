@@ -41,7 +41,7 @@ const Header = () => {
           className='relative bg-cover bg-center bg-no-repeat lg:w-1/2'
           style={{ backgroundImage: `url(${LinesBg.src})` }}
         >
-          <div className='overflow-hidden  sm:w-[500px] flex flex-col justify-end items-end'>
+          <div className='overflow-hidden  2xl-custom:w-[500px] flex justify-center items-center'>
             <Image
               className='pt-28 max-h-[634px]'
               src={HeroBg}
@@ -56,7 +56,7 @@ const Header = () => {
           </div>
 
           {/* stats section   md:w-[55vw] lg:w-[40vw] */}
-          <div className='absolute w-[520px] bottom-4 xl:bottom-10  flex justify-between items-center gap-2 sm:gap-[30px] rounded-[16px] bg-white/90 shadow-[0px_4px_4px_0px_rgba(28,136,163,0.05)] px-1 sm:px-12 py-4 overflow-hidden'>
+          {/* <div className='absolute w-[520px] bottom-4 xl:bottom-10  flex justify-between items-center gap-2 sm:gap-[30px] rounded-[16px] bg-white/90 shadow-[0px_4px_4px_0px_rgba(28,136,163,0.05)] px-1 sm:px-12 py-4 overflow-hidden'>
             <div className='text-center'>
               <h3 className='text-primary text-[18px] sm:text-[32px] font-[700]'>
                 6+
@@ -81,7 +81,7 @@ const Header = () => {
                 Projects Completed
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

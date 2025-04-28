@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import HeroImg from '../../public/assets/home/whyHero.png'
-import HeroBg from '../../public/assets/home/hero-background.png'
+import HeroBg from '../../public/assets/home/hero-background2.png'
 
 const features = [
   {
@@ -56,7 +56,7 @@ const WhyChooseUs = () => {
         <div className='grid grid-cols-1 sm:grid-cols-2 pb-0 sm:pb-6'>
           {features.map((feature, index) => (
             <div
-              className={`flex flex-col justify-center items-start gap-4 pt-4 pr-[24px] w-full 2xl:w-[400px] pb-[10px] sm:pb-[32px] sm:border-offWhite border-white 
+              className={`flex flex-col justify-center items-start gap-4 pt-4 pr-[24px] w-full 2xl:w-[400px] 2xl-custom:w-full pb-[10px] sm:pb-[32px] sm:border-offWhite border-white 
                  ${index % 2 === 0 ? 'border-r-[1px]' : 'pl-0 sm:pl-4'}
                  ${index < 4 ? 'border-b-[1px]' : ''} `}
               key={index}
@@ -78,10 +78,10 @@ const WhyChooseUs = () => {
       </div>
 
       {/* Hero Image Section */}
-      <div className='relative hidden lg:block'>
-        <div className='h-[400px] xl:h-[500px] w-[400px] xl:w-[500px] overflow-hidden'>
+      <div className='relative mt-[100px] hidden lg:block'>
+        <div className='overflow-hidden h-[480px] w-[480px] flex justify-end items-end'>
           <Image
-            className='pt-36 h-[500px] xl:h-[700px] w-[480px]'
+            className='mt-40 w-full h-2/3'
             src={HeroBg}
             alt='Hero Background'
           />
@@ -89,7 +89,7 @@ const WhyChooseUs = () => {
             src={HeroImg}
             alt='Hero Image'
             fill
-            className='object-contain'
+            className='object-cover '
           />
         </div>
       </div>
