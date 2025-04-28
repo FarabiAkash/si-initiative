@@ -10,7 +10,7 @@ const Header = () => {
       className='w-full flex items-center bg-cover bg-center bg-no-repeat relative px-4 sm:px-12 xl:px-36'
       style={{ backgroundImage: `url(${HeaderBg.src})` }}
     >
-      <div className='xl:flex flex flex-wrap-reverse lg:flex-nowrap items-center justify-center xl:justify-between  w-full'>
+      <div className='xl:flex flex flex-wrap lg:flex-nowrap items-center justify-center xl:justify-between  w-full'>
         {/* left */}
         <div className='flex flex-col justify-center lg:justify-start items-center lg:items-start gap-6 max-w-lg pt-10 xl:pt-0 pb-10 xl:pb-0'>
           <h2 className='text-[#0B3641] text-[38px] font-extrabold text-center lg:text-start'>
@@ -56,7 +56,7 @@ const Header = () => {
           </div>
 
           {/* stats section   md:w-[55vw] lg:w-[40vw] */}
-          {/* <div className='absolute w-[520px] bottom-4 xl:bottom-10  flex justify-between items-center gap-2 sm:gap-[30px] rounded-[16px] bg-white/90 shadow-[0px_4px_4px_0px_rgba(28,136,163,0.05)] px-1 sm:px-12 py-4 overflow-hidden'>
+          <div className='absolute w-full 2xl-custom:w-[520px] bottom-4 xl:bottom-10  flex justify-between items-center gap-2 sm:gap-[30px] rounded-[16px] bg-white/90 shadow-[0px_4px_4px_0px_rgba(28,136,163,0.05)] px-1 sm:px-12 py-4 overflow-hidden'>
             <div className='text-center'>
               <h3 className='text-primary text-[18px] sm:text-[32px] font-[700]'>
                 6+
@@ -81,7 +81,7 @@ const Header = () => {
                 Projects Completed
               </p>
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
     </div>
