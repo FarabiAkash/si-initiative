@@ -39,7 +39,7 @@ const FAQ = () => {
         <h1 className='text-titleSubtitle text-[32px] font-bold leading-[40px]'>
           Frequently Asked Questions (FAQ)
         </h1>
-        <p className='text-paragraph text-[18px] font-normal leading-[24px] w-[75vw] mx-auto pt-3'>
+        <p className='text-paragraph text-[18px] font-normal leading-[24px]  pt-3'>
           Answers to Your Most Common Questions
         </p>
       </div>
