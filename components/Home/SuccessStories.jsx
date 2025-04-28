@@ -99,7 +99,7 @@ const SuccessStories = ({ pageName }) => {
       <div className='w-full max-w-3xl relative'>
         <Slider {...settings} dotsClass='slick-dots custom-dots'>
           {reviews.map(review => (
-            <div key={review.id} className='px-4 mb-8'>
+            <div key={review.id} className='sm:px-4 mb-8'>
               <div className='relative  p-[48px] rounded-[16px] border border-[#F1F3F4] bg-white shadow-[0px_16px_16px_0px_rgba(15,72,87,0.10)] flex flex-col justify-start items-start text-center'>
                 {/* Quote Icon */}
                 <Image
