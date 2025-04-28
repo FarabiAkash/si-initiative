@@ -40,8 +40,8 @@ const coreServices = [
 
 const CoreServices = () => {
   return (
-    <div className='custom-container'>
-      <div className='flex flex-col justify-center xl:justify-start items-center xl:items-start'>
+    <div className='custom-container 2xl-custom:px-4'>
+      <div className='block lg:hidden'>
         <h1 className='text-titleSubtitle text-[32px] font-[700] leading-[40px]'>
           Core Services
         </h1>
@@ -49,21 +49,32 @@ const CoreServices = () => {
           Revolutionizing Healthcare with Cutting-edge Technological Solutions.
         </p>
       </div>
-      <div className='flex items-center xl:items-end justify-center xl:justify-between gap-4'>
-        {/* Hero Image Section */}
-        <div className='relative hidden xl:block'>
-          <div className='h-[400px] w-[550px] overflow-hidden'>
-            <Image
-              className='h-[430px] w-[600px]'
-              src={HeroBg}
-              alt='Hero Background'
-            />
-            <Image
-              src={HeroImg}
-              alt='Hero Image'
-              fill
-              className='object-contain'
-            />
+      <div className='flex items-center  justify-center  lg:gap-4 '>
+        <div className='flex flex-col justify-start items-start lg:w-1/2'>
+          <div className='hidden lg:block'>
+            <h1 className='text-titleSubtitle text-[32px] font-[700] leading-[40px]'>
+              Core Services
+            </h1>
+            <p className='text-paragraph text-[18px] font-[400] leading-[24px] pt-3'>
+              Revolutionizing Healthcare with Cutting-edge Technological
+              Solutions.
+            </p>
+          </div>
+          {/* Hero Image Section */}
+          <div className='relative  hidden lg:block'>
+            <div className='h-[300px] w-[300px] xl:h-[480px] xl:w-[480px] flex justify-end items-end'>
+              <Image
+                className='w-full h-2/3'
+                src={HeroBg}
+                alt='Hero Background'
+              />
+              <Image
+                src={HeroImg}
+                alt='Hero Image'
+                fill
+                className='object-cover'
+              />
+            </div>
           </div>
         </div>
 
@@ -73,8 +84,8 @@ const CoreServices = () => {
             <div
               key={index}
               className='group rounded-xl border border-[#F1F3F4] shadow-md shadow-[rgba(15,72,87,0.10)] 
-        bg-[#F1F3F4] hover:bg-white hover:shadow-lg transition-all duration-300 
-        sm:w-[288px] sm:h-[248px] flex flex-col justify-start items-start gap-4 p-[24px]'
+        bg-[#F1F3F4] hover:bg-white hover:shadow-lg transition-all duration-300  lg:w-[240px] lg:h-[250px]
+        2xl:w-[288px] 2xl:h-[248px]  flex flex-col justify-start items-start gap-4 p-[20px] xl:p-[24px]'
             >
               <div
                 className='rounded-full w-[64px] h-[64px] bg-white group-hover:bg-[#F1F3F4] 
