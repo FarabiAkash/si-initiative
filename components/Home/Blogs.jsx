@@ -1,5 +1,6 @@
 'use client'
-import { useRef } from 'react'
+
+import { useRef, useState } from 'react'
 import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import blog1 from '../../public/assets/home/Blogs/blog1.png'
@@ -36,6 +37,10 @@ const blogsData = [
 const Blogs = () => {
   const scrollRef = useRef(null)
 
+  const [isDragging, setIsDragging] = useState(false)
+  const [startX, setStartX] = useState(0)
+  const [scrollLeft, setScrollLeft] = useState(0)
+
   const handleScroll = direction => {
     if (scrollRef.current) {
       const scrollAmount = 400
@@ -44,6 +49,51 @@ const Blogs = () => {
         behavior: 'smooth'
       })
     }
+  }
+
+  const handleMouseDown = e => {
+    setIsDragging(true)
+    setStartX(e.pageX - scrollRef.current.offsetLeft)
+    setScrollLeft(scrollRef.current.scrollLeft)
+    document.body.style.userSelect = 'none'
+  }
+
+  const handleMouseLeave = () => {
+    setIsDragging(false)
+    document.body.style.userSelect = ''
+  }
+
+  const handleMouseUp = () => {
+    setIsDragging(false)
+    document.body.style.userSelect = ''
+  }
+
+  const handleMouseMove = e => {
+    if (!isDragging) return
+    e.preventDefault()
+    const x = e.pageX - scrollRef.current.offsetLeft
+    const walk = (x - startX) * 1
+    scrollRef.current.scrollLeft = scrollLeft - walk
+  }
+
+  const handleTouchStart = e => {
+    setIsDragging(true)
+    setStartX(e.touches[0].clientX)
+    setScrollLeft(scrollRef.current.scrollLeft)
+    document.body.style.userSelect = 'none'
+  }
+
+  const handleTouchMove = e => {
+    if (!isDragging) return
+    const x = e.touches[0].clientX
+    const walk = (x - startX) * 1
+    scrollRef.current.scrollLeft = scrollLeft - walk
+    e.preventDefault() // Prevent vertical scrolling
+  }
+
+  const handleTouchEnd = () => {
+    setIsDragging(false)
+    document.body.style.userSelect = ''
   }
 
   return (
@@ -80,8 +130,18 @@ const Blogs = () => {
         {/* Scrollable Blogs Container */}
         <div
           ref={scrollRef}
-          className='flex gap-6 overflow-hidden'
-          style={{ scrollSnapType: 'x mandatory' }}
+          className='flex gap-6 overflow-x-auto cursor-grab active:cursor-grabbing hide-scrollbar'
+          style={{
+            scrollSnapType: 'x mandatory',
+            WebkitOverflowScrolling: 'touch'
+          }}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
           {blogsData.map((blog, index) => (
             <div

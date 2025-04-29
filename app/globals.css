@@ -19,3 +19,12 @@
   font-size: 16px; /* Larger size for active dot */
   opacity: 1;
 }
+
+/* for recent blogs */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
