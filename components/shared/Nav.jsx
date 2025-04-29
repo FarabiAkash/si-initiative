@@ -21,9 +21,9 @@ const Nav = () => {
   return (
     <>
       <nav
-        className={`flex items-center justify-between px-4 sm:px-12 xl:px-36  py-5 ${
-          pathname === '/contact-us' && 'bg-[#0B3641] !text-white'
-        }`}
+        className={`sticky top-0 z-[50] bg-white ${
+          pathname === '/contact-us' ? '!bg-[#0B3641] !text-white' : ''
+        } flex items-center justify-between px-4 sm:px-12 xl:px-36 py-5`}
       >
         {/* Logo */}
         <Link href={'/'} className='w-[111.613px] h-[40px] cursor-pointer'>
@@ -108,8 +108,8 @@ const Nav = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <div
-          className={`lg:hidden flex flex-col items-center space-y-4 bg-gray-100 py-5 ${
-            pathname === '/contact-us' && 'bg-[#0B3641]'
+          className={`fixed top-[70px] left-0 w-full z-[40] lg:hidden flex flex-col items-center space-y-4 py-5 transition-all duration-300 ${
+            pathname === '/contact-us' ? 'bg-[#0B3641]' : 'bg-gray-100'
           }`}
         >
           <a
