@@ -33,7 +33,7 @@ const OurMission = () => {
         </p>
       </div>
 
-      <div className='flex flex-col-reverse lg:flex-row justify-center items-center gap-[20px] sm:gap-[40px] mt-[20px] lg:mt-[50px]'>
+      <div className='flex flex-col lg:flex-row justify-center items-center gap-[20px] sm:gap-[40px] mt-[20px] lg:mt-[50px]'>
         <div className='flex-1 flex flex-col justify-start items-center gap-[16px]'>
           <p className='text-paragraph text-[16px] font-[400] leading-[20px]'>
             Our mission is to harness the power of cutting-edge technology and
@@ -73,7 +73,7 @@ const OurMission = () => {
         <Image
           src={missionImage}
           alt='CMED Vision'
-          className='w-full h-full flex-1 rounded-[8px]'
+          className='w-full h-full lg:w-[500px] lg:h-[450px] object-cover rounded-[8px]'
         />
       </div>
     </div>

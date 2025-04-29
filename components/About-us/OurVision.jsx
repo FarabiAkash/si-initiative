@@ -13,13 +13,13 @@ const OurVision = () => {
         </p>
       </div>
 
-      <div className='flex flex-col lg:flex-row justify-center items-center gap-[20px] sm:gap-[40px]  mt-[50px]'>
+      <div className='flex flex-col-reverse lg:flex-row justify-center items-center gap-[20px] sm:gap-[40px]  mt-[50px]'>
         <Image
           src={visionImage}
           alt='CMED Vision'
-          className='w-full h-full flex-1 rounded-[8px]'
+          className='w-full h-full lg:w-[500px] lg:h-[450px] object-cover rounded-[8px]'
         />
-        <span className='text-[20px] sm:text-[24px] font-[400] leading-[36px] sm:leading-[40px] text-titleSubtitle text-justify'>
+        <span className='text-[20px] sm:text-[24px] font-[400] leading-[36px] text-titleSubtitle text-justify'>
           At CMED, we envision a world where technology bridges the gap in
           healthcare, ensuring accessible, efficient, and data-driven medical
           solutions for all. Through continuous innovation in AI, digital
