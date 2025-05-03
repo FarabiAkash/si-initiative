@@ -7,10 +7,10 @@ import LinesBg from '../../public/assets/home/Lines.png'
 const Header = () => {
   return (
     <div
-      className='w-full flex items-center bg-cover bg-center bg-no-repeat relative px-4 sm:px-12 xl:px-36'
+      className='w-full flex items-center bg-cover bg-center bg-no-repeat relative '
       style={{ backgroundImage: `url(${HeaderBg.src})` }}
     >
-      <div className='xl:flex flex flex-wrap lg:flex-nowrap items-center justify-center xl:justify-between  w-full'>
+      <div className='xl:flex flex flex-wrap lg:flex-nowrap items-center justify-center xl:justify-between  w-full  2xl-custom:w-[1580px] 2xl-custom:mx-auto px-4 sm:px-12 xl:px-36'>
         {/* left */}
         <div className='flex flex-col justify-center lg:justify-start items-center lg:items-start gap-6 max-w-lg pt-10 xl:pt-0 pb-10 xl:pb-0'>
           <h2 className='text-[#0B3641] text-[38px] font-extrabold text-center lg:text-start'>
@@ -38,7 +38,7 @@ const Header = () => {
 
         {/* Hero Image Container */}
         <div
-          className='relative bg-cover bg-center bg-no-repeat lg:w-1/2'
+          className='relative bg-cover bg-center bg-no-repeat '
           style={{ backgroundImage: `url(${LinesBg.src})` }}
         >
           <div className='overflow-hidden  2xl-custom:w-[500px] flex justify-center items-center'>
@@ -51,7 +51,7 @@ const Header = () => {
               src={HeroImg}
               alt='Hero Image'
               fill
-              className='flex justify-end items-end object-cover'
+              className='flex justify-center items-center object-cover'
             />
           </div>
 

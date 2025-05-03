@@ -34,44 +34,46 @@ const FAQ = () => {
   }
 
   return (
-    <div className='custom-container bg-gradient-to-bl from-white to-[#F5FDFF]'>
-      <div className='text-center'>
-        <h1 className='text-titleSubtitle text-[32px] font-bold leading-[40px]'>
-          Frequently Asked Questions (FAQ)
-        </h1>
-        <p className='text-paragraph text-[18px] font-normal leading-[24px]  pt-3'>
-          Answers to Your Most Common Questions
-        </p>
-      </div>
+    <div className='bg-gradient-to-bl from-white to-[#F5FDFF] '>
+      <div className='custom-container  2xl-custom:w-[1580px] 2xl-custom:mx-auto'>
+        <div className='text-center'>
+          <h1 className='text-titleSubtitle text-[32px] font-bold leading-[40px]'>
+            Frequently Asked Questions (FAQ)
+          </h1>
+          <p className='text-paragraph text-[18px] font-normal leading-[24px]  pt-3'>
+            Answers to Your Most Common Questions
+          </p>
+        </div>
 
-      <div className='space-y-3 w-full sm:w-3/4 mx-auto pt-16'>
-        {faqData.map((item, index) => (
-          <div
-            key={index}
-            className={`border-[1px] border-[#F1F3F4] py-[0.5rem] rounded-lg bg-white  ${
-              openIndex === index && 'shadow-md'
-            }`}
-          >
-            <button
-              className={`w-full flex items-center text-start justify-between px-6 py-4 text-[18px] font-[600] ${
-                openIndex === index ? 'text-titleSubtitle' : 'text-[#586A78]'
+        <div className='space-y-3 w-full sm:w-3/4 mx-auto pt-16'>
+          {faqData.map((item, index) => (
+            <div
+              key={index}
+              className={`border-[1px] border-[#F1F3F4] py-[0.5rem] rounded-lg bg-white  ${
+                openIndex === index && 'shadow-md'
               }`}
-              onClick={() => toggleFAQ(index)}
             >
-              {index + 1}. {item.question}
-              {openIndex === index ? (
-                <ChevronUp className='text-gray-600' />
-              ) : (
-                <ChevronDown className='text-gray-600' />
+              <button
+                className={`w-full flex items-center text-start justify-between px-6 py-4 text-[18px] font-[600] ${
+                  openIndex === index ? 'text-titleSubtitle' : 'text-[#586A78]'
+                }`}
+                onClick={() => toggleFAQ(index)}
+              >
+                {index + 1}. {item.question}
+                {openIndex === index ? (
+                  <ChevronUp className='text-gray-600' />
+                ) : (
+                  <ChevronDown className='text-gray-600' />
+                )}
+              </button>
+              {openIndex === index && (
+                <div className='px-6 pb-4 text-[#484E4F] text-base font-[400]'>
+                  {item.answer}
+                </div>
               )}
-            </button>
-            {openIndex === index && (
-              <div className='px-6 pb-4 text-[#484E4F] text-base font-[400]'>
-                {item.answer}
-              </div>
-            )}
-          </div>
-        ))}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   )

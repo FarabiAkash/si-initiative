@@ -19,7 +19,7 @@ const Nav = () => {
   }
 
   return (
-    <>
+    <div className=' 2xl-custom:w-[1580px] 2xl-custom:mx-auto'>
       <nav
         className={`sticky top-0 z-[50] bg-white ${
           pathname === '/contact-us' ? '!bg-[#0B3641] !text-white' : ''
@@ -177,7 +177,7 @@ const Nav = () => {
           </button>
         </div>
       )}
-    </>
+    </div>
   )
 }
 

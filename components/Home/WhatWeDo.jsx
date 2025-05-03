@@ -37,42 +37,44 @@ const data = [
 
 const WhatWeDo = () => {
   return (
-    <section className='custom-container text-center bg-gradient-to-l from-[#F5FDFF] to-white'>
-      <div className='container mx-auto px-4'>
-        <h1 className='text-[32px] font-[700] text-[#0B3641] leading-[40px]'>
-          What We Do
-        </h1>
-        <p className='text-[#677A7E] text-[18px] font-[400] leading-[24px] mt-2'>
-          Explore Our Core Innovations
-        </p>
+    <div className='bg-gradient-to-l from-[#F5FDFF] to-white'>
+      <section className='custom-container text-center  2xl-custom:w-[1580px] 2xl-custom:mx-auto'>
+        <div className='container mx-auto'>
+          <h1 className='text-[32px] font-[700] text-[#0B3641] leading-[40px]'>
+            What We Do
+          </h1>
+          <p className='text-[#677A7E] text-[18px] font-[400] leading-[24px] mt-2'>
+            Explore Our Core Innovations
+          </p>
 
-        {/* Icons Section */}
-        <div className='mt-10 grid grid-cols-1 xl:grid-cols-4 sm:grid-cols-2 gap-8'>
-          {data.map((item, index) => (
-            <div
-              key={index}
-              className='flex flex-col gap-6 items-center text-center p-6 transition duration-300 hover:scale-105'
-            >
-              <div className='h-[80px] w-[80px] rounded-[40px] border  bg-white shadow-[0px_16px_16px_0px_rgba(72,196,227,0.15)]'>
-                <Image
-                  src={item.icon}
-                  alt={item.title}
-                  width={80}
-                  height={80}
-                  className='p-[24px]'
-                />
-              </div>
-              <h3
-                className={`${item.color} text-[18px] font-[500] leading-[24px] uppercase`}
+          {/* Icons Section */}
+          <div className='mt-10 grid grid-cols-1 xl:grid-cols-4 sm:grid-cols-2 gap-8'>
+            {data.map((item, index) => (
+              <div
+                key={index}
+                className='flex flex-col gap-6 items-center text-center p-6 transition duration-300 hover:scale-105'
               >
-                {item.title}
-              </h3>
-              <p className='text-gray-600 mt-2 text-sm'>{item.description}</p>
-            </div>
-          ))}
+                <div className='h-[80px] w-[80px] rounded-[40px] border  bg-white shadow-[0px_16px_16px_0px_rgba(72,196,227,0.15)]'>
+                  <Image
+                    src={item.icon}
+                    alt={item.title}
+                    width={80}
+                    height={80}
+                    className='p-[24px]'
+                  />
+                </div>
+                <h3
+                  className={`${item.color} text-[18px] font-[500] leading-[24px] uppercase`}
+                >
+                  {item.title}
+                </h3>
+                <p className='text-gray-600 mt-2 text-sm'>{item.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   )
 }
 

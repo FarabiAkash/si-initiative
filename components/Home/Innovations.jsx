@@ -49,7 +49,7 @@ const Innovations = () => {
   const [selectedTab, setSelectedTab] = useState(0)
 
   return (
-    <div className='custom-container flex flex-col md:flex-row gap-8'>
+    <div className='custom-container flex flex-col justify-between md:flex-row gap-8  2xl-custom:w-[1580px] 2xl-custom:mx-auto'>
       {/* Left Section - Tabs */}
       <div className='flex flex-col gap-2 w-full h-auto md:w-1/3'>
         {data.map((item, index) => (

@@ -40,7 +40,7 @@ const coreServices = [
 
 const CoreServices = () => {
   return (
-    <div className='custom-container 2xl-custom:px-4'>
+    <div className='custom-container 2xl-custom:w-[1580px] 2xl-custom:mx-auto'>
       <div className='block lg:hidden'>
         <h1 className='text-titleSubtitle text-[32px] font-[700] leading-[40px]'>
           Core Services
@@ -49,7 +49,7 @@ const CoreServices = () => {
           Revolutionizing Healthcare with Cutting-edge Technological Solutions.
         </p>
       </div>
-      <div className='flex items-center  justify-center  lg:gap-4 '>
+      <div className='flex items-center  justify-between  lg:gap-4 '>
         <div className='flex flex-col justify-start items-start lg:w-1/2'>
           <div className='hidden lg:block'>
             <h1 className='text-titleSubtitle text-[32px] font-[700] leading-[40px]'>

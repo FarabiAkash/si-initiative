@@ -81,64 +81,66 @@ const SuccessStories = ({ pageName }) => {
   }
   return (
     <div
-      className={`custom-container flex flex-col justify-center items-center gap-8 ${
+      className={`${
         pageName === 'services' && 'bg-gradient-to-bl from-white to-[#F5FDFF]'
-      }`}
+      } 2xl-custom:w-[1580px] 2xl-custom:mx-auto`}
     >
-      {/* Heading */}
-      <div className='text-center'>
-        <h1 className='text-titleSubtitle text-[32px] font-[700] leading-[40px]'>
-          Success Stories
-        </h1>
-        <p className='text-paragraph text-[18px] font-[400] leading-[24px] pt-3'>
-          Real Stories of Impact and Innovation
-        </p>
-      </div>
+      <div className='custom-container flex flex-col justify-center items-center gap-8'>
+        {/* Heading */}
+        <div className='text-center'>
+          <h1 className='text-titleSubtitle text-[32px] font-[700] leading-[40px]'>
+            Success Stories
+          </h1>
+          <p className='text-paragraph text-[18px] font-[400] leading-[24px] pt-3'>
+            Real Stories of Impact and Innovation
+          </p>
+        </div>
 
-      {/* Review Slider */}
-      <div className='w-full max-w-3xl relative'>
-        <Slider {...settings} dotsClass='slick-dots custom-dots'>
-          {reviews.map(review => (
-            <div key={review.id} className='sm:px-4 mb-8'>
-              <div className='relative  p-[48px] rounded-[16px] border border-[#F1F3F4] bg-white shadow-[0px_16px_16px_0px_rgba(15,72,87,0.10)] flex flex-col justify-start items-start text-center'>
-                {/* Quote Icon */}
-                <Image
-                  src='/assets/home/reviewQuoteIcon.svg'
-                  alt='quote icon'
-                  width={50}
-                  height={50}
-                  className='absolute top-4 right-4'
-                />
-
-                <div className='flex-col sm:flex-row sm:flex justify-center sm:justify-start  items-center gap-2 sm:gap-4'>
-                  {/* Profile Image */}
+        {/* Review Slider */}
+        <div className='w-full max-w-3xl relative'>
+          <Slider {...settings} dotsClass='slick-dots custom-dots'>
+            {reviews.map(review => (
+              <div key={review.id} className='sm:px-4 mb-8'>
+                <div className='relative  p-[48px] rounded-[16px] border border-[#F1F3F4] bg-white shadow-[0px_16px_16px_0px_rgba(15,72,87,0.10)] flex flex-col justify-start items-start text-center'>
+                  {/* Quote Icon */}
                   <Image
-                    src={review.image}
-                    alt={review.name}
-                    width={64}
-                    height={64}
-                    className='rounded-full mb-4'
+                    src='/assets/home/reviewQuoteIcon.svg'
+                    alt='quote icon'
+                    width={50}
+                    height={50}
+                    className='absolute top-4 right-4'
                   />
 
-                  {/* Reviewer Name & Position */}
-                  <div className='flex flex-col justify-start items-start'>
-                    <h3 className='text-titleSubtitle font-semibold text-[18px]'>
-                      {review.name}
-                    </h3>
-                    <p className='text-paragraph text-sm  mb-4'>
-                      {review.position}
-                    </p>
-                  </div>
-                </div>
+                  <div className='flex-col sm:flex-row sm:flex justify-center sm:justify-start  items-center gap-2 sm:gap-4'>
+                    {/* Profile Image */}
+                    <Image
+                      src={review.image}
+                      alt={review.name}
+                      width={64}
+                      height={64}
+                      className='rounded-full mb-4'
+                    />
 
-                {/* Review Text */}
-                <p className='text-paragraph text-base text-start'>
-                  {review.review}
-                </p>
+                    {/* Reviewer Name & Position */}
+                    <div className='flex flex-col justify-start items-start'>
+                      <h3 className='text-titleSubtitle font-semibold text-[18px]'>
+                        {review.name}
+                      </h3>
+                      <p className='text-paragraph text-sm  mb-4'>
+                        {review.position}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Review Text */}
+                  <p className='text-paragraph text-base text-start'>
+                    {review.review}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
-        </Slider>
+            ))}
+          </Slider>
+        </div>
       </div>
     </div>
   )

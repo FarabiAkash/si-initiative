@@ -31,46 +31,48 @@ const specializedServices = [
 ]
 const SpecializedService = () => {
   return (
-    <div className='custom-container bg-gradient-to-bl from-white to-[#F5FDFF] flex flex-col justify-center items-center gap-8'>
-      <div>
-        <h1 className='text-titleSubtitle text-center text-[32px] font-[700] leading-[40px]'>
-          Specialized Services
-        </h1>
-        <p className='text-paragraph text-center text-[18px] font-[400] leading-[24px] pt-3'>
-          Tailored Innovations for Targeted Healthcare Needs.
-        </p>
-      </div>
-      <div className='flex flex-wrap xl:flex-nowrap justify-center items-center gap-4 pt-4 sm:pt-10'>
-        {specializedServices.map(service => (
-          <div
-            key={service.id}
-            className={`${
-              service.color
-            } rounded-[8px] text-white min-w-[300px] sm:w-[392px] h-auto p-[32px] ${
-              service.id === 2 && 'mb-0 xl:mb-[32px]'
-            } flex gap-[36px] flex-col justify-start items-start`}
-          >
+    <div className='bg-gradient-to-bl from-white to-[#F5FDFF]'>
+      <div className='custom-container  flex flex-col justify-center items-center gap-8 2xl-custom:w-[1580px] 2xl-custom:mx-auto'>
+        <div>
+          <h1 className='text-titleSubtitle text-center text-[32px] font-[700] leading-[40px]'>
+            Specialized Services
+          </h1>
+          <p className='text-paragraph text-center text-[18px] font-[400] leading-[24px] pt-3'>
+            Tailored Innovations for Targeted Healthcare Needs.
+          </p>
+        </div>
+        <div className='flex flex-wrap xl:flex-nowrap justify-center items-center gap-4 2xl-custom:gap-14 pt-4 sm:pt-10'>
+          {specializedServices.map(service => (
             <div
-              className='rounded-full w-[64px] h-[64px] bg-white 
-              flex items-center justify-center transition-all duration-300'
+              key={service.id}
+              className={`${
+                service.color
+              } rounded-[8px] text-white min-w-[300px] sm:w-[372px] 2xl:w-[392px] h-auto sm:h-[316px] p-[32px] ${
+                service.id === 2 && 'mb-0 xl:mb-[32px]'
+              } flex gap-[36px] flex-col justify-start items-start`}
             >
-              <Image
-                src={service.icon}
-                alt={service.title}
-                width={40}
-                height={40}
-              />
+              <div
+                className='rounded-full w-[64px] h-[64px] bg-white 
+              flex items-center justify-center transition-all duration-300'
+              >
+                <Image
+                  src={service.icon}
+                  alt={service.title}
+                  width={40}
+                  height={40}
+                />
+              </div>
+              <div>
+                <h2 className='text-[18px] font-[600] leading-[20px]'>
+                  {service.title}
+                </h2>
+                <p className='text-[16px] font-[400] leading-[24px] pt-4'>
+                  {service.description}
+                </p>
+              </div>
             </div>
-            <div>
-              <h2 className='text-[18px] font-[600] leading-[20px]'>
-                {service.title}
-              </h2>
-              <p className='text-[16px] font-[400] leading-[24px] pt-4'>
-                {service.description}
-              </p>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   )
