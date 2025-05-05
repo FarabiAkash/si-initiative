@@ -19,12 +19,12 @@ const Nav = () => {
   }
 
   return (
-    <div className=' 2xl-custom:w-[1580px] 2xl-custom:mx-auto'>
-      <nav
-        className={`sticky top-0 z-[50] bg-white ${
-          pathname === '/contact-us' ? '!bg-[#0B3641] !text-white' : ''
-        } flex items-center justify-between px-4 sm:px-12 xl:px-36 py-5`}
-      >
+    <div
+      className={`sticky top-0 z-[50] bg-white ${
+        pathname === '/contact-us' ? '!bg-[#0B3641] !text-white' : ''
+      }`}
+    >
+      <nav className='  flex items-center justify-between px-4 sm:px-12 xl:px-36 py-5 2xl-custom:w-[1580px] 2xl-custom:mx-auto'>
         {/* Logo */}
         <Link href={'/'} className='w-[111.613px] h-[40px] cursor-pointer'>
           <Image src={Logo} alt='SI-Initiative Logo' width={500} height={500} />
