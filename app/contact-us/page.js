@@ -6,7 +6,7 @@ import contactImg from "../../public/assets/home/caseStudiesImg.png";
 const page = () => {
     return (
         <div className="bg-[#0B3641]">
-            <div className="custom-container  flex flex-col justify-center items-center gap-8 lg:gap-24 2xl-custom:w-[1580px] 2xl-custom:mx-auto">
+            <div className="px-4 sm:px-12 xl:px-36 pt-[20px] pb-[35px]   flex flex-col justify-center items-center gap-8 lg:gap-28 2xl-custom:w-[1580px] 2xl-custom:mx-auto">
                 <div className="w-full h-[56px] flex justify-between gap-4 border-t border-b border-t-[#ffffff33] border-b-[#ffffff33]">
                     <p className="lg:w-1/5 py-[16px] leading-[24px] text-[16px] font-[500] flex justify-start items-center gap-[16px]">
                         <Link href={"/"}>

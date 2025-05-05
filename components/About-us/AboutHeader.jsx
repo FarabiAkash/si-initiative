@@ -4,7 +4,7 @@ import aboutImg from '@/public/assets/blogs/blog1.png' // Replace with your actu
 
 const AboutHeader = () => {
   return (
-    <div className='custom-container 2xl-custom:w-[1580px] 2xl-custom:mx-auto'>
+    <div className='px-4 sm:px-12 xl:px-36 pt-[20px] pb-[35px] 2xl-custom:w-[1580px] 2xl-custom:mx-auto'>
       {/* Breadcrumb */}
       <div className='w-full min-h-[56px] flex items-center border-y border-[#F1F3F4]'>
         <p className='text-[16px] font-medium flex items-center gap-4'>
@@ -18,7 +18,7 @@ const AboutHeader = () => {
 
       {/* Hero Section */}
       <div
-        className=' flex justify-center items-center p-6 rounded-[16px] mt-10 gap-2 flex-wrap'
+        className=' flex justify-center items-center p-6 rounded-[16px] mt-10 sm:mt-28 gap-2 flex-wrap'
         style={{
           background:
             'linear-gradient(109deg, #F7FDFF 0%, #E3F1F7 41.07%, #C4E3F2 71.08%)'
