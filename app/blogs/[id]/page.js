@@ -621,7 +621,7 @@ const page = () => {
     if (!blog) return <p className="text-center text-lg font-semibold mt-10">Loading...</p>;
 
     return (
-        <div className="custom-container">
+        <div className="custom-container 2xl-custom:w-[1580px] 2xl-custom:mx-auto">
             <div className='w-full h-min-[56px]  border-t border-b border-t-[#F1F3F4] border-b-[#F1F3F4] mb-10'>
                 <p className='py-[16px] leading-[24px] text-[16px] font-[500] flex justify-start items-center gap-[16px]'>
                     <Link href={'/'}><span className='text-[#586A78]'>Home</span></Link>

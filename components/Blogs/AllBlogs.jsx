@@ -607,7 +607,7 @@ const blogs = [
 
 const AllBlogs = () => {
   return (
-    <div className='custom-container flex flex-col items-center gap-10'>
+    <div className='custom-container flex flex-col items-center gap-10 2xl-custom:w-[1580px] 2xl-custom:mx-auto'>
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
         {blogs.map((blog, index) => (
           <div
