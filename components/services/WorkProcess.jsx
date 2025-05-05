@@ -55,7 +55,7 @@ const steps = [
 
 const WorkProcess = () => {
   return (
-    <div className='custom-container flex flex-col justify-center items-center gap-10 lg:gap-20'>
+    <div className='custom-container flex flex-col justify-center items-center gap-10 lg:gap-20 2xl-custom:w-[1580px] 2xl-custom:mx-auto'>
       <div className='md:w-2/3 text-center space-y-[16px]'>
         <h2 className='text-[32px] font-[700] text-center leading-[40px] text-titleSubtitle'>
           Our Work Process
