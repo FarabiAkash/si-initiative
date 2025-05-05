@@ -47,66 +47,68 @@ const RelatedCase = () => {
   }
 
   return (
-    <div className='custom-container bg-[#FDFDFD]'>
-      {/* Section Header */}
-      <div className='text-start mb-8'>
-        <h1 className='text-titleSubtitle text-[32px] font-bold leading-[40px]'>
-          Related Articles
-        </h1>
-        <div className='flex justify-between items-center pt-3'>
-          <p className='text-paragraph text-[18px] font-normal leading-[24px]'>
-            Stay informed with the latest trends, breakthroughs, and expert
-            insights shaping the future of healthcare.
-          </p>
-          <div className='flex justify-center items-center gap-2'>
-            <button
-              className='w-[32px] h-[32px] flex justify-center items-center bg-[#F1F3F4] p-1 rounded-[4px]'
-              onClick={() => handleScroll('left')}
-            >
-              <ChevronLeft size={20} className='text-[#586A78]' />
-            </button>
-            <button
-              className='w-[32px] h-[32px] flex justify-center items-center bg-[#F1F3F4] p-1 rounded-[4px]'
-              onClick={() => handleScroll('right')}
-            >
-              <ChevronRight size={20} className='text-[#586A78]' />
-            </button>
+    <div className='bg-[#FDFDFD]'>
+      <div className='custom-container  2xl-custom:w-[1580px] 2xl-custom:mx-auto'>
+        {/* Section Header */}
+        <div className='text-start mb-8'>
+          <h1 className='text-titleSubtitle text-[32px] font-bold leading-[40px]'>
+            Related Articles
+          </h1>
+          <div className='flex justify-between items-center pt-3'>
+            <p className='text-paragraph text-[18px] font-normal leading-[24px]'>
+              Stay informed with the latest trends, breakthroughs, and expert
+              insights shaping the future of healthcare.
+            </p>
+            <div className='flex justify-center items-center gap-2'>
+              <button
+                className='w-[32px] h-[32px] flex justify-center items-center bg-[#F1F3F4] p-1 rounded-[4px]'
+                onClick={() => handleScroll('left')}
+              >
+                <ChevronLeft size={20} className='text-[#586A78]' />
+              </button>
+              <button
+                className='w-[32px] h-[32px] flex justify-center items-center bg-[#F1F3F4] p-1 rounded-[4px]'
+                onClick={() => handleScroll('right')}
+              >
+                <ChevronRight size={20} className='text-[#586A78]' />
+              </button>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Blog List with Navigation */}
-      <div className='relative flex items-center'>
-        {/* Scrollable Blogs Container */}
-        <div
-          ref={scrollRef}
-          className='flex gap-6 overflow-hidden'
-          style={{ scrollSnapType: 'x mandatory' }}
-        >
-          {blogsData.map((blog, index) => (
-            <div
-              key={index}
-              className='min-w-[320px] max-w-[392px] space-y-2 rounded-[8px] overflow-hidden'
-              style={{ scrollSnapAlign: 'start' }}
-            >
-              <Image
-                src={blog.img}
-                alt={blog.title}
-                width={350}
-                height={260}
-                className='w-full h-52 object-cover rounded-[8px]'
-              />
+        {/* Blog List with Navigation */}
+        <div className='relative flex items-center'>
+          {/* Scrollable Blogs Container */}
+          <div
+            ref={scrollRef}
+            className='flex gap-6 overflow-hidden'
+            style={{ scrollSnapType: 'x mandatory' }}
+          >
+            {blogsData.map((blog, index) => (
+              <div
+                key={index}
+                className='min-w-[320px] max-w-[392px] space-y-2 rounded-[8px] overflow-hidden'
+                style={{ scrollSnapAlign: 'start' }}
+              >
+                <Image
+                  src={blog.img}
+                  alt={blog.title}
+                  width={350}
+                  height={260}
+                  className='w-full h-52 object-cover rounded-[8px]'
+                />
 
-              <h3 className='text-titleSubtitle  text-[18px] font-[600] leading-[24px]'>
-                {blog.title}
-              </h3>
-              <p className='text-base text-[#6D787B] mt-2'>
-                {blog.description.length > 80
-                  ? `${blog.description.substring(0, 80)}...`
-                  : blog.description}
-              </p>
-            </div>
-          ))}
+                <h3 className='text-titleSubtitle  text-[18px] font-[600] leading-[24px]'>
+                  {blog.title}
+                </h3>
+                <p className='text-base text-[#6D787B] mt-2'>
+                  {blog.description.length > 80
+                    ? `${blog.description.substring(0, 80)}...`
+                    : blog.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

@@ -478,7 +478,7 @@ const data = [
 
 const CaseStudies = () => {
   return (
-    <div className='custom-container'>
+    <div className='custom-container 2xl-custom:w-[1580px] 2xl-custom:mx-auto'>
       <div className='flex flex-col gap-[28px] sm:gap-[36px] justify-center items-center'>
         {data.map((item, index) => (
           <div
