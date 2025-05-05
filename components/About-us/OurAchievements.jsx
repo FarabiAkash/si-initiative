@@ -12,7 +12,7 @@ const achievements = [
 
 const OurAchievements = () => {
   return (
-    <div className='custom-container '>
+    <div className='custom-container 2xl-custom:w-[1580px] 2xl-custom:mx-auto'>
       <div className='flex flex-col md:flex-row items-start md:items-center'>
         <div className='md:w-2/5'>
           <h1 className='text-titleSubtitle text-[32px] font-[700] leading-[40px]'>

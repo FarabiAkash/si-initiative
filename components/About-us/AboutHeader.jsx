@@ -4,7 +4,7 @@ import aboutImg from '@/public/assets/blogs/blog1.png' // Replace with your actu
 
 const AboutHeader = () => {
   return (
-    <div className='custom-container'>
+    <div className='custom-container 2xl-custom:w-[1580px] 2xl-custom:mx-auto'>
       {/* Breadcrumb */}
       <div className='w-full min-h-[56px] flex items-center border-y border-[#F1F3F4]'>
         <p className='text-[16px] font-medium flex items-center gap-4'>

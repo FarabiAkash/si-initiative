@@ -2,7 +2,7 @@ import { Mail, Phone, MapPin } from 'lucide-react'
 
 const ContactFormBox = ({ title }) => {
   return (
-    <div className='bg-white rounded-[16px] border border-[#F1F3F4] p-8 sm:p-16 w-full lg:w-[60vw] flex flex-col justify-start items-start gap-2'>
+    <div className='bg-white rounded-[16px] border border-[#F1F3F4] p-8 sm:p-16 w-full lg:w-[60vw] flex flex-col justify-start items-start gap-2 '>
       <h2 className='text-titleSubtitle text-[32px] font-[700] leading-[40px] '>
         {title}
       </h2>

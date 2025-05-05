@@ -23,7 +23,7 @@ const data = [
 ]
 const OurMission = () => {
   return (
-    <div className='custom-container'>
+    <div className='custom-container  2xl-custom:w-[1580px] 2xl-custom:mx-auto'>
       <div className='flex flex-col justify-start  items-start '>
         <h1 className='text-titleSubtitle text-[32px] font-[700] leading-[40px]'>
           Our Mission
