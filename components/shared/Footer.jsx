@@ -163,7 +163,18 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className='mt-8 border-t border-[#C2D2D6] pt-4 flex flex-col md:flex-row justify-between text-paragraph text-base font[400]'>
-          <p>© 2025 SI Initiative. All Rights Reserved</p>
+          <div className='flex justify-start items-center gap-2'>
+            <p>© 2025 SI Initiative. All Rights Reserved</p>
+            <span>|</span>
+            <p>developed by</p>
+            <a
+              href='https://shahinuralambhuiyan.vercel.app'
+              target='_blank'
+              className='italic underline'
+            >
+              Shahinur Alam Bhuiyan
+            </a>
+          </div>
           <div className='flex gap-4'>
             <a href='#' className='hover:text-[#E5533C] transition'>
               Privacy Policy
