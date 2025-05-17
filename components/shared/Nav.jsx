@@ -5,9 +5,11 @@ import { useState } from 'react'
 import Logo from '../../public/assets/logo.png'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
+import ContactModal from './ContactModal'
 
-const Nav = () => {
+const Nav = ({ openContactModal }) => {
   const [isOpen, setIsOpen] = useState(false)
+
   const pathname = usePathname()
 
   const isActive = path => {
@@ -95,7 +97,10 @@ const Nav = () => {
         </div>
 
         {/* Desktop Button */}
-        <button className='hidden lg:flex item-center justify-center py-[8px] px-[40px] rounded-[20px] bg-[#F05232] text-white  font-[600] tracking-[1.4px] uppercase text-[14px]'>
+        <button
+          className='hidden lg:flex item-center justify-center py-[8px] px-[40px] rounded-[20px] bg-[#F05232] text-white  font-[600] tracking-[1.4px] uppercase text-[14px]'
+          onClick={openContactModal}
+        >
           Get in Touch
         </button>
 
@@ -172,7 +177,10 @@ const Nav = () => {
           >
             Contact Us
           </a>
-          <button className='h-[40px] py-[8px] px-[40px] rounded-[20px] bg-[#F05232] text-white text-[14px] font-[600] tracking-[1.4px] uppercase'>
+          <button
+            className='h-[40px] py-[8px] px-[40px] rounded-[20px] bg-[#F05232] text-white text-[14px] font-[600] tracking-[1.4px] uppercase'
+            onClick={openContactModal}
+          >
             Get in Touch
           </button>
         </div>
