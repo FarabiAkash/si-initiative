@@ -80,7 +80,7 @@ const ContactModal = ({ isOpen, onClose }) => {
               value={form.name}
               onChange={handleChange}
               placeholder='Your full name'
-              className='w-full mt-1 p-2 border border-[#C2D2D6] rounded outline-none focus:ring-2 focus:ring-blue-400'
+              className='w-full mt-1 p-2 border border-[#C2D2D6] rounded outline-none focus:ring-2 focus:ring-blue-400 text-black'
             />
           </div>
 
@@ -94,7 +94,7 @@ const ContactModal = ({ isOpen, onClose }) => {
               value={form.email}
               onChange={handleChange}
               placeholder='Your email address'
-              className='w-full mt-1 p-2 border border-[#C2D2D6] rounded outline-none focus:ring-2 focus:ring-blue-400'
+              className='w-full mt-1 p-2 border border-[#C2D2D6] rounded outline-none focus:ring-2 focus:ring-blue-400 text-black'
             />
           </div>
 
@@ -108,7 +108,7 @@ const ContactModal = ({ isOpen, onClose }) => {
               onChange={handleChange}
               placeholder='Write here'
               rows={4}
-              className='w-full mt-1 p-2 border border-[#C2D2D6] rounded outline-none focus:ring-2 focus:ring-blue-400 resize-none'
+              className='w-full mt-1 p-2 border border-[#C2D2D6] rounded outline-none focus:ring-2 focus:ring-blue-400 resize-none text-black'
             />
           </div>
 

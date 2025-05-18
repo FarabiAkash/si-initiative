@@ -36,7 +36,7 @@ const Footer = () => {
                   <div className='border-[1px] w-[32px] h-[32px] border-[#F1F3F4] rounded-[8px] flex items-center justify-center'>
                     <Mail className='w-[20px] h-[20px] text-primary' />
                   </div>
-                  <p className='text-sm'>info@hbb.com</p>
+                  <p className='text-sm'>siintiative2025@gmail.com</p>
                 </div>
               </div>
               <div className='flex items-center gap-3 text-paragraph'>
