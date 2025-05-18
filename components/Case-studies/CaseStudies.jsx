@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image'
 import correctArrow from '../../public/assets/services/correctArrow.svg'
 import caseImg from '../../public/assets/home/caseStudiesImg.png'
@@ -13,6 +14,7 @@ const data = [
     description:
       'Leveraging big data and machine learning, our platform predicts potential disease outbreaks and provides proactive healthcare insights.',
     img: caseImg4,
+    tags: ['Digital Health'],
     options: [
       {
         title: 'Early Disease Prediction',
@@ -107,6 +109,7 @@ const data = [
     description:
       'A virtual health assistant provides 24/7 support, answering patient queries, booking appointments, and assisting in symptom analysis.',
     img: caseImg3,
+    tags: ['Digital Health', 'R&D Innovations'],
     options: [
       {
         title: '24/7 Patient Support',
@@ -200,6 +203,7 @@ const data = [
     description:
       'A leading healthcare provider faced challenges in detecting diseases early due to delayed diagnostics and human error and implemented an AI-driven diagnostic system.',
     img: caseImg,
+    tags: ['AI Solution', 'Global Impact'],
     options: [
       {
         title: '30% Faster Diagnosis',
@@ -293,6 +297,7 @@ const data = [
     description:
       'A virtual health assistant provides 24/7 support, answering patient queries, booking appointments, and assisting in symptom analysis.',
     img: caseImg2,
+    tags: ['AI Solution', 'Global Impact'],
     options: [
       {
         title: '24/7 Patient Support',
@@ -386,6 +391,7 @@ const data = [
     description:
       'Leveraging big data and machine learning, our platform predicts potential disease outbreaks and provides proactive healthcare insights.',
     img: caseImg4,
+    tags: ['Global Impact'],
     options: [
       {
         title: 'Early Disease Prediction',
@@ -476,11 +482,15 @@ const data = [
   }
 ]
 
-const CaseStudies = () => {
+const CaseStudies = ({ selectedTag }) => {
+  const filteredCases =
+    selectedTag === 'All'
+      ? data
+      : data.filter(cs => cs.tags.includes(selectedTag))
   return (
     <div className='custom-container 2xl-custom:w-[1580px] 2xl-custom:mx-auto'>
       <div className='flex flex-col gap-[28px] sm:gap-[36px] justify-center items-center'>
-        {data.map((item, index) => (
+        {filteredCases.map((item, index) => (
           <div
             key={index}
             className='flex flex-col lg:flex-row justify-center items-center gap-[24px] lg:gap-[48px] w-full border border-[#F1F3F4] p-[24px] rounded-[16px]'
@@ -528,10 +538,14 @@ const CaseStudies = () => {
             </div>
           </div>
         ))}
-
-        <button className='h-[56px] px-[40px] py-[16px] border border-[#C2D2D6] text-[#338499] uppercase tracking-[1.4px] leading-[24px] font-[600] rounded-[28px]'>
-          load more
-        </button>
+        {filteredCases.length === 0 && (
+          <p className='text-gray-500'>No blogs found for "{selectedTag}"</p>
+        )}
+        {filteredCases.length > 0 && (
+          <button className='h-[56px] px-[40px] py-[16px] border border-[#C2D2D6] text-[#338499] uppercase tracking-[1.4px] leading-[24px] font-[600] rounded-[28px]'>
+            load more
+          </button>
+        )}
       </div>
     </div>
   )
