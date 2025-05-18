@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation'
 import TagsFilter from './TagsFilter'
 import Link from 'next/link'
 
-const PageHeader = ({ title, subtitle, tags }) => {
+const PageHeader = ({ title, subtitle, tags, selectedTag, setSelectedTag }) => {
   const path = usePathname()
   const formattedPath = path.slice(1).charAt(0).toUpperCase() + path.slice(2)
 
@@ -28,7 +28,13 @@ const PageHeader = ({ title, subtitle, tags }) => {
             <span className='text-primary'>{formattedPath}</span>
           </p>
 
-          {tags?.length > 0 && <TagsFilter tags={tags} />}
+          {tags?.length > 0 && (
+            <TagsFilter
+              tags={tags}
+              selectedTag={selectedTag}
+              setSelectedTag={setSelectedTag}
+            />
+          )}
         </div>
       </div>
     </div>

@@ -3,12 +3,12 @@
 import { useState } from 'react'
 import { ChevronRight, ChevronLeft } from 'lucide-react'
 
-const TagsFilter = ({ tags }) => {
+const TagsFilter = ({ tags, selectedTag, setSelectedTag }) => {
   const [startIndex, setStartIndex] = useState(0)
-  const [activeTag, setActiveTag] = useState(tags[0])
+  const visibleCount = 5 // How many tags to show at once
 
   const handleNext = () => {
-    if (startIndex + 5 < tags.length) {
+    if (startIndex + visibleCount < tags.length) {
       setStartIndex(startIndex + 1)
     }
   }
@@ -19,28 +19,24 @@ const TagsFilter = ({ tags }) => {
     }
   }
 
-  const handleTagClick = tag => {
-    setActiveTag(tag)
-  }
-
   return (
-    <div className='flex items-center justify-end gap-[16px] py-4 w-4/5 overflow-hidden'>
-      {/* tags container */}
-      <div className='relative overflow-hidden'>
+    <div className='flex items-center justify-end gap-4 py-4 w-4/5 overflow-hidden'>
+      {/* Scrollable Tag Container */}
+      <div className='relative overflow-hidden w-full'>
         <div
           className='flex gap-3 transition-transform duration-300 ease-in-out'
-          style={{ transform: `translateX(-${startIndex * 120}px)` }}
+          style={{ transform: `translateX(-${startIndex * 130}px)` }}
         >
           {tags.map((tag, index) => (
             <div
               key={index}
               className={`h-[40px] flex justify-center items-center border px-[16px] py-2 rounded-[4px] flex-shrink-0 cursor-pointer 
                 ${
-                  activeTag === tag
+                  selectedTag === tag
                     ? 'border-primary text-primary font-semibold'
                     : 'border-[#F1F3F4] text-[#586A78]'
                 }`}
-              onClick={() => handleTagClick(tag)}
+              onClick={() => setSelectedTag(tag)}
             >
               {tag}
             </div>
@@ -48,12 +44,12 @@ const TagsFilter = ({ tags }) => {
         </div>
       </div>
 
-      {/* Buttons */}
-      {tags.length > 5 && (
+      {/* Prev/Next Buttons */}
+      {tags.length > visibleCount && (
         <div className='flex justify-between gap-2'>
           <button
             onClick={handlePrev}
-            className={`border px-2 py-2 rounded-full text-paragraph flex items-center ${
+            className={`border px-2 py-2 rounded-full flex items-center justify-center ${
               startIndex > 0
                 ? 'border-paragraph bg-white'
                 : 'opacity-50 cursor-not-allowed'
@@ -62,14 +58,15 @@ const TagsFilter = ({ tags }) => {
           >
             <ChevronLeft className='w-[20px] h-[20px]' />
           </button>
+
           <button
             onClick={handleNext}
-            className={`px-2 py-2 rounded-full flex justify-center items-center border border-gray-300 text-paragraph ${
-              startIndex + 5 < tags.length
+            className={`border px-2 py-2 rounded-full flex items-center justify-center ${
+              startIndex + visibleCount < tags.length
                 ? 'border-paragraph bg-white'
                 : 'opacity-50 cursor-not-allowed'
             }`}
-            disabled={startIndex + 5 >= tags.length}
+            disabled={startIndex + visibleCount >= tags.length}
           >
             <ChevronRight className='w-[20px] h-[20px]' />
           </button>

@@ -12,7 +12,7 @@ import blog9 from '../../public/assets/blogs/blog9.png'
 import blog10 from '../../public/assets/blogs/blog10.png'
 import blog11 from '../../public/assets/blogs/blog11.png'
 import blog12 from '../../public/assets/blogs/blog12.jpeg'
-import { redirect } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 
 const blogs = [
   {
@@ -21,6 +21,7 @@ const blogs = [
     description:
       'AI is revolutionizing healthcare, from early disease detection to personalized treatment plans.',
     img: blog1,
+    tags: ['Digital Health', 'R&D Innovations'],
     content: [
       {
         sectionTitle: 'AI-Powered Diagnostics',
@@ -70,6 +71,7 @@ const blogs = [
     description:
       'Traditional prescriptions often lead to misinterpretation and errors, but digital systems ensure accuracy.',
     img: blog2,
+    tags: ['Big Data'],
     content: [
       {
         sectionTitle: 'AI-Powered Diagnostics',
@@ -119,6 +121,7 @@ const blogs = [
     description:
       'IoT-powered healthcare devices bridge the gap between doctors and patients by providing real-time data.',
     img: blog3,
+    tags: ['Cloud Computing'],
     content: [
       {
         sectionTitle: 'AI-Powered Diagnostics',
@@ -168,6 +171,7 @@ const blogs = [
     description:
       'Understanding the importance of balanced meals can significantly impact overall health and wellness.',
     img: blog4,
+    tags: ['Telemedicine'],
     content: [
       {
         sectionTitle: 'AI-Powered Diagnostics',
@@ -217,6 +221,7 @@ const blogs = [
     description:
       'With AI and robotics, modern surgeries have become safer and more efficient than ever before.',
     img: blog5,
+    tags: ['Telemedicine', 'IoT & Smart Tech'],
     content: [
       {
         sectionTitle: 'AI-Powered Diagnostics',
@@ -266,6 +271,7 @@ const blogs = [
     description:
       'AI-powered EHR systems are making healthcare records more accessible and accurate for patients and doctors.',
     img: blog6,
+    tags: ['Blockchain'],
     content: [
       {
         sectionTitle: 'AI-Powered Diagnostics',
@@ -315,6 +321,7 @@ const blogs = [
     description:
       'Smartwatches and wearable sensors are helping individuals track their health in real-time.',
     img: blog7,
+    tags: ['Cybersecurity', 'Blockchain'],
     content: [
       {
         sectionTitle: 'AI-Powered Diagnostics',
@@ -364,6 +371,7 @@ const blogs = [
     description:
       'Remote consultations have become a standard part of healthcare delivery worldwide.',
     img: blog8,
+    tags: ['Data & Security'],
     content: [
       {
         sectionTitle: 'AI-Powered Diagnostics',
@@ -413,6 +421,7 @@ const blogs = [
     description:
       'AI algorithms are transforming how new drugs are researched and tested for global health needs.',
     img: blog9,
+    tags: ['Data & Security', 'AI in Healthcare'],
     content: [
       {
         sectionTitle: 'AI-Powered Diagnostics',
@@ -462,6 +471,7 @@ const blogs = [
     description:
       'Blockchain technology is enhancing security and privacy in electronic health records (EHRs).',
     img: blog10,
+    tags: ['Digital Health', 'R&D Innovations'],
     content: [
       {
         sectionTitle: 'AI-Powered Diagnostics',
@@ -511,6 +521,7 @@ const blogs = [
     description:
       'AI is improving radiology and diagnostic imaging for faster and more precise disease detection.',
     img: blog11,
+    tags: ['Digital Health', 'R&D Innovations'],
     content: [
       {
         sectionTitle: 'AI-Powered Diagnostics',
@@ -560,6 +571,7 @@ const blogs = [
     description:
       'Data-driven insights are helping hospitals predict outbreaks and manage resources efficiently.',
     img: blog12,
+    tags: ['Digital Health', 'R&D Innovations'],
     content: [
       {
         sectionTitle: 'AI-Powered Diagnostics',
@@ -605,15 +617,22 @@ const blogs = [
   }
 ]
 
-const AllBlogs = () => {
+const AllBlogs = ({ selectedTag }) => {
+
+  const router = useRouter()
+
+  const filteredBlogs =
+    selectedTag === 'All'
+      ? blogs
+      : blogs.filter(blog => blog.tags.includes(selectedTag))
   return (
     <div className='custom-container flex flex-col items-center gap-10 2xl-custom:w-[1580px] 2xl-custom:mx-auto'>
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
-        {blogs.map((blog, index) => (
+        {filteredBlogs.map((blog, index) => (
           <div
             key={index}
             className='bg-white rounded-lg overflow-hidden transition duration-300 cursor-pointer'
-            onClick={() => redirect(`/blogs/${blog.id}`)}
+            onClick={() => router.push(`/blogs/${blog.id}`)}
           >
             <div className='relative w-full h-48'>
               <Image
@@ -628,15 +647,15 @@ const AllBlogs = () => {
                 {blog.title}
               </h3>
               <p className='text-base text-[#6D787B] mt-2 truncate'>
-                {blog.description}...
+                {blog.description}
               </p>
             </div>
           </div>
         ))}
       </div>
-      <button className='h-[56px] px-[40px] py-[16px] border border-[#C2D2D6] text-[#338499] uppercase tracking-[1.4px] leading-[24px] font-[600] rounded-[28px]'>
-        load more
-      </button>
+      {filteredBlogs.length === 0 && (
+        <p className='text-gray-500'>No blogs found for "{selectedTag}"</p>
+      )}
     </div>
   )
 }
