@@ -18,8 +18,8 @@ export default function Home() {
     <>
       <NewHeader />
       <WhatWeDo />
-      {/* <WhyChooseUs /> */}
       <OurPartners />
+      <WhyChooseUs />
       <CoreServices />
       <SpecializedService />
       <CaseStudies />

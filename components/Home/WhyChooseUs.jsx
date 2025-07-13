@@ -1,6 +1,4 @@
 import Image from 'next/image'
-import HeroImg from '../../public/assets/home/whyHero.png'
-import HeroBg from '../../public/assets/home/hero-background2.png'
 
 const features = [
   {
@@ -43,54 +41,30 @@ const features = [
 
 const WhyChooseUs = () => {
   return (
-    <div className='custom-container flex items-end justify-between gap-4 2xl-custom:w-[1580px] 2xl-custom:mx-auto'>
-      {/* Left Section */}
-
-      <div className='flex flex-col justify-start items-start gap-4'>
+    <div className='custom-container 2xl-custom:w-[1580px] 2xl-custom:mx-auto'>
+      <div className='flex flex-col justify-center items-center gap-4'>
         <h1 className='text-titleSubtitle text-[32px] font-[700] leading-[40px]'>
           Why Choose Us
         </h1>
         <p className='text-paragraph text-[18px] font-[400] leading-[24px]'>
           Empowering Healthcare with Innovation, Expertise, and Trust.
         </p>
-        <div className='grid grid-cols-1 sm:grid-cols-2 pb-0 sm:pb-6'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 pb-0 sm:pb-6 mt-4'>
           {features.map((feature, index) => (
             <div
-              className={`flex flex-col justify-center items-start gap-4 pt-4 pr-[24px] w-full 2xl:w-[400px] 2xl-custom:w-full pb-[10px] sm:pb-[32px] sm:border-offWhite border-white 
+              className={`flex flex-col justify-center items-center gap-4 pt-4 pr-[24px] w-full sm:w-[400px] pb-[10px] sm:pb-[32px] sm:border-offWhite border-white 
                  ${index % 2 === 0 ? 'border-r-[1px]' : 'pl-0 sm:pl-4'}
                  ${index < 4 ? 'border-b-[1px]' : ''} `}
               key={index}
             >
-              <div className='flex justify-start items-center gap-4'>
-                <p className='w-[48px] h-[48px] p-[16px] flex items-center justify-center bg-[#F1F3F4] text-primary rounded-[50%]'>
-                  {feature.id}
-                </p>
-                <p className='text-titleSubtitle text-[18px] font-[500] leading-[20px]'>
-                  {feature.title}
-                </p>
-              </div>
-              <p className='text-[#677A7E] text-[16px] font-[400] leading-[24px]'>
+              <p className='text-[#19BCE5] text-[18px] font-[600] leading-[20px]'>
+                {feature.title}
+              </p>
+              <p className='text-[#677A7E] text-[16px] font-[400] leading-[24px] text-center'>
                 {feature.description}
               </p>
             </div>
           ))}
-        </div>
-      </div>
-
-      {/* Hero Image Section */}
-      <div className='relative mt-[100px] hidden lg:block'>
-        <div className='overflow-hidden h-[480px] w-[480px] flex justify-end items-end'>
-          <Image
-            className='mt-40 w-full h-2/3'
-            src={HeroBg}
-            alt='Hero Background'
-          />
-          <Image
-            src={HeroImg}
-            alt='Hero Image'
-            fill
-            className='object-cover '
-          />
         </div>
       </div>
     </div>
