@@ -1,12 +1,11 @@
 import Image from 'next/image'
-import dwsPartner from '../../public/assets/home/partners/dws.png'
-import stripPartner from '../../public/assets/home/partners/stripe.png'
-import tropicPartner from '../../public/assets/home/partners/tropic.png'
-import ventuzPartner from '../../public/assets/home/partners/ventuz.png'
-import grandJournalPartner from '../../public/assets/home/partners/grandJournal.png'
-import irexPartner from '../../public/assets/home/partners/irex.png'
-import forbesPartner from '../../public/assets/home/partners/forbes.png'
-import diePartner from '../../public/assets/home/partners/die.png'
+import p1 from '../../public/assets/home/partners/p1.png'
+import p2 from '../../public/assets/home/partners/p2.png'
+import p3 from '../../public/assets/home/partners/p3.png'
+import p4 from '../../public/assets/home/partners/p4.png'
+import p5 from '../../public/assets/home/partners/p5.png'
+import p6 from '../../public/assets/home/partners/p6.png'
+import p7 from '../../public/assets/home/partners/p7.png'
 
 const OurPartners = () => {
   return (
@@ -21,51 +20,42 @@ const OurPartners = () => {
           healthcare solutions.
         </p>
         {/* partners images */}
-        <div className='flex flex-col gap-6 py-8'>
-          <div className='flex flex-wrap justify-center items-center gap-3 lg:gap-14 2xl:gap-20'>
-            <Image
-              src={dwsPartner}
-              alt='Partner Logo'
-              className='w-[120px] lg:w-[180px] h-full lg:h-[64px]'
-            />
-            <Image
-              src={stripPartner}
-              alt='Partner Logo'
-              className='w-[120px] lg:w-[180px] h-full lg:h-[64px]'
-            />
-            <Image
-              src={tropicPartner}
-              alt='Partner Logo'
-              className='w-[120px] lg:w-[180px] h-full lg:h-[64px]'
-            />
-          </div>
-          <div className='flex flex-wrap justify-center items-center gap-3 lg:gap-14 2xl:gap-20'>
-            <Image
-              src={ventuzPartner}
-              alt='Partner Logo'
-              className='w-[120px] lg:w-[180px] h-full lg:h-[64px]'
-            />
-            <Image
-              src={grandJournalPartner}
-              alt='Partner Logo'
-              className='w-[120px] lg:w-[180px] h-full lg:h-[64px]'
-            />
-            <Image
-              src={irexPartner}
-              alt='Partner Logo'
-              className='w-[120px] lg:w-[180px] h-full lg:h-[64px]'
-            />
-            <Image
-              src={forbesPartner}
-              alt='Partner Logo'
-              className='w-[120px] lg:w-[180px] h-full lg:h-[64px]'
-            />
-            <Image
-              src={diePartner}
-              alt='Partner Logo'
-              className='w-[120px] lg:w-[180px] h-full lg:h-[64px]'
-            />
-          </div>
+        <div className='flex flex-wrap justify-center items-center gap-10  py-8'>
+          <Image
+            src={p1}
+            alt='Partner Logo'
+            className='w-[120px] lg:w-[180px] h-full lg:h-[64px]'
+          />
+          <Image
+            src={p2}
+            alt='Partner Logo'
+            className='w-[120px] lg:w-[180px] h-full lg:h-[64px]'
+          />
+          <Image
+            src={p3}
+            alt='Partner Logo'
+            className='w-[120px] lg:w-[180px] h-full lg:h-[64px]'
+          />
+          <Image
+            src={p4}
+            alt='Partner Logo'
+            className='w-[120px] lg:w-[180px] h-full lg:h-[64px]'
+          />
+          <Image
+            src={p5}
+            alt='Partner Logo'
+            className='w-[120px] lg:w-[180px] h-full lg:h-[64px]'
+          />
+          <Image
+            src={p6}
+            alt='Partner Logo'
+            className='w-[120px] lg:w-[180px] h-full lg:h-[64px]'
+          />
+          <Image
+            src={p7}
+            alt='Partner Logo'
+            className='w-[120px] lg:w-[180px] h-full lg:h-[64px]'
+          />
         </div>
 
         <p className='text-titleSubtitle text-[18px] font-[500] leading-[24px] w-full sm:w-[60vw] xl:w-[38vw] 2xl:w-[30vw] text-center'>
