@@ -4,6 +4,7 @@ import ContactUs from "../components/Home/ContactUs";
 import CoreServices from "../components/Home/CoreServices";
 import FAQ from "../components/Home/FAQ";
 import Header from "../components/Home/Header";
+import NewHeader from "../components/Home/NewHeader.jsx";
 import InnovationCard from "../components/Home/InnovationCard";
 import Innovations from "../components/Home/Innovations";
 import OurPartners from "../components/Home/OurPartners";
@@ -14,8 +15,8 @@ import WhyChooseUs from "../components/Home/WhyChooseUs";
 
 export default function Home() {
   return (
-    <div className="">
-      <Header />
+    <>
+      <NewHeader />
       <WhatWeDo />
       <WhyChooseUs />
       <OurPartners />
@@ -28,6 +29,6 @@ export default function Home() {
       <FAQ />
       <ContactUs />
       <Blogs />
-    </div>
+    </>
   );
 }

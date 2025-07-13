@@ -1,105 +1,94 @@
 'use client'
+
 import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Logo from '../../public/assets/logo.png'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-import ContactModal from './ContactModal'
 
 const Nav = ({ openContactModal }) => {
   const [isOpen, setIsOpen] = useState(false)
-
+  const [isScrolled, setIsScrolled] = useState(false)
   const pathname = usePathname()
 
-  const isActive = path => {
-    const formattedPath = path === '/' ? path : path.replace(/^\/(.+)/, '$1') // Remove leading "/" except for "/"
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
-    return pathname === path || pathname.startsWith(`${path}/`)
-      ? 'text-secondary'
-      : 'text-[#6D787B]'
-  }
+  const isActive = path =>
+    pathname === path || pathname.startsWith(`${path}/`)
+      ? `${
+          shouldShowWhiteBg ? 'text-secondary' : 'text-white'
+        } after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:bg-secondary after:rounded-full border-b`
+      : `${
+          shouldShowWhiteBg ? 'text-gray-700' : 'text-white'
+        } hover:text-secondary`
+
+  const shouldShowWhiteBg = pathname === '/about-us' || isScrolled
 
   return (
-    <div
-      className={`sticky top-0 z-[50] bg-white ${
-        pathname === '/contact-us' ? '!bg-[#0B3641] !text-white' : ''
+    <header
+      className={`fixed top-0 w-[100vw] left-0 z-[50] transition-all duration-300 ${
+        shouldShowWhiteBg
+          ? 'bg-white text-black border-b border-white'
+          : 'bg-transparent text-white'
       }`}
     >
-      <nav className='  flex items-center justify-between px-4 sm:px-12 xl:px-36 py-5 2xl-custom:w-[1580px] 2xl-custom:mx-auto'>
+      <nav className='flex items-center justify-between px-4 sm:px-12 xl:px-32 py-5 2xl:w-[1580px] 2xl-custom:mx-auto'>
         {/* Logo */}
-        <Link href={'/'} className='w-[111.613px] h-[40px] cursor-pointer'>
-          <Image src={Logo} alt='SI-Initiative Logo' width={500} height={500} />
+        <Link href='/' className='w-[111.613px] h-[40px] cursor-pointer'>
+          <Image
+            src={Logo}
+            alt='Logo'
+            className='w-full h-full object-contain'
+            width={500}
+            height={500}
+          />
         </Link>
 
         {/* Desktop Menu */}
-        <div className='hidden lg:flex space-x-6'>
-          <a
-            href='/'
-            className={`${
-              pathname === '/contact-us'
-                ? 'text-white'
-                : 'hover:text-secondary text-[#6D787B]'
-            }   text-[14px] font-[500] ${isActive('/')}`}
-          >
+        <div className='hidden lg:flex items-center gap-6 text-sm font-medium uppercase relative'>
+          <Link href='/' className={`relative pb-1 ${isActive('/')}`}>
             Home
-          </a>
-          <a
+          </Link>
+          <Link
             href='/services'
-            className={`${
-              pathname === '/contact-us'
-                ? 'text-white'
-                : 'hover:text-secondary text-[#6D787B]'
-            }   text-[14px] font-[500] ${isActive('/services')}`}
+            className={`relative pb-1 ${isActive('/services')}`}
           >
             Services
-          </a>
-          <a
+          </Link>
+          <Link
             href='/case-studies'
-            className={`${
-              pathname === '/contact-us'
-                ? 'text-white'
-                : 'hover:text-secondary text-[#6D787B]'
-            }   text-[14px] font-[500] ${isActive('/case-studies')}`}
+            className={`relative pb-1 ${isActive('/case-studies')}`}
           >
             Case Studies
-          </a>
-          <a
-            href='/blogs'
-            className={`${
-              pathname === '/contact-us'
-                ? 'text-white'
-                : 'hover:text-secondary text-[#6D787B]'
-            }   text-[14px] font-[500] ${isActive('/blogs')}`}
-          >
+          </Link>
+          <Link href='/blogs' className={`relative pb-1 ${isActive('/blogs')}`}>
             Blogs
-          </a>
-          <a
+          </Link>
+          <Link
             href='/about-us'
-            className={`${
-              pathname === '/contact-us'
-                ? 'text-white'
-                : 'hover:text-secondary text-[#6D787B]'
-            }   text-[14px] font-[500] ${isActive('/about-us')}`}
+            className={`relative pb-1 ${isActive('/about-us')}`}
           >
             About Us
-          </a>
-          <a
+          </Link>
+          <Link
             href='/contact-us'
-            className={`${
-              pathname === '/contact-us'
-                ? 'text-white'
-                : 'hover:text-secondary text-[#6D787B]'
-            }   text-[14px] font-[500] ${isActive('/contact-us')}`}
+            className={`relative pb-1 ${isActive('/contact-us')}`}
           >
             Contact Us
-          </a>
+          </Link>
         </div>
 
         {/* Desktop Button */}
         <button
-          className='hidden lg:flex item-center justify-center py-[8px] px-[40px] rounded-[20px] bg-[#F05232] text-white  font-[600] tracking-[1.4px] uppercase text-[14px]'
           onClick={openContactModal}
+          className='hidden lg:flex items-center justify-center py-2 px-8 rounded-full bg-[#F05232] text-white font-semibold tracking-wide uppercase text-sm'
         >
           Get in Touch
         </button>
@@ -113,79 +102,64 @@ const Nav = ({ openContactModal }) => {
       {/* Mobile Menu */}
       {isOpen && (
         <div
-          className={`fixed top-[70px] left-0 w-full z-[40] lg:hidden flex flex-col items-center space-y-4 py-5 transition-all duration-300 ${
-            pathname === '/contact-us' ? 'bg-[#0B3641]' : 'bg-gray-100'
+          className={`lg:hidden flex flex-col items-center space-y-4 py-5 px-4 ${
+            shouldShowWhiteBg ? 'bg-white text-black' : 'bg-black/90 text-white'
           }`}
         >
-          <a
+          <Link
             href='/'
-            className={`${
-              pathname === '/contact-us'
-                ? 'text-white'
-                : 'hover:text-secondary text-[#6D787B]'
-            }   text-[14px] font-[500] ${isActive('/')}`}
+            onClick={() => setIsOpen(false)}
+            className='text-sm font-medium'
           >
             Home
-          </a>
-          <a
+          </Link>
+          <Link
             href='/services'
-            className={`${
-              pathname === '/contact-us'
-                ? 'text-white'
-                : 'hover:text-secondary text-[#6D787B]'
-            }   text-[14px] font-[500] ${isActive('/services')}`}
+            onClick={() => setIsOpen(false)}
+            className='text-sm font-medium'
           >
             Services
-          </a>
-          <a
+          </Link>
+          <Link
             href='/case-studies'
-            className={`${
-              pathname === '/contact-us'
-                ? 'text-white'
-                : 'hover:text-secondary text-[#6D787B]'
-            }   text-[14px] font-[500] ${isActive('/case-studies')}`}
+            onClick={() => setIsOpen(false)}
+            className='text-sm font-medium'
           >
             Case Studies
-          </a>
-          <a
+          </Link>
+          <Link
             href='/blogs'
-            className={`${
-              pathname === '/contact-us'
-                ? 'text-white'
-                : 'hover:text-secondary text-[#6D787B]'
-            }   text-[14px] font-[500] ${isActive('/blogs')}`}
+            onClick={() => setIsOpen(false)}
+            className='text-sm font-medium'
           >
             Blogs
-          </a>
-          <a
+          </Link>
+          <Link
             href='/about-us'
-            className={`${
-              pathname === '/contact-us'
-                ? 'text-white'
-                : 'hover:text-secondary text-[#6D787B]'
-            }   text-[14px] font-[500] ${isActive('/about-us')}`}
+            onClick={() => setIsOpen(false)}
+            className='text-sm font-medium'
           >
             About Us
-          </a>
-          <a
+          </Link>
+          <Link
             href='/contact-us'
-            className={`${
-              pathname === '/contact-us'
-                ? 'text-white'
-                : 'hover:text-secondary text-[#6D787B]'
-            }   text-[14px] font-[500] ${isActive('/contact-us')}`}
+            onClick={() => setIsOpen(false)}
+            className='text-sm font-medium'
           >
             Contact Us
-          </a>
+          </Link>
           <button
-            className='h-[40px] py-[8px] px-[40px] rounded-[20px] bg-[#F05232] text-white text-[14px] font-[600] tracking-[1.4px] uppercase'
-            onClick={openContactModal}
+            onClick={() => {
+              openContactModal()
+              setIsOpen(false)
+            }}
+            className='w-full py-2 px-6 rounded-full bg-[#F05232] text-white text-sm font-semibold tracking-wide uppercase'
           >
             Get in Touch
           </button>
         </div>
       )}
-    </div>
+    </header>
   )
 }
 

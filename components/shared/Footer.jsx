@@ -17,7 +17,7 @@ const Footer = () => {
               research, we provide data-driven solutions.
             </p>
             <div className='mt-5 space-y-3'>
-              <div className='flex justify-start gap-4 items-center'>
+              <div className='flex flex-wrap justify-start gap-4 items-center'>
                 <div className='flex items-center gap-3 text-paragraph'>
                   <div className='border-[1px] w-[32px] h-[32px] border-[#F1F3F4] rounded-[8px] flex items-center justify-center'>
                     <Phone className='w-[20px] h-[20px] text-primary' />
