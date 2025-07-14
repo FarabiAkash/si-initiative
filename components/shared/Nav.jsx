@@ -25,9 +25,7 @@ const Nav = ({ openContactModal }) => {
       ? `${
           shouldShowWhiteBg ? 'text-secondary' : 'text-white'
         } after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:bg-secondary after:rounded-full border-b`
-      : `${
-          shouldShowWhiteBg ? 'text-gray-700' : 'text-white'
-        } hover:text-secondary`
+      : `${shouldShowWhiteBg ? 'text-gray-700' : 'text-white'} hover:border-b`
 
   const shouldShowWhiteBg = pathname === '/about-us' || isScrolled
 
@@ -52,15 +50,27 @@ const Nav = ({ openContactModal }) => {
         </Link>
 
         {/* Desktop Menu */}
-        <div className='hidden lg:flex items-center gap-6 text-sm font-medium uppercase relative'>
-          <Link href='/' className={`relative pb-1 ${isActive('/')}`}>
-            Home
+        <div className='hidden lg:flex items-center gap-6 text-sm font-medium relative'>
+          <Link
+            href='/about-us'
+            className={`relative pb-1 ${isActive('/about-us')}`}
+          >
+            About Us
+          </Link>
+          <Link href='/team' className={`relative pb-1 ${isActive('/team')}`}>
+            Our Team
           </Link>
           <Link
             href='/services'
             className={`relative pb-1 ${isActive('/services')}`}
           >
             Services
+          </Link>
+          <Link
+            href='/industries'
+            className={`relative pb-1 ${isActive('/industries')}`}
+          >
+            Industries
           </Link>
           <Link
             href='/case-studies'
@@ -71,12 +81,7 @@ const Nav = ({ openContactModal }) => {
           <Link href='/blogs' className={`relative pb-1 ${isActive('/blogs')}`}>
             Blogs
           </Link>
-          <Link
-            href='/about-us'
-            className={`relative pb-1 ${isActive('/about-us')}`}
-          >
-            About Us
-          </Link>
+
           <Link
             href='/contact-us'
             className={`relative pb-1 ${isActive('/contact-us')}`}
@@ -107,11 +112,18 @@ const Nav = ({ openContactModal }) => {
           }`}
         >
           <Link
-            href='/'
+            href='/about-us'
             onClick={() => setIsOpen(false)}
             className='text-sm font-medium'
           >
-            Home
+            About Us
+          </Link>
+          <Link
+            href='/team'
+            onClick={() => setIsOpen(false)}
+            className='text-sm font-medium'
+          >
+            Our Team
           </Link>
           <Link
             href='/services'
@@ -119,6 +131,13 @@ const Nav = ({ openContactModal }) => {
             className='text-sm font-medium'
           >
             Services
+          </Link>
+          <Link
+            href='/industries'
+            onClick={() => setIsOpen(false)}
+            className='text-sm font-medium'
+          >
+            Industries
           </Link>
           <Link
             href='/case-studies'
@@ -133,13 +152,6 @@ const Nav = ({ openContactModal }) => {
             className='text-sm font-medium'
           >
             Blogs
-          </Link>
-          <Link
-            href='/about-us'
-            onClick={() => setIsOpen(false)}
-            className='text-sm font-medium'
-          >
-            About Us
           </Link>
           <Link
             href='/contact-us'
