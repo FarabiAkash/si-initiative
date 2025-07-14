@@ -34,7 +34,7 @@ const NewHeader = () => {
 
   return (
     <div
-      className='w-[100vw] flex flex-wrap items-center bg-cover bg-center bg-no-repeat relative '
+      className='flex flex-wrap items-center bg-cover bg-center bg-no-repeat relative '
       style={{ backgroundImage: `url(${NewHeaderBg.src})` }}
     >
       <div className='xl:flex flex flex-wrap lg:flex-nowrap items-center justify-center xl:justify-between  w-full  2xl-custom:w-[1580px] 2xl-custom:mx-auto px-4 sm:px-12 xl:px-36 pt-20 md:pt-40 sm:pb-32'>
