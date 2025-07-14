@@ -80,6 +80,12 @@ const AllServicesWeOffer = () => {
     <div className='bg-gradient-to-bl from-white to-[#F5FDFF]'>
       <div className=' custom-container 2xl-custom:w-[1580px] 2xl-custom:mx-auto'>
         <div className='flex flex-col justify-center items-center gap-4'>
+          <h1 className='text-[32px] font-[700] text-[#0B3641] leading-[40px]'>
+            All the Services We Offer
+          </h1>
+          <p className='text-[#677A7E] text-[18px] font-[400] leading-[24px] mt-2'>
+            Empowering Healthcare with Innovation, Expertise, and Trust.
+          </p>
           <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 pb-0 sm:pb-6 mt-4'>
             {services.map((service, index) => (
               <div
