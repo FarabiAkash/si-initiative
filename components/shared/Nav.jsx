@@ -23,9 +23,11 @@ const Nav = ({ openContactModal }) => {
   const isActive = path =>
     pathname === path || pathname.startsWith(`${path}/`)
       ? `${
-          shouldShowWhiteBg ? 'text-secondary' : 'text-white'
-        } after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:bg-secondary after:rounded-full border-b`
-      : `${shouldShowWhiteBg ? 'text-gray-700' : 'text-white'} hover:border-b`
+          shouldShowWhiteBg ? 'text-[#010101]' : 'text-white'
+        } after:absolute after:bottom-[-4px] after:left-0 after:w-full after:bg-secondary after:rounded-full border-b-2 border-[#F05232]`
+      : `${
+          shouldShowWhiteBg ? 'text-[#010101]' : 'text-white'
+        } hover:border-b-2 hover:border-[#F05232]`
 
   const shouldShowWhiteBg = pathname === '/about-us' || isScrolled
 
