@@ -13,7 +13,7 @@ const cards = [
 const SingleCard = ({ item }) => {
   return (
     <div className='w-[290px] h-[160px] bg-white rounded-[8px] flex flex-col justify-center items-center gap-1'>
-      <Image src={item.icon} />
+      <Image src={item.icon} alt={item.text} />
       <h3 className='text-[#0B3641] text-[20px] leading-[32px] font-semibold'>
         {item.count}+
       </h3>

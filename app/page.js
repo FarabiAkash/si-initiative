@@ -20,12 +20,12 @@ export default function Home() {
       <WhatWeDo />
       <OurPartners />
       <WhyChooseUs />
-      <CoreServices />
-      <SpecializedService />
+      {/* <CoreServices /> */}
+      {/* <SpecializedService /> */}
       <CaseStudies />
       <SuccessStories pageName={'home'} />
-      <InnovationCard />
-      <Innovations />
+      {/* <InnovationCard /> */}
+      {/* <Innovations /> */}
       <FAQ />
       <ContactUs />
       <Blogs />
