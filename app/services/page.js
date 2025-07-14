@@ -4,16 +4,18 @@ import SuccessStories from "../../components/Home/SuccessStories"
 import GetInTouch from "../../components/services/GetInTouch"
 import SpecializedServices from "../../components/services/SpecializedServices"
 import AllCoreService from "../../components/services/AllCoreService"
+import AllServicesWeOffer from '../../components/services/AllServicesWeOffer'
 
 const page = () => {
     return (
         <>
             <PageHeader
-                title={'Innovative Healthcare Solutions for a Smarter Future'}
+                title={'Meet the Team Powering CMED Tech’s Innovation'}
                 subtitle={'Empowering healthcare providers with AI-driven, data-centric, and digital solutions for better patient outcomes'}
             />
-            <AllCoreService /> 
-           <SpecializedServices />
+            <AllServicesWeOffer />
+            {/* <AllCoreService /> */}
+            {/* <SpecializedServices /> */}
             <WorkProcess />
             <SuccessStories pageName={'services'} />
             <GetInTouch />
