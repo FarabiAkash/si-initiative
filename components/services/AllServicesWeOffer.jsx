@@ -45,7 +45,7 @@ const services = [
   },
   {
     icon: s7,
-    title: 'it consultations',
+    title: 'IT consultations',
     desc: 'Revolutionizing healthcare with AI-powered diagnostics, personalized treatments, and predictive analytics.'
   },
   {

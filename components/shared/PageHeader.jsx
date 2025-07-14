@@ -7,8 +7,10 @@ import pageHeaderBg from '@/public/assets/pageHeader.jpg'
 
 const PageHeader = ({ title, subtitle, tags, selectedTag, setSelectedTag }) => {
   const path = usePathname()
-  const formattedPath = path.slice(1).charAt(0).toUpperCase() + path.slice(2)
-
+  let formattedPath = path.slice(1).charAt(0).toUpperCase() + path.slice(2)
+  if (formattedPath === 'Team') {
+    formattedPath = 'Our Team'
+  }
   return (
     <div
       className='w-[100vw] flex flex-wrap items-center bg-cover bg-center bg-no-repeat relative '
@@ -29,7 +31,7 @@ const PageHeader = ({ title, subtitle, tags, selectedTag, setSelectedTag }) => {
               <span className='text-primary'>Home</span>
             </Link>
             <span className='text-[#F05232]'>/</span>
-            <span className='text-white'>{formattedPath}</span>
+            <span className='text-white text-nowrap'>{formattedPath}</span>
           </p>
 
           {tags?.length > 0 && (
