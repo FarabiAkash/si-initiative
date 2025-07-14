@@ -20,7 +20,7 @@ const TagsFilter = ({ tags, selectedTag, setSelectedTag }) => {
   }
 
   return (
-    <div className='flex items-center justify-end gap-4 py-4 w-4/5 overflow-hidden'>
+    <div className='flex items-center justify-end gap-4 py-4  overflow-hidden'>
       {/* Scrollable Tag Container */}
       <div className='relative overflow-hidden w-full'>
         <div
@@ -30,11 +30,11 @@ const TagsFilter = ({ tags, selectedTag, setSelectedTag }) => {
           {tags.map((tag, index) => (
             <div
               key={index}
-              className={`h-[40px] flex justify-center items-center border px-[16px] py-2 rounded-[4px] flex-shrink-0 cursor-pointer 
+              className={`h-[40px] flex justify-center items-center px-[16px] py-2 rounded-[4px] flex-shrink-0 cursor-pointer 
                 ${
                   selectedTag === tag
-                    ? 'border-primary text-primary font-semibold'
-                    : 'border-[#F1F3F4] text-[#586A78]'
+                    ? 'bg-primary text-white font-semibold'
+                    : 'bg-[#FFFFFF1A] text-white'
                 }`}
               onClick={() => setSelectedTag(tag)}
             >
