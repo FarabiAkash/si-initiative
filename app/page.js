@@ -4,7 +4,7 @@ import ContactUs from "../components/Home/ContactUs";
 import CoreServices from "../components/Home/CoreServices";
 import FAQ from "../components/Home/FAQ";
 import Header from "../components/Home/Header";
-import NewHeader from "../components/Home/NewHeader.jsx";
+import NewHeader from "../components/Home/NewHeader";
 import InnovationCard from "../components/Home/InnovationCard";
 import Innovations from "../components/Home/Innovations";
 import OurPartners from "../components/Home/OurPartners";

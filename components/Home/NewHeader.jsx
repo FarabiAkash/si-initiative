@@ -1,8 +1,12 @@
+'use client'
 import Image from 'next/image'
 import NewHeaderBg from '../../public/assets/home/headerBg.jpg'
 import professionalsIcon from '../../public/assets/home/headers/user-group.png'
 import experienceIcon from '../../public/assets/home/headers/calendar-02.png'
 import projectsIcon from '../../public/assets/home/headers/command-line.png'
+import { useRouter } from 'next/navigation'
+import { useState } from 'react'
+import ScheduleCallModal from './ScheduleCallModal'
 
 const cards = [
   { icon: professionalsIcon, count: 50, text: 'IT Professionals' },
@@ -25,6 +29,9 @@ const SingleCard = ({ item }) => {
 }
 
 const NewHeader = () => {
+  const router = useRouter()
+  const [modalOpen, setModalOpen] = useState(false)
+
   return (
     <div
       className='w-[100vw] flex flex-wrap items-center bg-cover bg-center bg-no-repeat relative '
@@ -41,12 +48,23 @@ const NewHeader = () => {
             Empowering your business with innovative, tailored tech solutions to
             drive growth, efficiency, and success.
           </p>
+          <ScheduleCallModal
+            isOpen={modalOpen}
+            onClose={() => setModalOpen(false)}
+          />
+
           {/* Buttons */}
           <div className='flex flex-wrap xl:flex-nowrap justify-center items-center gap-4'>
-            <button className='rounded-[28px] bg-[#F05232] text-white font-semibold shadow-[#f05232] px-[40px] py-[12px] uppercase'>
+            <button
+              onClick={() => setModalOpen(true)}
+              className='rounded-[28px] bg-[#F05232] text-white font-semibold shadow-[#f05232] px-[40px] py-[12px] uppercase'
+            >
               schedule a call
             </button>
-            <button className='rounded-[28px] text-white bg-[#FFFFFF26] font-semibold border-[1px] border-[#FFFFFF40] px-[40px] py-[12px] uppercase'>
+            <button
+              onClick={() => router.push('/team')}
+              className='rounded-[28px] text-white bg-[#FFFFFF26] font-semibold border-[1px] border-[#FFFFFF40] px-[40px] py-[12px] uppercase'
+            >
               meet our team
             </button>
           </div>
