@@ -498,9 +498,9 @@ const page = () => {
     }
 
     return (
-        <div className="custom-container 2xl-custom:w-[1580px] 2xl-custom:mx-auto">
+        <div className="custom-container 2xl-custom:w-[1580px] 2xl-custom:mx-auto mt-10">
             <div className='w-full h-min-[56px]  border-t border-b border-t-[#F1F3F4] border-b-[#F1F3F4] mb-10'>
-                <p className='py-[16px] leading-[24px] text-[16px] font-[500] flex justify-start items-center gap-[16px]'>
+                <p className='py-[16px] leading-[24px] text-[16px] font-[500] flex flex-wrap justify-start items-center gap-[16px]'>
                     <Link href={'/'}><span className='text-[#586A78]'>Home</span></Link>
                     <span className='text-[#F05232]'>/</span>
                     <Link href={'/case-studies'}><span className='text-[#586A78]'>Case Studies</span></Link>

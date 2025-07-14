@@ -56,7 +56,7 @@ const Page = () => {
 
     return (
         <div className='bg-[#0B3641]'>
-            <div className='px-4 sm:px-12 xl:px-36 pt-[20px] pb-[35px] flex flex-col justify-center items-center gap-8 lg:gap-28 2xl-custom:w-[1580px] 2xl-custom:mx-auto'>
+            <div className='px-4 sm:px-12 xl:px-36 pt-24 pb-[35px] flex flex-col justify-center items-center gap-8 lg:gap-28 2xl-custom:w-[1580px] 2xl-custom:mx-auto'>
                 {/* Breadcrumb */}
                 <div className='w-full h-[56px] flex justify-between gap-4 border-t border-b border-t-[#ffffff33] border-b-[#ffffff33]'>
                     <p className='lg:w-1/5 py-[16px] leading-[24px] text-[16px] font-[500] flex justify-start items-center gap-[16px]'>
@@ -68,7 +68,7 @@ const Page = () => {
                     </p>
                 </div>
 
-                <div className='bg-white rounded-[16px] border border-[#F1F3F4] p-8 sm:p-16 flex flex-col lg:flex-row justify-between items-center lg:items-start gap-6 relative'>
+                <div className='bg-white rounded-[16px] border border-[#F1F3F4] p-4 sm:p-16 flex flex-col lg:flex-row justify-between items-center lg:items-start gap-6 relative'>
                     {/* Left: Contact Form */}
                     <div className='lg:w-1/2 pr-4 lg:pr-10'>
                         <h2 className='text-titleSubtitle text-[32px] font-[700] leading-[40px]'>Get in Touch</h2>
@@ -128,7 +128,7 @@ const Page = () => {
                             <Image src={contactImg} alt='Contact Us' className='rounded-[8px] object-cover w-full h-full' />
                         </div>
                         <div className='mt-6 space-y-[25px] w-full'>
-                            <div className='flex justify-between items-center'>
+                            <div className='flex flex-wrap gap-4 justify-between items-center'>
                                 <div className='flex items-center gap-3'>
                                     <div className='border-[1px] w-[44px] h-[44px] border-[#F1F3F4] rounded-[8px] flex items-center justify-center'>
                                         <Phone className='w-[24px] h-[24px] text-primary' />

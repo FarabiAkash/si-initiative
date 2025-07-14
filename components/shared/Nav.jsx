@@ -29,7 +29,11 @@ const Nav = ({ openContactModal }) => {
           shouldShowWhiteBg ? 'text-[#010101]' : 'text-white'
         } hover:border-b-2 hover:border-[#F05232]`
 
-  const shouldShowWhiteBg = pathname === '/about-us' || isScrolled
+  const shouldShowWhiteBg =
+    isScrolled ||
+    pathname === '/about-us' ||
+    pathname.startsWith('/blogs/') ||
+    pathname.startsWith('/case-studies/')
 
   return (
     <header

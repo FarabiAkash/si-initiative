@@ -20,7 +20,7 @@ const TagsFilter = ({ tags, selectedTag, setSelectedTag }) => {
   }
 
   return (
-    <div className='flex items-center justify-end gap-4 py-4  overflow-hidden'>
+    <div className='flex items-center justify-end gap-4 py-4  overflow-hidden '>
       {/* Scrollable Tag Container */}
       <div className='relative overflow-hidden w-full'>
         <div
