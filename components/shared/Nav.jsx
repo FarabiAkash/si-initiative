@@ -3,7 +3,8 @@
 import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import Logo from '../../public/assets/logo.png'
+import darkLogo from '../../public/assets/logoDark.svg'
+import lightLogo from '../../public/assets/logoLight.svg'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 
@@ -20,6 +21,12 @@ const Nav = ({ openContactModal }) => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const shouldShowWhiteBg =
+    isScrolled ||
+    pathname === '/about-us' ||
+    pathname.startsWith('/blogs/') ||
+    pathname.startsWith('/case-studies/')
+
   const isActive = path =>
     pathname === path || pathname.startsWith(`${path}/`)
       ? `${
@@ -28,12 +35,6 @@ const Nav = ({ openContactModal }) => {
       : `${
           shouldShowWhiteBg ? 'text-[#010101]' : 'text-white'
         } hover:border-b-2 hover:border-[#F05232]`
-
-  const shouldShowWhiteBg =
-    isScrolled ||
-    pathname === '/about-us' ||
-    pathname.startsWith('/blogs/') ||
-    pathname.startsWith('/case-studies/')
 
   return (
     <header
@@ -47,7 +48,7 @@ const Nav = ({ openContactModal }) => {
         {/* Logo */}
         <Link href='/' className='w-[111.613px] h-[40px] cursor-pointer'>
           <Image
-            src={Logo}
+            src={shouldShowWhiteBg ? darkLogo : lightLogo}
             alt='Logo'
             className='w-full h-full object-contain'
             width={500}
