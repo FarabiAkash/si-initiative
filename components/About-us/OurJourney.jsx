@@ -1,38 +1,31 @@
 const journeyData = [
   {
-    year: '2019',
-    phase: 'Laying the Foundation',
-    title: 'Digital Prescription System',
+    year: '2016-2017',
+    phase: 'Ideation & Foundation',
+    title: 'From Vision to Validation',
     description:
-      'We launched an AI-powered digital prescription platform to eliminate errors in manual prescriptions and streamline doctor-patient interactions.'
+      'Born from the GP Accelerator Program, our vision for rural healthcare earned early recognition with an Elsevier publication and a BASIS National ICT Award.'
   },
   {
-    year: '2020',
-    phase: 'Advancing AI in Healthcare',
-    title: 'AI-Powered Diagnostics',
+    year: 'Year 2: 2020',
+    phase: 'Innovation & Recognition',
+    title: 'Prestigious Wins & Global Acclaim',
     description:
-      'Developed an AI-based disease detection system, enhancing diagnostic accuracy and reducing reporting time for medical imaging and pathology.'
+      'We secured key patents for our digital health solutions and earned global acclaim with prestigious wins at the Seedstars World and APICTA Awards.'
   },
   {
-    year: '2021',
+    year: 'Year 3: 2021',
     phase: 'Expanding Healthcare Accessibility',
-    title: 'Telemedicine & Health Care',
+    title: 'Pandemic Response & Growth',
     description:
-      'Introduced a telemedicine solution that connected patients with healthcare providers, ensuring continuous medical support during the COVID-19 pandemic.'
+      'During the COVID-19 response, we scaled our impact to support over 10,000 health workers and reach 2 million users through our new telemedicine services.'
   },
   {
-    year: '2022',
-    phase: 'Smart Healthcare with IoT',
-    title: 'IoT-Based Patient Monitoring',
+    year: '2022-2030',
+    phase: 'Expansion & Vision',
+    title: 'Current Scale & Future Vision',
     description:
       'Launched an IoT-driven health monitoring system, allowing real-time tracking of patient vitals and improving emergency response times.'
-  },
-  {
-    year: '2023',
-    phase: 'Revolutionizing Autism Care',
-    title: 'Autism Barta',
-    description:
-      'Developed Autism Barta, an AI-powered app designed to help autistic individuals communicate effectively and integrate into society more easily.'
   }
 ]
 
@@ -46,13 +39,13 @@ const OurJourney = () => {
           </h2>
           <p className='text-[18px] font-[400] leading-[24px] text-[#ffffffd3]'>
             Over the years, we have embarked on transformative projects, pushing
-            the boundaries of AI, digital health, and medical innovation. Here’s
-            how we’ve evolved:
+            the boundaries of AI, 4IR Technology and Innovation. Here’s how
+            we’ve evolved:
           </p>
         </div>
         <div className='relative  mx-auto'>
           {/* Timeline Line */}
-          <div className='hidden sm:block absolute left-1/2 transform -translate-x-1/2 w-[1px] bg-[#ffffff33] h-[82%]' />
+          <div className='hidden sm:block absolute left-1/2 transform -translate-x-1/2 w-[1px] bg-[#ffffff33] h-[78%]' />
 
           {/* Timeline Items */}
           {journeyData.map((item, index) => (
@@ -64,7 +57,7 @@ const OurJourney = () => {
               {index % 2 === 0 ? (
                 <div className='w-full md:w-1/2 pr-8 sm:text-right'>
                   <p className='lg:hidden text-primary font-[700]'>
-                    Year {index + 1}: {item.year}
+                    {item.year}
                   </p>
                   <p className='text-[14px] mb-2 font-[600] text-primary leading-[16px]'>
                     {item.phase}
@@ -84,7 +77,7 @@ const OurJourney = () => {
               <div className='hidden sm:flex justify-center items-center mt-[-8px]'>
                 {index % 2 !== 0 && (
                   <div className='hidden lg:w-[130px] h-[32px] bg-primary rounded-[16px] lg:flex items-center justify-center'>
-                    Year {index + 1}: {item.year}
+                    {item.year}
                   </div>
                 )}
                 <div
@@ -105,7 +98,7 @@ const OurJourney = () => {
 
                 {index % 2 === 0 && (
                   <div className='hidden lg:w-[130px] h-[32px] bg-primary rounded-[16px] lg:flex items-center justify-center'>
-                    Year {index + 1}: {item.year}
+                    {item.year}
                   </div>
                 )}
               </div>
@@ -139,8 +132,8 @@ const OurJourney = () => {
           </h2>
           <p className='text-center text-[20px] font-[400] leading-[32px]'>
             As we move forward, we remain committed to innovation, research, and
-            global impact, ensuring that technology continues to shape a
-            healthier future.
+            global impact, ensuring that technology continues to shape the
+            future.
           </p>
           <button className='mx-auto mt-10 text-[14px] rounded-[28px] bg-[#F05232]  font-[600] leading-[24px] tracking-[1.4px] px-[40px] py-[16px] sm:py-[16px] uppercase'>
             Collaborate with us

@@ -9,8 +9,8 @@ import { useState } from 'react'
 import ScheduleCallModal from './ScheduleCallModal'
 
 const cards = [
-  { icon: professionalsIcon, count: 50, text: 'IT Professionals' },
-  { icon: experienceIcon, count: 9, text: 'Years of Experience' },
+  { icon: professionalsIcon, count: 100, text: 'AI & IT Experts' },
+  { icon: experienceIcon, count: 5, text: 'Years of Experience' },
   { icon: projectsIcon, count: 100, text: 'Projects Completed' }
 ]
 

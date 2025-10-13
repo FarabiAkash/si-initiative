@@ -70,7 +70,7 @@ const ContactFormBox = ({ title }) => {
                   Call Us
                 </p>
                 <p className='text-[#6D787B] text-[16px] leading-[20px] font-[400]'>
-                  +02 965 8645
+                  +880 1742 925 686
                 </p>
               </div>
             </div>
@@ -83,7 +83,7 @@ const ContactFormBox = ({ title }) => {
                   Email Us
                 </p>
                 <p className='text-[#6D787B] text-[16px] leading-[20px] font-[400]'>
-                  siintiative2025@gmail.com
+                  info@cmedinnovation.com
                 </p>
               </div>
             </div>

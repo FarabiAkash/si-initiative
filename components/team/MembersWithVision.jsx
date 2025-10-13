@@ -23,7 +23,7 @@ const SingleMemberCard = ({ card }) => {
     <div className='w-full  md:w-[270px]  2xl:w-[310px] border border-[#19BCE533] p-4 flex flex-col justify-center items-center gap-4 rounded-[8px]'>
       <div className='w-[168px] h-[168px] rounded-full'>
         <Image
-          src={memberImg}
+          src={card.img}
           alt={card.name}
           className='w-full h-full object-cover rounded-full'
         />
@@ -36,13 +36,6 @@ const SingleMemberCard = ({ card }) => {
           {card.position}
         </h3>
       </div>
-      <a
-        href={card.linkedIn}
-        target='_blank'
-        className='flex justify-between items-center gap-1 text-sm font-medium text-[#0B3641] border border-[#EEF6F8] rounded-[4px] px-4 py-[6px]'
-      >
-        <Image src={linkedInIcon} alt={card.linkedIn} /> LinkedIn
-      </a>
     </div>
   )
 }

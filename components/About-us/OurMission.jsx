@@ -1,24 +1,24 @@
 import Image from 'next/image'
 
-import missionImage from '../../public/assets/home/Blogs/blog2.png'
+import missionImage from '@/public/assets/about/mission.jpg'
 import diamondShape from '../../public/assets/diamondShape.svg'
 
 const data = [
   {
-    title: 'Enhance Diagnostics & Treatment',
-    desc: 'Leveraging AI and data analytics to improve accuracy and efficiency'
+    title: 'Drive Digital Transformation',
+    desc: 'Deploying modern tools and platforms that streamline operations and boost productivity.'
   },
   {
-    title: 'Improve Healthcare Accessibility',
-    desc: 'Developing digital platforms for seamless remote healthcare and telemedicine'
+    title: 'Ensure Reliability & Trust',
+    desc: 'Delivering solutions you can depend on, with consistency, security, and quality in every service.'
   },
   {
-    title: 'Drive Research & Development',
-    desc: 'Pioneering new medical technologies for better patient outcomes'
+    title: 'Fuel Business Growth',
+    desc: 'Cultivating scalable strategies and technologies to help businesses expand, adapt, and stay ahead.'
   },
   {
-    title: ' Foster Collaboration & Growth',
-    desc: 'Partnering with healthcare institutions, researchers, and industry leaders to build a sustainable healthcare ecosystem'
+    title: 'Partner with Purpose',
+    desc: 'Aligning our solutions to your needs, taking ownership of your challenges so you can focus on what you do best.'
   }
 ]
 const OurMission = () => {
@@ -29,16 +29,16 @@ const OurMission = () => {
           Our Mission
         </h1>
         <p className='text-paragraph text-[18px] font-[400] leading-[24px] pt-3'>
-          Innovate, Empower, Impact
+          Innovate. Deliver. Transform.
         </p>
       </div>
 
-      <div className='flex flex-col lg:flex-row justify-center items-center gap-[20px] sm:gap-[40px] mt-[20px] lg:mt-[50px]'>
+      <div className='flex flex-col lg:flex-row justify-center items-start gap-[20px] sm:gap-[40px] mt-[20px] lg:mt-[50px]'>
         <div className='flex-1 flex flex-col justify-start items-center gap-[16px]'>
           <p className='text-paragraph text-[16px] font-[400] leading-[20px]'>
-            Our mission is to harness the power of cutting-edge technology and
-            research to create scalable, intelligent, and user-friendly
-            healthcare solutions that:
+            Our mission is to be your go-to partner for end-to-end technology
+            solutions—offering innovation, reliability, and support that help
+            businesses grow stronger and work smarter in today’s digital world.
           </p>
           <div>
             {data.map((item, i) => (
@@ -64,11 +64,6 @@ const OurMission = () => {
               </div>
             ))}
           </div>
-          <p className='text-paragraph text-[16px] font-[400] leading-[20px]'>
-            With a patient-first approach and a commitment to continuous
-            innovation, we aim to shape the future of healthcare, making it
-            smarter, faster, and more inclusive.
-          </p>
         </div>
         <Image
           src={missionImage}

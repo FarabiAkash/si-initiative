@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { Mail, Phone, MapPin } from 'lucide-react'
 import Image from 'next/image'
-import contactImg from '../../public/assets/home/caseStudiesImg.png'
+import contactImg from '../../public/assets/contact.jpg'
 import emailjs from '@emailjs/browser'
 import { toast } from 'react-hot-toast'
 
@@ -135,7 +135,7 @@ const Page = () => {
                                     </div>
                                     <div>
                                         <p className='text-[16px] font-[700] text-titleSubtitle leading-[20px]'>Call Us</p>
-                                        <p className='text-[#6D787B] text-[16px] leading-[20px] font-[400]'>+02 965 8645</p>
+                                        <p className='text-[#6D787B] text-[16px] leading-[20px] font-[400]'>+880 1701 663 986</p>
                                     </div>
                                 </div>
                                 <div className='flex items-center gap-3'>
@@ -144,7 +144,7 @@ const Page = () => {
                                     </div>
                                     <div>
                                         <p className='text-[16px] font-[700] text-titleSubtitle leading-[20px]'>Email Us</p>
-                                        <p className='text-[#6D787B] text-[16px] leading-[20px] font-[400]'>siintiative2025@gmail.com</p>
+                                        <p className='text-[#6D787B] text-[16px] leading-[20px] font-[400]'>innovation@cmedhealth.com</p>
                                     </div>
                                 </div>
                             </div>

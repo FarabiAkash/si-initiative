@@ -31,6 +31,24 @@ const industriesData = [
     ]
   },
   {
+    domain: 'Agri Tech',
+    subDomains: [
+      'Precision Farming & IoT Crop Monitoring',
+      'AI/ML for Yield Prediction & Pest Detection',
+      'Supply Chain Management & Traceability',
+      'Smart Irrigation & Drone Automation'
+    ]
+  },
+  {
+    domain: 'Energy & Enviroment',
+    subDomains: [
+      'Smart Grid & IoT Integration',
+      'Predictive Maintenance & Analytics',
+      'Cloud-Based Big Data Platforms',
+      'Cybersecurity for Critical Systems'
+    ]
+  },
+  {
     domain: 'E-Commerce',
     subDomains: [
       'Scalable Online Stores with Payment Integration',
@@ -56,15 +74,6 @@ const industriesData = [
       'AI: Price Prediction & Lead Scoring',
       'Cloud-Based Property Data Hosting',
       'Web & Mobile Portals'
-    ]
-  },
-  {
-    domain: 'Energy & Utilities',
-    subDomains: [
-      'Smart Grid & IoT Integration',
-      'Predictive Maintenance & Analytics',
-      'Cloud-Based Big Data Platforms',
-      'Cybersecurity for Critical Systems'
     ]
   },
   {
@@ -96,9 +105,9 @@ const IndustryWeWorkWith = () => {
           <h1 className='text-[24px] sm:text-[32px] font-[700] text-[#0B3641] sm:leading-[40px]'>
             Industry We Work with
           </h1>
-          <p className='text-[#677A7E] text-[18px] font-[400] leading-[24px] mt-2 text-center'>
-            Meet the minds shaping our strategy, guiding innovation, and <br />{' '}
-            leading CMED Tech toward a smarter future.
+          <p className='text-[#677A7E] text-[18px] font-[400] leading-[24px] mt-2 text-center max-w-md'>
+            Driving innovation across industries with intelligent, scalable
+            technology solutions.
           </p>
 
           {/* Domain Sections */}

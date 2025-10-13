@@ -1,39 +1,39 @@
 const features = [
   {
     id: 1,
-    title: 'Decision Support Systems',
+    title: 'Research-Driven Innovation',
     description:
-      'We leverage AI, IoT, and cloud-based solutions to revolutionize healthcare services.'
+      'Our dedicated R&D fuels innovation, transforming bold ideas into practical solutions that deliver lasting value.'
   },
   {
     id: 2,
-    title: 'Proven Expertise',
+    title: 'Decision Support Systems',
     description:
-      'Our team of industry experts, researchers, and engineers ensures top-tier solutions.'
+      'Our smart, data-driven platforms simplify complexity, empowering your business to make faster, better decisions.'
   },
   {
     id: 3,
-    title: 'User-Centric Approach',
+    title: 'Proven Expertise',
     description:
-      'Designed with patients and healthcare providers in mind, ensuring seamless experiences.'
+      'Our team of 100+ AI & IT experts is committed to excellence, delivering proven success across all sectors.'
   },
   {
     id: 4,
-    title: 'Scalable & Secure Solutions',
+    title: 'Client-Centric Approach',
     description:
-      'HIPAA-compliant, highly scalable, and secure platforms for diverse healthcare needs.'
+      'Our client-centric approach means we own your challenges, guaranteeing a smooth and collaborative journey to success.'
   },
   {
     id: 5,
-    title: 'Global Impact & Accessibility',
+    title: 'Scalable & Reliable',
     description:
-      'Bridging healthcare gaps worldwide with accessible, innovative, and inclusive solutions.'
+      'We build scalable and reliable solutions, designed to seamlessly grow with your business and deliver lasting value.'
   },
   {
     id: 6,
-    title: 'Research-Driven Innovation',
+    title: 'Global Impact & Accessibility',
     description:
-      'Backed by continuous R&D to deliver groundbreaking digital healthcare advancements.'
+      'We build inclusive products designed to generate significant, positive outcomes for communities and industries everywhere'
   }
 ]
 

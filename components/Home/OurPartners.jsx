@@ -14,7 +14,7 @@ const OurPartners = () => {
         <h1 className='text-titleSubtitle text-[32px] font-[700] leading-[40px]'>
           Our Partners
         </h1>
-        <p className='text-paragraph text-[18px] font-[400] leading-[24px] w-[75vw] xl:w-[38vw] 2xl:w-[30vw] text-center'>
+        <p className='text-paragraph text-[18px] font-[400] leading-[24px] w-[75vw] xl:w-[38vw] 2xl:w-[40vw] text-center'>
           We are proud to collaborate with top healthcare providers, tech
           innovators, and research institutions to create impactful digital
           healthcare solutions.

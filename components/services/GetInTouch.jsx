@@ -17,7 +17,7 @@ const GetInTouch = () => {
         onClick={() => setShowContact(true)}
         className='mt-10 h-[56px] py-[16px] px-[40px] rounded-[28px] bg-[#F05232] text-white text-[14px] font-[600] tracking-[1.4px] uppercase'
       >
-        Get in Touch
+        Schedule a call
       </button>
       <ContactModal
         isOpen={showContact}

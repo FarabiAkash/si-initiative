@@ -8,39 +8,39 @@ import w6 from '../../public/assets/home/whatwedo/w6.png'
 
 const data = [
   {
-    title: 'Custom Software Dveelopment',
+    title: 'R&D Innovation',
     description:
-      'Revolutionizing healthcare with AI-powered diagnostics, personalized treatments, and predictive analytics.',
-    icon: w1
+      'Turning ideas into impactful solutions through research, prototyping, and cutting-edge technology.',
+    icon: w5
   },
   {
-    title: 'AI/ML Integration',
+    title: 'AI integration',
     description:
-      'Revolutionizing healthcare with AI-powered diagnostics, personalized treatments, and predictive analytics.',
+      'Empowering businesses with intelligent automation, predictive insights, and smarter decision-making.',
     icon: w2
   },
   {
-    title: 'Web & Mobile app development',
+    title: 'IT consultations',
     description:
-      'Revolutionizing healthcare with AI-powered diagnostics, personalized treatments, and predictive analytics.',
-    icon: w3
-  },
-  {
-    title: 'it consultations',
-    description:
-      'Revolutionizing healthcare with AI-powered diagnostics, personalized treatments, and predictive analytics.',
+      'Expert guidance to align your IT strategy with your business goals.',
     icon: w4
   },
   {
-    title: 'R&D Innovations',
+    title: 'Custom Software Development',
     description:
-      'Revolutionizing healthcare with AI-powered diagnostics, personalized treatments, and predictive analytics.',
-    icon: w5
+      'Tailored software solutions designed to meet your unique business needs.',
+    icon: w1
+  },
+  {
+    title: 'Web and Mobile App Development',
+    description:
+      'Engaging, scalable, and user-friendly applications for web and mobile platforms.',
+    icon: w3
   },
   {
     title: 'Quality Assurance',
     description:
-      'Revolutionizing healthcare with AI-powered diagnostics, personalized treatments, and predictive analytics.',
+      'Comprehensive testing to ensure flawless performance and reliability of your products.',
     icon: w6
   }
 ]
@@ -58,7 +58,7 @@ const SingleCard = ({ item }) => {
         />
       </div>
       <h3
-        className={`text-[18px] text-[#19BCE5] font-[600] leading-[24px] uppercase mt-4`}
+        className={`text-[18px] text-[#010101] font-[600] leading-[24px] mt-4`}
       >
         {item.title}
       </h3>

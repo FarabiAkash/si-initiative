@@ -4,9 +4,9 @@ import { ChevronUp, ChevronDown } from 'lucide-react'
 
 const faqData = [
   {
-    question: 'How can I get started with your digital healthcare solutions?',
+    question: 'Do you provide customized solutions?',
     answer:
-      'Getting started is simple! Explore our core and specialized services, and if you need guidance, reach out via our Contact Us section. Our team will assist you in finding the right solution for your needs.'
+      'Yes. Every business is unique, and we tailor our solutions to align with your specific goals, challenges, and long-term vision.'
   },
   {
     question: 'Are your healthcare platforms secure and HIPAA-compliant?',

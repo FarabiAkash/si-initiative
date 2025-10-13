@@ -2,14 +2,16 @@ import PageHeader from "@/components/shared/PageHeader"
 import IndustryWeWorkWith from '../../components/industries/IndustryWeWorkWith'
 import SuccessStories from "@/components/Home/SuccessStories"
 import GetInTouch from "@/components/services/GetInTouch"
+import pageHeaderBg from '../../public/assets/industry/banner.jpg'
 
 
 const page = () => {
     return (
         <>
             <PageHeader
-                title={'Meet the Team Powering CMED Tech’s Innovation'}
-                subtitle={'Empowering healthcare providers with AI-driven, data-centric, and digital solutions for better patient outcomes'}
+                title={'Innovation That Transforms Industries and Sectors'}
+                subtitle={'Partnering across diverse industries worldwide to accelerate meaningful progress and transformation in the digital era'}
+                pageHeaderBg={pageHeaderBg}
             />
             <IndustryWeWorkWith />
             <SuccessStories pageName={'industries'} />

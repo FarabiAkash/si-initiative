@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import aboutImg from '@/public/assets/blogs/blog1.png' // Replace with your actual image
+import aboutImg from '@/public/assets/about/aboutHeader.jpg'
 
 const AboutHeader = () => {
   return (
@@ -26,12 +26,12 @@ const AboutHeader = () => {
       >
         {/* Text Block */}
         <div className='lg:w-2/4'>
-          <h1 className='text-[28px] md:text-[32px]  font-bold sm:leading-[36px]  text-titleSubtitle'>
-            Revolutionizing Healthcare Through Innovation
+          <h1 className='text-[28px] md:text-[32px] 2xl:text-[48px]  font-bold sm:leading-[36px] xl:leading-[64px]  text-titleSubtitle'>
+            Revolutionizing Industry Demands with Innovations
           </h1>
           <p className=' text-paragraph text-[20px] font-[400] leading-[32px] mt-4'>
-            Empowering the future of healthcare with AI, digital transformation,
-            and research-driven solutions.
+            Technical excellence with creative problem solving to transform
+            industry challenges into opportunities.
           </p>
         </div>
 

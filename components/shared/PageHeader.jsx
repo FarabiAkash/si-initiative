@@ -3,9 +3,16 @@
 import { usePathname } from 'next/navigation'
 import TagsFilter from './TagsFilter'
 import Link from 'next/link'
-import pageHeaderBg from '@/public/assets/pageHeader.jpg'
+// import pageHeaderBg from '@/public/assets/pageHeader.jpg'
 
-const PageHeader = ({ title, subtitle, tags, selectedTag, setSelectedTag }) => {
+const PageHeader = ({
+  title,
+  subtitle,
+  tags,
+  selectedTag,
+  setSelectedTag,
+  pageHeaderBg
+}) => {
   const path = usePathname()
   let formattedPath = path.slice(1).charAt(0).toUpperCase() + path.slice(2)
   if (formattedPath === 'Team') {

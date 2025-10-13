@@ -1,13 +1,22 @@
 import React from 'react'
 import Image from 'next/image'
 
+import a1 from '../../public/assets/achievement/a1.jpg'
+import a2 from '../../public/assets/achievement/a2.jpg'
+import a3 from '../../public/assets/achievement/a3.jpg'
+import a4 from '../../public/assets/achievement/a4.jpg'
+import a5 from '../../public/assets/achievement/a5.jpg'
+import a6 from '../../public/assets/achievement/a6.jpg'
+import a7 from '../../public/assets/achievement/a7.jpg'
+
 const achievements = [
-  { year: 2020, title: 'Global Health Innovation Award' },
-  { year: 2021, title: 'SDG Impact Award in Healthcare' },
-  { year: 2022, title: 'AI for Social Good Award' },
-  { year: 2023, title: 'Best Digital Health Solution Award' },
-  { year: 2023, title: 'IoT & Smart Healthcare Excellence Award' },
-  { year: 2024, title: 'Global Tech for Good Healthcare Award' }
+  { year: 2024, title: '', img: a1 },
+  { year: 2019, title: 'Won the 19th APICTA Award', img: a2 },
+  { year: 2019, title: 'Won the Bangladesh Innovation Award', img: a3 },
+  { year: 2018, title: 'Won the SeedStars Global Innovation Award', img: a4 },
+  { year: 2018, title: 'DBS – NUS Social Venture Challenge Asia', img: a5 },
+  { year: 2018, title: 'Won the Bangladesh Innovation Award', img: a6 },
+  { year: 2015, title: 'Won the GP Accelerator Award', img: a7 }
 ]
 
 const OurAchievements = () => {
@@ -26,14 +35,30 @@ const OurAchievements = () => {
       </div>
 
       <div className='grid grid-cols-1 lg:grid-cols-4 gap-6 mt-8 items-end'>
-        <div className='md:col-span-2 w-full h-[300px] lg:h-[550px] rounded-lg bg-[#C2D2D6]'></div>
+        {/* Large image area (optional static or first achievement) */}
+        <div className='md:col-span-2 w-full h-[300px] lg:h-[550px] rounded-lg overflow-hidden'>
+          <Image
+            src={a1}
+            alt='Main Achievement'
+            className='w-full h-full object-cover rounded-lg'
+          />
+        </div>
+
+        {/* Grid of other achievements */}
         <div className='grid grid-cols-2 sm:grid-cols-3 gap-4 sm:col-span-2'>
-          {achievements.map((achievement, index) => (
+          {achievements.slice(1, 7).map((achievement, index) => (
             <div
               key={index}
-              className=' rounded-lg flex flex-col justify-start gap-[10px]'
+              className='rounded-lg flex flex-col justify-start gap-[10px]'
             >
-              <div className='bg-[#D9D9D9] h-[150px] rounded-lg flex flex-col justify-end p-4'></div>
+              <div className='relative w-full h-[150px] rounded-lg overflow-hidden'>
+                <Image
+                  src={achievement.img}
+                  alt={achievement.title}
+                  fill
+                  className='object-cover rounded-lg'
+                />
+              </div>
               <span className='text-[14px] font-[400] leading-[16px] text-paragraph'>
                 {achievement.year}
               </span>

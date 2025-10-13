@@ -5,13 +5,15 @@ import GetInTouch from "../../components/services/GetInTouch"
 import SpecializedServices from "../../components/services/SpecializedServices"
 import AllCoreService from "../../components/services/AllCoreService"
 import AllServicesWeOffer from '../../components/services/AllServicesWeOffer'
+import pageHeaderBg from '../../public/assets/services/banner.jpg'
 
 const page = () => {
     return (
         <>
             <PageHeader
-                title={'Meet the Team Powering CMED Tech’s Innovation'}
-                subtitle={'Empowering healthcare providers with AI-driven, data-centric, and digital solutions for better patient outcomes'}
+                title={'Empowering Businesses with Innovation and Expertise'}
+                subtitle={'Delivering innovative solutions that seamlessly adapt, scale efficiently, and empower businesses to thrive tomorrow.'}
+                pageHeaderBg={pageHeaderBg}
             />
             <AllServicesWeOffer />
             {/* <AllCoreService /> */}

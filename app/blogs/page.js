@@ -4,6 +4,7 @@ import { useState } from 'react'
 import PageHeader from "../../components/shared/PageHeader"
 import AllBlogs from '../../components/Blogs/AllBlogs.jsx'
 import MostReadArticle from "../../components/Blogs/MostReadArticle.jsx"
+import pageHeaderBg from '../../public/assets/case-studies/banner.jpg'
 
 const page = () => {
   const [selectedTag, setSelectedTag] = useState('All')
@@ -11,8 +12,9 @@ const page = () => {
   return (
     <div>
       <PageHeader
-        title='Transforming Healthcare with Innovation: The Blog'
-        subtitle='Stay ahead with expert insights, groundbreaking research, and the latest advancements in AI, digital health, and medical technology.'
+        title='Stay Ahead With Expert Perspectives'
+        subtitle='Providing valuable insights, emerging trends, and expert perspectives that are shaping and driving the next wave of innovation.'
+        pageHeaderBg={pageHeaderBg}
         tags={[
           'All',
           'Digital Health',

@@ -14,64 +14,68 @@ import Image from 'next/image'
 
 const services = [
   {
-    icon: s1,
-    title: 'Custom Software Development',
-    desc: 'Revolutionizing healthcare with AI-powered diagnostics, personalized treatments, and predictive analytics.'
+    icon: s5,
+    title: 'R&D Innovation',
+    desc: 'Turning ideas into impactful solutions through research, prototyping, and cutting-edge technology.'
   },
   {
     icon: s2,
-    title: 'AI/ML Integration',
-    desc: 'Revolutionizing healthcare with AI-powered diagnostics, personalized treatments, and predictive analytics.'
-  },
-  {
-    icon: s3,
-    title: 'Web and Mobile App Development',
-    desc: 'Revolutionizing healthcare with AI-powered diagnostics, personalized treatments, and predictive analytics.'
-  },
-  {
-    icon: s4,
-    title: 'Cybersecurity Services',
-    desc: 'Revolutionizing healthcare with AI-powered diagnostics, personalized treatments, and predictive analytics.'
-  },
-  {
-    icon: s5,
-    title: 'R&D Innovation',
-    desc: 'Revolutionizing healthcare with AI-powered diagnostics, personalized treatments, and predictive analytics.'
-  },
-  {
-    icon: s6,
-    title: 'Cloud Computing Services',
-    desc: 'Revolutionizing healthcare with AI-powered diagnostics, personalized treatments, and predictive analytics.'
+    title: 'AI Integration',
+    desc: 'Empowering businesses with intelligent automation, predictive insights, and smarter decision-making.'
   },
   {
     icon: s7,
     title: 'IT consultations',
-    desc: 'Revolutionizing healthcare with AI-powered diagnostics, personalized treatments, and predictive analytics.'
+    desc: 'Expert guidance to align your IT strategy with your business goals.'
   },
   {
-    icon: s8,
-    title: 'IT Infrastructure Management',
-    desc: 'Revolutionizing healthcare with AI-powered diagnostics, personalized treatments, and predictive analytics.'
+    icon: s1,
+    title: 'Custom Software Development',
+    desc: 'Tailored software solutions designed to meet your unique business needs.'
   },
+
   {
-    icon: s9,
-    title: 'Data Analysis',
-    desc: 'Revolutionizing healthcare with AI-powered diagnostics, personalized treatments, and predictive analytics.'
-  },
-  {
-    icon: s10,
-    title: 'DevOps and CI/CD',
-    desc: 'Revolutionizing healthcare with AI-powered diagnostics, personalized treatments, and predictive analytics.'
-  },
-  {
-    icon: s11,
-    title: 'VoIP and Communication Solutions',
-    desc: 'Revolutionizing healthcare with AI-powered diagnostics, personalized treatments, and predictive analytics.'
+    icon: s3,
+    title: 'Web and Mobile App Development',
+    desc: 'Engaging, scalable, and user-friendly applications for web and mobile platforms.'
   },
   {
     icon: s12,
     title: 'Quality Assurance',
-    desc: 'Revolutionizing healthcare with AI-powered diagnostics, personalized treatments, and predictive analytics.'
+    desc: 'Comprehensive testing to ensure flawless performance and reliability of your products.'
+  },
+
+  {
+    icon: s8,
+    title: 'IT Infrastructure Management',
+    desc: 'Reliable management and optimization of your IT systems and networks.'
+  },
+
+  {
+    icon: s9,
+    title: 'Data Analysis',
+    desc: 'Transforming  raw data into actionable insights for smarter decision-making.'
+  },
+  {
+    icon: s10,
+    title: 'DevOps and CI/CD',
+    desc: 'Accelerate software delivery with automated, efficient, and collaborative workflows.'
+  },
+
+  {
+    icon: s11,
+    title: 'Communication Solutions',
+    desc: 'Cost-effective and seamless communication systems for businesses.'
+  },
+  {
+    icon: s6,
+    title: 'Cloud Computing Services',
+    desc: 'Secure, scalable, and flexible cloud solutions to modernize operations and drive business agility.'
+  },
+  {
+    icon: s4,
+    title: 'Cybersecurity Services',
+    desc: ' End-to-end protection with proactive strategies to safeguard your data, systems, and digital assets.'
   }
 ]
 

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { Mail, Phone, MapPin } from 'lucide-react'
-import Logo from '../../public/assets/logo.png'
+import Logo from '../../public/assets/logoDark.svg'
 import NewsLetterSub from './NewsLetterSub'
 
 const Footer = () => {
@@ -12,9 +12,9 @@ const Footer = () => {
           {/* Left Section - Company Info */}
           <div className='lg:w-1/3'>
             <p className='text-paragraph text-base mt-4 lg:mt-10'>
-              We harness AI and digital innovation to enhance healthcare
-              accessibility, efficiency, and patient care. Through cutting-edge
-              research, we provide data-driven solutions.
+              CMED Innovation leverages AI, IT, and research to help businesses
+              grow, innovate, and succeed in today's digital world. We transform
+              ideas into intelligent solutions for a smarter tomorrow.
             </p>
             <div className='mt-5 space-y-3'>
               <div className='flex flex-wrap justify-start gap-4 items-center'>
@@ -22,14 +22,14 @@ const Footer = () => {
                   <div className='border-[1px] w-[32px] h-[32px] border-[#F1F3F4] rounded-[8px] flex items-center justify-center'>
                     <Phone className='w-[20px] h-[20px] text-primary' />
                   </div>
-                  <p className='text-sm'>+02 965 8645</p>
+                  <p className='text-sm'>+880 1701 663 986</p>
                 </div>
 
                 <div className='flex items-center gap-3 text-paragraph'>
                   <div className='border-[1px] w-[32px] h-[32px] border-[#F1F3F4] rounded-[8px] flex items-center justify-center'>
                     <Mail className='w-[20px] h-[20px] text-primary' />
                   </div>
-                  <p className='text-sm'>siintiative2025@gmail.com</p>
+                  <p className='text-sm'>innovation@cmedhealth.com</p>
                 </div>
               </div>
               <div className='flex items-center gap-3 text-paragraph'>

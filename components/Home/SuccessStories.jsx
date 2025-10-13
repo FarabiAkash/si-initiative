@@ -43,27 +43,27 @@ const CustomNextArrow = ({ onClick }) => (
 const reviews = [
   {
     id: 1,
-    name: 'Dr. Al-Mamun',
-    position: 'Professor & Director, IRIIC',
+    name: 'Mahfuz Alam Khandakar',
+    position: 'CEO, Urban Tech Clinic',
     review:
       'Using the AI diagnostic tool, our clinic detected early-stage breast cancer in a patient, enabling timely treatment. The tool has since been adopted in 50+ underserved communities, improving survival rates and healthcare access.',
-    image: '/assets/home/reviews/alMamun.png'
+    image: '/assets/home/reviews/alam.jpg'
   },
   {
     id: 2,
-    name: 'Rasel Hossain',
-    position: 'UI/UX Designer',
+    name: 'Dr. Shaila Rahman',
+    position: 'Medical Director, Lifecare Hospital',
     review:
-      'AI-driven tools have transformed our diagnostics, reducing errors by 40% and improving patient outcomes significantly. tools have transformed our diagnostics With AI-assisted analysis',
-    image: '/assets/home/reviews/rasel.png'
+      'The AI system streamlined our radiology workflow, reducing diagnostic errors and report turnaround time by 40%. Patients now receive faster, more accurate diagnoses, transforming our quality of care across departments.',
+    image: '/assets/home/reviews/shaila.jpg'
   },
   {
     id: 3,
-    name: 'Shahinur Alam Bhuiyan',
-    position: 'Full Stack Developer',
+    name: 'Engr. Tanvir Hossain',
+    position: 'CTO, MediLink Innovations',
     review:
-      'With AI-assisted analysis, our team can now predict complications earlier, improving surgical success rates by 30%. tools have transformed our diagnostics With AI-assisted analysis',
-    image: '/assets/home/reviews/shahin.png'
+      'Integrating this AI tool into our telemedicine platform enhanced early disease detection and remote consultation accuracy. It’s now supporting thousands of virtual check-ups monthly, bridging healthcare gaps in rural areas.',
+    image: '/assets/home/reviews/tanvir.jpg'
   }
 ]
 const SuccessStories = ({ pageName }) => {
@@ -113,13 +113,15 @@ const SuccessStories = ({ pageName }) => {
 
                   <div className='flex-col sm:flex-row sm:flex justify-center sm:justify-start  items-center gap-2 sm:gap-4'>
                     {/* Profile Image */}
-                    <Image
-                      src={review.image}
-                      alt={review.name}
-                      width={64}
-                      height={64}
-                      className='rounded-full mb-4'
-                    />
+                    <div className='w-[64px] h-[64px]'>
+                      <Image
+                        src={review.image}
+                        alt={review.name}
+                        width={64}
+                        height={64}
+                        className='rounded-full mb-4 object-cover w-full h-full'
+                      />
+                    </div>
 
                     {/* Reviewer Name & Position */}
                     <div className='flex flex-col justify-start items-start'>

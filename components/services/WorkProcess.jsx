@@ -6,9 +6,9 @@ const steps = [
   {
     title: 'Understanding Needs & Research',
     points: [
-      'AI-powered TB screening and diagnostics',
-      'Real-time tracking of patient treatment progress',
-      'Digital record management for seamless data access'
+      'AI-Driven Market Analysis',
+      'Real-Time Project Monitoring',
+      'Centralized Data Management'
     ]
   },
   {
@@ -22,9 +22,9 @@ const steps = [
   {
     title: 'Development & Integration',
     points: [
-      'AI, IoT, and cloud-based system development',
-      'Secure API and system integrations',
-      'Compliance with healthcare regulations (HIPAA, GDPR, etc.)'
+      'AI, IoT & Cloud-Enabled Solutions',
+      'Secure API & System Interoperability',
+      'Adherence to Industry Standards & Regulations'
     ]
   },
   {
@@ -38,9 +38,9 @@ const steps = [
   {
     title: 'Deployment & Implementation',
     points: [
-      'Scalable deployment for hospitals, clinics, and users',
-      'Onboarding, training, and support for smooth adoption',
-      'Seamless data migration and system integration'
+      'Scalable Rollout Across Platforms & User Groups',
+      'Comprehensive Onboarding & Continuous Support',
+      'Effortless Data Migration & System Integration'
     ]
   },
   {
@@ -62,7 +62,7 @@ const WorkProcess = () => {
         </h2>
         <p className='text-[18px] font-[400] leading-[24px] text-paragraph'>
           Streamlined, research-driven, and technology-powered—our process
-          ensures seamless execution and impactful healthcare solutions.
+          ensures seamless execution and impactful solutions.
         </p>
       </div>
 
