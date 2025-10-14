@@ -3,6 +3,7 @@ import PageHeader from "@/components/shared/PageHeader"
 import pageHeaderBg from '../../public/assets/portfolio/banner.jpg'
 import { useState } from "react"
 import AllPortfolio from "@/components/Portfolio/AllPortfolio"
+import ReadyToTransform from "@/components/shared/ReadyToTransform"
 
 const page = () => {
     const [selectedTag, setSelectedTag] = useState('All')
@@ -18,6 +19,7 @@ const page = () => {
                 setSelectedTag={setSelectedTag}
             />
             <AllPortfolio />
+            <ReadyToTransform />
         </>
     )
 }

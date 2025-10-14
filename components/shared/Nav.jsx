@@ -81,7 +81,7 @@ const Nav = ({ openContactModal }) => {
           </Link>
           <Link
             href='/portfolio'
-            className={`relative pb-1 ${isActive('#portfolio')}`}
+            className={`relative pb-1 ${isActive('/portfolio')}`}
           >
             Portfolio
           </Link>
@@ -151,6 +151,13 @@ const Nav = ({ openContactModal }) => {
             className='text-sm font-medium'
           >
             Industries
+          </Link>
+          <Link
+            href='/portfolio'
+            onClick={() => setIsOpen(false)}
+            className='text-sm font-medium'
+          >
+            Portfolio
           </Link>
           <Link
             href='/case-studies'

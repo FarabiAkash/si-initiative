@@ -87,7 +87,7 @@ const AllPortfolio = () => {
                 <Image
                   src={project.img}
                   alt={project.name}
-                  className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-105'
+                  className='w-full h-[320px] sm:h-full object-cover transition-transform duration-500 group-hover:scale-105'
                   placeholder='blur'
                 />
 
