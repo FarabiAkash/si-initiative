@@ -1,516 +1,93 @@
-'use client';
+"use client"
+import { useEffect, useState } from 'react'
+import { useParams } from 'next/navigation'
+import Image from 'next/image'
+import { databases } from '@/lib/appwrite'
+import Link from 'next/link'
 
-import { useParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
-import caseImg from '../../../public/assets/home/caseStudiesImg.png';
-import caseImg2 from '../../../public/assets/home/Blogs/blog1.png'
-import caseImg3 from '../../../public/assets/home/Blogs/blog2.png'
-import caseImg4 from '../../../public/assets/home/Blogs/blog3.png'
-import CaseStudiesDetails from '../../../components/Case-studies/CaseStudiesDetails';
-import Link from 'next/link';
-
-const data = [
-    {
-        id: 1,
-        title: 'Predictive Analytics for Disease Prevention',
-        description:
-            'Leveraging big data and machine learning, our platform predicts potential disease outbreaks and provides proactive healthcare insights.',
-        img: caseImg4,
-        options: [
-            {
-                title: 'Early Disease Prediction',
-                description: 'AI identifies at-risk individuals before symptoms appear'
-            },
-            {
-                title: 'Personalized Health Recommendations',
-                description: 'Tailored wellness plans based on data insights'
-            },
-            {
-                title: 'Hospital Resource Optimization',
-                description:
-                    'Predicting patient influx to improve hospital preparedness'
-            },
-            {
-                title: 'Real-Time Data Processing',
-                description: 'Analyzing millions of health records for patterns'
-            }
-        ],
-        challenges: [
-            {
-                title: 'Delayed Diagnosis',
-                description:
-                    'Traditional diagnostic methods required manual analysis, often taking days to provide results. This delay hindered timely treatment decisions, especially for critical conditions.'
-            },
-            {
-                title: 'Human Errors',
-                description:
-                    'Inconsistencies in manual assessments led to varying diagnostic accuracy, increasing the risk of misdiagnosis.'
-            },
-            {
-                title: 'Scalability Issues',
-                description:
-                    'The hospital faced increasing patient loads, making it difficult to maintain efficiency with its existing diagnostic processes.'
-            }
-        ],
-        solutions: [
-            {
-                title: 'Automated Image Analysis',
-                description:
-                    'AI models were trained to analyze medical images, including X-rays, MRIs, and pathology slides, detecting abnormalities with high precision.'
-            },
-            {
-                title: 'Predictive Insights',
-                description:
-                    'Machine learning algorithms identified patterns and flagged potential diseases in their earliest stages, improving preventive care.'
-            },
-            {
-                title: 'Seamless Integration',
-                description:
-                    'The system was integrated with the hospital’s electronic health records (EHR), allowing real-time access to AI-powered diagnostic reports.'
-            },
-            {
-                title: 'User-Friendly Dashboard',
-                description:
-                    'A visual and interactive dashboard enabled healthcare professionals to interpret AI findings quickly and make data-driven decisions.'
-            }
-        ],
-        metrics: [
-            {
-                title: '30% Faster Diagnosis',
-                description:
-                    'AI reduced analysis time from 48 hours to just 12 hours, enabling quicker medical intervention.'
-            },
-            {
-                title: '95% Accuracy Rate',
-                description:
-                    'The AI system significantly improved precision in detecting abnormalities, reducing misdiagnosis rates.'
-            },
-            {
-                title: '40% Decrease in Diagnostic Errors',
-                description:
-                    'AI-assisted assessments led to more reliable and consistent results compared to traditional manual evaluations.'
-            },
-            {
-                title: '5x Increase in Scalability',
-                description:
-                    'The system efficiently handled increased patient data without additional strain on healthcare staff.'
-            }
-        ],
-        clientTestimonial: {
-            description:
-                'With AI-driven diagnostics, our hospital reduced misdiagnoses and improved patient care significantly. The efficiency gains have been remarkable, and we are now able to detect critical diseases much earlier.',
-            clientName: 'Dr. Sarah Matthews, Chief Radiologist'
-        },
-        conclusion:
-            'The successful deployment of AI-powered diagnostics transformed the healthcare provider’s operations, ensuring faster, more accurate, and scalable diagnostic processes. Moving forward, we plan to integrate real-time remote diagnostics to extend AI-driven healthcare access to underserved regions.'
-    },
-    {
-        id: 2,
-        title: 'AI-Powered Chatbots for Patient Assistance',
-        description:
-            'A virtual health assistant provides 24/7 support, answering patient queries, booking appointments, and assisting in symptom analysis.',
-        img: caseImg3,
-        options: [
-            {
-                title: '24/7 Patient Support',
-                description: 'Immediate responses to common health queries'
-            },
-            {
-                title: 'Appointment Scheduling',
-                description: 'Seamless booking without human intervention'
-            },
-            {
-                title: 'Symptom Checker',
-                description: 'AI analyzes symptoms and suggests possible conditions'
-            },
-            {
-                title: 'Multilingual Support',
-                description: 'Catering to patients worldwide with language translation'
-            }
-        ],
-        challenges: [
-            {
-                title: 'Delayed Diagnosis',
-                description:
-                    'Traditional diagnostic methods required manual analysis, often taking days to provide results. This delay hindered timely treatment decisions, especially for critical conditions.'
-            },
-            {
-                title: 'Human Errors',
-                description:
-                    'Inconsistencies in manual assessments led to varying diagnostic accuracy, increasing the risk of misdiagnosis.'
-            },
-            {
-                title: 'Scalability Issues',
-                description:
-                    'The hospital faced increasing patient loads, making it difficult to maintain efficiency with its existing diagnostic processes.'
-            }
-        ],
-        solutions: [
-            {
-                title: 'Automated Image Analysis',
-                description:
-                    'AI models were trained to analyze medical images, including X-rays, MRIs, and pathology slides, detecting abnormalities with high precision.'
-            },
-            {
-                title: 'Predictive Insights',
-                description:
-                    'Machine learning algorithms identified patterns and flagged potential diseases in their earliest stages, improving preventive care.'
-            },
-            {
-                title: 'Seamless Integration',
-                description:
-                    'The system was integrated with the hospital’s electronic health records (EHR), allowing real-time access to AI-powered diagnostic reports.'
-            },
-            {
-                title: 'User-Friendly Dashboard',
-                description:
-                    'A visual and interactive dashboard enabled healthcare professionals to interpret AI findings quickly and make data-driven decisions.'
-            }
-        ],
-        metrics: [
-            {
-                title: '30% Faster Diagnosis',
-                description:
-                    'AI reduced analysis time from 48 hours to just 12 hours, enabling quicker medical intervention.'
-            },
-            {
-                title: '95% Accuracy Rate',
-                description:
-                    'The AI system significantly improved precision in detecting abnormalities, reducing misdiagnosis rates.'
-            },
-            {
-                title: '40% Decrease in Diagnostic Errors',
-                description:
-                    'AI-assisted assessments led to more reliable and consistent results compared to traditional manual evaluations.'
-            },
-            {
-                title: '5x Increase in Scalability',
-                description:
-                    'The system efficiently handled increased patient data without additional strain on healthcare staff.'
-            }
-        ],
-        clientTestimonial: {
-            description:
-                'With AI-driven diagnostics, our hospital reduced misdiagnoses and improved patient care significantly. The efficiency gains have been remarkable, and we are now able to detect critical diseases much earlier.',
-            clientName: 'Dr. Sarah Matthews, Chief Radiologist'
-        },
-        conclusion:
-            'The successful deployment of AI-powered diagnostics transformed the healthcare provider’s operations, ensuring faster, more accurate, and scalable diagnostic processes. Moving forward, we plan to integrate real-time remote diagnostics to extend AI-driven healthcare access to underserved regions.'
-    },
-    {
-        id: 3,
-        title: 'AI-Powered Diagnostics for Early Disease Detection',
-        description:
-            'A leading healthcare provider faced challenges in detecting diseases early due to delayed diagnostics and human error and implemented an AI-driven diagnostic system.',
-        img: caseImg,
-        options: [
-            {
-                title: '30% Faster Diagnosis',
-                description: 'Reduced analysis time from 48 hours to 12 hours'
-            },
-            {
-                title: '95% Accuracy Rate',
-                description: 'Improved precision in detecting abnormalities'
-            },
-            {
-                title: '40% Decrease in Diagnostic Errors',
-                description: 'AI-assisted assessments led to more reliable results'
-            },
-            {
-                title: 'Seamless Scalability',
-                description: 'Processed 5x more cases without additional workforce'
-            }
-        ],
-        challenges: [
-            {
-                title: 'Delayed Diagnosis',
-                description:
-                    'Traditional diagnostic methods required manual analysis, often taking days to provide results. This delay hindered timely treatment decisions, especially for critical conditions.'
-            },
-            {
-                title: 'Human Errors',
-                description:
-                    'Inconsistencies in manual assessments led to varying diagnostic accuracy, increasing the risk of misdiagnosis.'
-            },
-            {
-                title: 'Scalability Issues',
-                description:
-                    'The hospital faced increasing patient loads, making it difficult to maintain efficiency with its existing diagnostic processes.'
-            }
-        ],
-        solutions: [
-            {
-                title: 'Automated Image Analysis',
-                description:
-                    'AI models were trained to analyze medical images, including X-rays, MRIs, and pathology slides, detecting abnormalities with high precision.'
-            },
-            {
-                title: 'Predictive Insights',
-                description:
-                    'Machine learning algorithms identified patterns and flagged potential diseases in their earliest stages, improving preventive care.'
-            },
-            {
-                title: 'Seamless Integration',
-                description:
-                    'The system was integrated with the hospital’s electronic health records (EHR), allowing real-time access to AI-powered diagnostic reports.'
-            },
-            {
-                title: 'User-Friendly Dashboard',
-                description:
-                    'A visual and interactive dashboard enabled healthcare professionals to interpret AI findings quickly and make data-driven decisions.'
-            }
-        ],
-        metrics: [
-            {
-                title: '30% Faster Diagnosis',
-                description:
-                    'AI reduced analysis time from 48 hours to just 12 hours, enabling quicker medical intervention.'
-            },
-            {
-                title: '95% Accuracy Rate',
-                description:
-                    'The AI system significantly improved precision in detecting abnormalities, reducing misdiagnosis rates.'
-            },
-            {
-                title: '40% Decrease in Diagnostic Errors',
-                description:
-                    'AI-assisted assessments led to more reliable and consistent results compared to traditional manual evaluations.'
-            },
-            {
-                title: '5x Increase in Scalability',
-                description:
-                    'The system efficiently handled increased patient data without additional strain on healthcare staff.'
-            }
-        ],
-        clientTestimonial: {
-            description:
-                'With AI-driven diagnostics, our hospital reduced misdiagnoses and improved patient care significantly. The efficiency gains have been remarkable, and we are now able to detect critical diseases much earlier.',
-            clientName: 'Dr. Sarah Matthews, Chief Radiologist'
-        },
-        conclusion:
-            'The successful deployment of AI-powered diagnostics transformed the healthcare provider’s operations, ensuring faster, more accurate, and scalable diagnostic processes. Moving forward, we plan to integrate real-time remote diagnostics to extend AI-driven healthcare access to underserved regions.'
-    },
-    {
-        id: 4,
-        title: 'AI-Powered Chatbots for Patient Assistance',
-        description:
-            'A virtual health assistant provides 24/7 support, answering patient queries, booking appointments, and assisting in symptom analysis.',
-        img: caseImg2,
-        options: [
-            {
-                title: '24/7 Patient Support',
-                description: 'Immediate responses to common health queries'
-            },
-            {
-                title: 'Appointment Scheduling',
-                description: 'Seamless booking without human intervention'
-            },
-            {
-                title: 'Symptom Checker',
-                description: 'AI analyzes symptoms and suggests possible conditions'
-            },
-            {
-                title: 'Multilingual Support',
-                description: 'Catering to patients worldwide with language translation'
-            }
-        ],
-        challenges: [
-            {
-                title: 'Delayed Diagnosis',
-                description:
-                    'Traditional diagnostic methods required manual analysis, often taking days to provide results. This delay hindered timely treatment decisions, especially for critical conditions.'
-            },
-            {
-                title: 'Human Errors',
-                description:
-                    'Inconsistencies in manual assessments led to varying diagnostic accuracy, increasing the risk of misdiagnosis.'
-            },
-            {
-                title: 'Scalability Issues',
-                description:
-                    'The hospital faced increasing patient loads, making it difficult to maintain efficiency with its existing diagnostic processes.'
-            }
-        ],
-        solutions: [
-            {
-                title: 'Automated Image Analysis',
-                description:
-                    'AI models were trained to analyze medical images, including X-rays, MRIs, and pathology slides, detecting abnormalities with high precision.'
-            },
-            {
-                title: 'Predictive Insights',
-                description:
-                    'Machine learning algorithms identified patterns and flagged potential diseases in their earliest stages, improving preventive care.'
-            },
-            {
-                title: 'Seamless Integration',
-                description:
-                    'The system was integrated with the hospital’s electronic health records (EHR), allowing real-time access to AI-powered diagnostic reports.'
-            },
-            {
-                title: 'User-Friendly Dashboard',
-                description:
-                    'A visual and interactive dashboard enabled healthcare professionals to interpret AI findings quickly and make data-driven decisions.'
-            }
-        ],
-        metrics: [
-            {
-                title: '30% Faster Diagnosis',
-                description:
-                    'AI reduced analysis time from 48 hours to just 12 hours, enabling quicker medical intervention.'
-            },
-            {
-                title: '95% Accuracy Rate',
-                description:
-                    'The AI system significantly improved precision in detecting abnormalities, reducing misdiagnosis rates.'
-            },
-            {
-                title: '40% Decrease in Diagnostic Errors',
-                description:
-                    'AI-assisted assessments led to more reliable and consistent results compared to traditional manual evaluations.'
-            },
-            {
-                title: '5x Increase in Scalability',
-                description:
-                    'The system efficiently handled increased patient data without additional strain on healthcare staff.'
-            }
-        ],
-        clientTestimonial: {
-            description:
-                'With AI-driven diagnostics, our hospital reduced misdiagnoses and improved patient care significantly. The efficiency gains have been remarkable, and we are now able to detect critical diseases much earlier.',
-            clientName: 'Dr. Sarah Matthews, Chief Radiologist'
-        },
-        conclusion:
-            'The successful deployment of AI-powered diagnostics transformed the healthcare provider’s operations, ensuring faster, more accurate, and scalable diagnostic processes. Moving forward, we plan to integrate real-time remote diagnostics to extend AI-driven healthcare access to underserved regions.'
-    },
-    {
-        id: 5,
-        title: 'Predictive Analytics for Disease Prevention',
-        description:
-            'Leveraging big data and machine learning, our platform predicts potential disease outbreaks and provides proactive healthcare insights.',
-        img: caseImg4,
-        options: [
-            {
-                title: 'Early Disease Prediction',
-                description: 'AI identifies at-risk individuals before symptoms appear'
-            },
-            {
-                title: 'Personalized Health Recommendations',
-                description: 'Tailored wellness plans based on data insights'
-            },
-            {
-                title: 'Hospital Resource Optimization',
-                description:
-                    'Predicting patient influx to improve hospital preparedness'
-            },
-            {
-                title: 'Real-Time Data Processing',
-                description: 'Analyzing millions of health records for patterns'
-            }
-        ],
-        challenges: [
-            {
-                title: 'Delayed Diagnosis',
-                description:
-                    'Traditional diagnostic methods required manual analysis, often taking days to provide results. This delay hindered timely treatment decisions, especially for critical conditions.'
-            },
-            {
-                title: 'Human Errors',
-                description:
-                    'Inconsistencies in manual assessments led to varying diagnostic accuracy, increasing the risk of misdiagnosis.'
-            },
-            {
-                title: 'Scalability Issues',
-                description:
-                    'The hospital faced increasing patient loads, making it difficult to maintain efficiency with its existing diagnostic processes.'
-            }
-        ],
-        solutions: [
-            {
-                title: 'Automated Image Analysis',
-                description:
-                    'AI models were trained to analyze medical images, including X-rays, MRIs, and pathology slides, detecting abnormalities with high precision.'
-            },
-            {
-                title: 'Predictive Insights',
-                description:
-                    'Machine learning algorithms identified patterns and flagged potential diseases in their earliest stages, improving preventive care.'
-            },
-            {
-                title: 'Seamless Integration',
-                description:
-                    'The system was integrated with the hospital’s electronic health records (EHR), allowing real-time access to AI-powered diagnostic reports.'
-            },
-            {
-                title: 'User-Friendly Dashboard',
-                description:
-                    'A visual and interactive dashboard enabled healthcare professionals to interpret AI findings quickly and make data-driven decisions.'
-            }
-        ],
-        metrics: [
-            {
-                title: '30% Faster Diagnosis',
-                description:
-                    'AI reduced analysis time from 48 hours to just 12 hours, enabling quicker medical intervention.'
-            },
-            {
-                title: '95% Accuracy Rate',
-                description:
-                    'The AI system significantly improved precision in detecting abnormalities, reducing misdiagnosis rates.'
-            },
-            {
-                title: '40% Decrease in Diagnostic Errors',
-                description:
-                    'AI-assisted assessments led to more reliable and consistent results compared to traditional manual evaluations.'
-            },
-            {
-                title: '5x Increase in Scalability',
-                description:
-                    'The system efficiently handled increased patient data without additional strain on healthcare staff.'
-            }
-        ],
-        clientTestimonial: {
-            description:
-                'With AI-driven diagnostics, our hospital reduced misdiagnoses and improved patient care significantly. The efficiency gains have been remarkable, and we are now able to detect critical diseases much earlier.',
-            clientName: 'Dr. Sarah Matthews, Chief Radiologist'
-        },
-        conclusion:
-            'The successful deployment of AI-powered diagnostics transformed the healthcare provider’s operations, ensuring faster, more accurate, and scalable diagnostic processes. Moving forward, we plan to integrate real-time remote diagnostics to extend AI-driven healthcare access to underserved regions.'
-    }
-]
-
-const page = () => {
-    const params = useParams();
-    const id = params?.id;
-    const [caseStudy, setCaseStudy] = useState(null);
+export default function CaseStudyDetailsPage() {
+    const { id } = useParams()
+    const [caseStudy, setCaseStudy] = useState(null)
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        if (id) {
-            const foundCase = data.find((item) => item.id == id);
-            if (foundCase) {
-                setCaseStudy(foundCase);
+        const fetchCaseStudy = async () => {
+            try {
+                const dbId = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID
+                const collectionId = process.env.NEXT_PUBLIC_APPWRITE_CASE_STUDIES_COLLECTION_ID
+
+                if (!dbId || !collectionId) {
+                    console.error("Missing Appwrite environment variables")
+                    return
+                }
+
+                const response = await databases.getDocument(dbId, collectionId, id)
+                setCaseStudy(response)
+            } catch (error) {
+                console.error("Failed to fetch case study:", error)
+            } finally {
+                setLoading(false)
             }
         }
-    }, [id]);
 
-    if (!caseStudy) {
-        return <p>Loading...</p>;
-    }
+        if (id) fetchCaseStudy()
+    }, [id])
+
+    if (loading) return <div className="text-center py-20">Loading...</div>
+
+    if (!caseStudy)
+        return <div className="text-center py-20">Case study not found.</div>
 
     return (
-        <div className="custom-container 2xl-custom:w-[1580px] 2xl-custom:mx-auto mt-10">
-            <div className='w-full h-min-[56px]  border-t border-b border-t-[#F1F3F4] border-b-[#F1F3F4] mb-10'>
-                <p className='py-[16px] leading-[24px] text-[16px] font-[500] flex flex-wrap justify-start items-center gap-[16px]'>
-                    <Link href={'/'}><span className='text-[#586A78]'>Home</span></Link>
-                    <span className='text-[#F05232]'>/</span>
-                    <Link href={'/case-studies'}><span className='text-[#586A78]'>Case Studies</span></Link>
-                    <span className='text-[#F05232]'>/</span>
-                    <span className='text-primary'>{caseStudy.title}</span>
-                </p>
-            </div>
-            <CaseStudiesDetails caseStudy={caseStudy} />
-        </div>
-    );
-};
+        // 
+        <div className='custom-container 2xl-custom:w-[1580px] 2xl-custom:mx-auto mt-10'>
+            <div className="flex flex-col justify-center items-center">
+                <div className='w-full h-min-[56px]  border-t border-b border-t-[#F1F3F4] border-b-[#F1F3F4] mb-10'>
+                    <p className='py-[16px] leading-[24px] text-[16px] font-[500] flex flex-wrap justify-start items-center gap-[16px]'>
+                        <Link href={'/'}><span className='text-[#586A78]'>Home</span></Link>
+                        <span className='text-[#F05232]'>/</span>
+                        <Link href={'/case-studies'}><span className='text-[#586A78]'>Case Studies</span></Link>
+                        <span className='text-[#F05232]'>/</span>
+                        <span className='text-primary'>{caseStudy.title}</span>
+                    </p>
+                </div>
+                <Image
+                    src={caseStudy.imageUrl}
+                    alt={caseStudy.title}
+                    width={1200}
+                    height={600}
+                    className="w-full rounded-lg max-h-[800px] object-cover"
+                />
 
-export default page;
+                <div className="px-6 pt-6 lg:px-20 max-w-6xl">
+                    <h1 className="text-[32px] lg:text-[44px] font-[700] mb-3">
+                        {caseStudy.title}
+                    </h1>
+                    <p className="text-[20px] text-gray-600 mb-6">{caseStudy.subDescription}</p>
+
+                    {/* Render content HTML */}
+                    <div
+                        className="prose prose-lg max-w-none"
+                        dangerouslySetInnerHTML={{ __html: caseStudy.content }}
+                    />
+                </div>
+
+                {/* Call-to-Action */}
+                <hr className='h-[1px] w-full bg-[#F1F3F4] my-8' />
+
+                <div className='flex flex-col justify-center text-center lg:px-24 pt-6 pb-12'>
+                    <h2 className='text-[24px] lg:text-[32px] font-[700] leading-[32px] lg:leading-[40px] text-titleSubtitle mb-4'>
+                        Want to implement AI diagnostics in your healthcare facility?
+                    </h2>
+                    <p className='text-center text-paragraph text-[18px] font-[400] leading-[28px]'>
+                        Would you like any additional elements, such as a visual timeline or
+                        success comparison charts?
+                    </p>
+                    <button className='sm:w-1/3 mx-auto mt-8 text-[14px] rounded-[28px] bg-primary text-white font-[600] leading-[24px] tracking-[1.4px] shadow-[0px_16px_16px_0px_rgba(25,188,229,0.20)] px-[24px] py-[12px] sm:py-[16px] uppercase'>
+                        Get In Touch
+                    </button>
+                </div>
+            </div>
+        </div>
+    )
+}

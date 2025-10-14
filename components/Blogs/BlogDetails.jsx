@@ -1,49 +1,51 @@
 import Image from 'next/image'
 
 const BlogDetails = ({ blog }) => {
+  // ✅ Support both dynamic (Appwrite) and static (local) blogs
+  const imageSrc = blog.imageUrl || blog.img
+  const subDescription = blog.subDescription || blog.description
+  const content = Array.isArray(blog.content)
+    ? blog.content
+    : typeof blog.content === 'string'
+    ? [{ sectionTitle: '', points: [blog.content] }]
+    : []
+
+  const hasConclusion = blog.conclusion?.title || blog.conclusion?.description
+
   return (
     <>
-      <Image
-        src={blog.img}
-        alt={blog.title}
-        className='w-full rounded-lg max-h-[800px]'
-      />
+      {/* ✅ Blog Image */}
+      {imageSrc && (
+        <div className='relative w-full h-[500px] md:h-[612px]'>
+          <Image
+            src={imageSrc}
+            alt={blog.title}
+            fill
+            className='rounded-lg object-cover'
+          />
+        </div>
+      )}
+
+      {/* ✅ Blog Content */}
       <div className='sm:px-14 pt-6'>
         <h1 className='text-[32px] lg:text-[44px] font-[700] leading-[36px] lg:leading-[64px] my-3'>
           {blog.title}
         </h1>
+
         <p className='text-paragraph text-[20px] font-[400] leading-[32px] mb-6'>
-          {blog.description}
+          {subDescription}
         </p>
 
-        {blog.content.map((section, index) => (
-          <div key={index} className='mt-[28px]'>
-            <h2 className='text-titleSubtitle text-[32px] font-[700] leading-[40px]'>
-              {section.sectionTitle}
-            </h2>
-            <ul className='list-disc list-inside mt-[16px]'>
-              {section.points.map((point, i) => (
-                <li
-                  key={i}
-                  className='text-paragraph text-[20px] font-[400] leading-[32px]'
-                >
-                  {point}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+        {/* ✅ Handle structured sections or plain content */}
+        <div
+          className='prose prose-lg max-w-none'
+          dangerouslySetInnerHTML={{ __html: blog.content }}
+        />
 
-        <div className='mt-[28px]'>
-          <h2 className='text-titleSubtitle text-[32px] font-[700] leading-[40px] mb-[16px]'>
-            Conclusion: {blog.conclusion.title}
-          </h2>
-          <span className='text-paragraph text-[20px] font-[400] leading-[32px] '>
-            {blog.conclusion.description}
-          </span>
-        </div>
-
+        {/* ✅ Divider */}
         <hr className='h-[1px] w-100 bg-[#F1F3F4] mt-4 lg:mt-6' />
+
+        {/* ✅ Call to Action Section */}
         <div className='flex flex-col justify-center text-center lg:px-44 pt-10'>
           <h2 className='text-center text-[24px] lg:text-[32px] font-[700] leading-[32px] lg:leading-[40px] text-titleSubtitle mb-4'>
             Want to implement AI diagnostics in your healthcare facility?
@@ -60,4 +62,5 @@ const BlogDetails = ({ blog }) => {
     </>
   )
 }
+
 export default BlogDetails

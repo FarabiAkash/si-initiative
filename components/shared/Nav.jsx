@@ -80,7 +80,7 @@ const Nav = ({ openContactModal }) => {
             Industries
           </Link>
           <Link
-            href='#portfolio'
+            href='/portfolio'
             className={`relative pb-1 ${isActive('#portfolio')}`}
           >
             Portfolio

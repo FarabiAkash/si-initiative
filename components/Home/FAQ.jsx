@@ -9,20 +9,24 @@ const faqData = [
       'Yes. Every business is unique, and we tailor our solutions to align with your specific goals, challenges, and long-term vision.'
   },
   {
-    question: 'Are your healthcare platforms secure and HIPAA-compliant?',
+    question: 'How do you ensure data security?',
     answer:
-      'Yes, our platforms follow strict security protocols and comply with HIPAA regulations to ensure data protection.'
+      'We follow industry best practices and global standards in cybersecurity, implementing advanced protection measures to safeguard your data and digital assets.'
   },
   {
-    question:
-      'Can I integrate your solutions with my existing healthcare system?',
+    question: 'Can you handle both small and large-scale projects?',
     answer:
-      'Absolutely! Our solutions are designed to integrate seamlessly with existing healthcare infrastructures.'
+      'Absolutely. With a team of 100+ IT and AI professionals, we have the expertise and resources to manage projects of all sizes, from quick deployments to enterprise-scale transformations.'
   },
   {
-    question: 'Do you offer customized digital healthcare solutions?',
+    question: 'Do you provide ongoing support after project delivery?',
     answer:
-      'Yes, we provide tailored solutions based on the specific needs of your organization.'
+      'Yes. Our services don’t end at deployment—we provide continuous support, maintenance, and optimization to ensure long-term success.'
+  },
+  {
+    question: 'How can I get started with CMED Innovation?',
+    answer:
+      'Simply reach out through our contact form or consultation request, and our team will connect with you to discuss your needs and the best path forward.'
   }
 ]
 

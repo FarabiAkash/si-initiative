@@ -5,6 +5,7 @@ import w3 from '../../public/assets/home/whatwedo/w3.png'
 import w4 from '../../public/assets/home/whatwedo/w4.png'
 import w5 from '../../public/assets/home/whatwedo/w5.png'
 import w6 from '../../public/assets/home/whatwedo/w6.png'
+import Link from 'next/link'
 
 const data = [
   {
@@ -92,9 +93,12 @@ const WhatWeDo = () => {
             ))}
           </div>
         </div>
-        <button className='mt-4 bg-[#19BCE50D] uppercase border border-[#19BCE533] px-[40px] py-[12px] rounded-[28px] text-sm font-semibold leading-[24px] text-[#19BCE5]'>
+        <Link
+          href={'/services'}
+          className='mt-4 bg-[#19BCE50D] uppercase border border-[#19BCE533] px-[40px] py-[12px] rounded-[28px] text-sm font-semibold leading-[24px] text-[#19BCE5]'
+        >
           View all services
-        </button>
+        </Link>
       </section>
     </div>
   )

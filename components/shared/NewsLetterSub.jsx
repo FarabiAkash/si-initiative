@@ -44,8 +44,8 @@ const NewsLetterSub = () => {
         Subscribe to Our Newsletter!
       </h3>
       <p className='text-paragraph mt-3 text-base text-[400]'>
-        Stay ahead in digital healthcare, subscribe to our newsletter for the
-        latest innovations, insights, and breakthroughs!
+        Stay ahead in your journey, subscribe to our newsletter for the latest
+        innovations, insights, and breakthroughs!
       </p>
       <div className='mt-4 flex flex-col gap-2'>
         <p className='text-[16px] font-[500] text-titleSubtitle leading-[20px]'>

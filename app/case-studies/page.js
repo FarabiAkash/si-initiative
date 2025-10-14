@@ -1,9 +1,9 @@
 'use client'
 import { useState } from "react"
 import CaseStudies from "../../components/Case-studies/CaseStudies"
-import RelatedCase from "../../components/Case-studies/RelatedCase"
 import PageHeader from "../../components/shared/PageHeader"
 import pageHeaderBg from '../../public/assets/case-studies/banner.jpg'
+import MostReadArticle from "@/components/Blogs/MostReadArticle"
 
 const page = () => {
   const [selectedTag, setSelectedTag] = useState('All')
@@ -19,7 +19,7 @@ const page = () => {
         setSelectedTag={setSelectedTag}
       />
       <CaseStudies selectedTag={selectedTag} />
-      <RelatedCase />
+      <MostReadArticle />
     </>
   )
 }
