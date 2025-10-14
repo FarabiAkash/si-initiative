@@ -3,72 +3,71 @@
 import { useState } from 'react'
 import { ChevronRight, ChevronLeft } from 'lucide-react'
 
-const TagsFilter = ({ tags, selectedTag, setSelectedTag }) => {
+const TagsFilter = ({ tags = [], selectedTag, setSelectedTag }) => {
   const [startIndex, setStartIndex] = useState(0)
-  const visibleCount = 5 // How many tags to show at once
+  const visibleCount = 5 // number of tags visible at a time
 
   const handleNext = () => {
     if (startIndex + visibleCount < tags.length) {
-      setStartIndex(startIndex + 1)
+      setStartIndex(prev => prev + 1)
     }
   }
 
   const handlePrev = () => {
     if (startIndex > 0) {
-      setStartIndex(startIndex - 1)
+      setStartIndex(prev => prev - 1)
     }
   }
 
   return (
-    <div className='flex items-center justify-end gap-4 py-4  overflow-hidden '>
-      {/* Scrollable Tag Container */}
-      <div className='relative overflow-hidden w-full'>
+    <div className='flex items-center justify-between sm:justify-end gap-3 w-full overflow-hidden'>
+      {/* Tag Container */}
+      <div className='relative flex-1 overflow-hidden'>
         <div
           className='flex gap-3 transition-transform duration-300 ease-in-out'
           style={{ transform: `translateX(-${startIndex * 130}px)` }}
         >
           {tags.map((tag, index) => (
-            <div
+            <button
               key={index}
-              className={`h-[40px] flex justify-center items-center px-[16px] py-2 rounded-[4px] flex-shrink-0 cursor-pointer 
+              onClick={() => setSelectedTag(tag)}
+              className={`h-[40px] flex justify-center items-center px-[20px] rounded-md flex-shrink-0 cursor-pointer text-sm sm:text-base transition-colors duration-200
                 ${
                   selectedTag === tag
                     ? 'bg-primary text-white font-semibold'
-                    : 'bg-[#FFFFFF1A] text-white'
+                    : 'bg-[#FFFFFF1A] text-white hover:bg-[#FFFFFF2D]'
                 }`}
-              onClick={() => setSelectedTag(tag)}
             >
               {tag}
-            </div>
+            </button>
           ))}
         </div>
       </div>
 
       {/* Prev/Next Buttons */}
       {tags.length > visibleCount && (
-        <div className='flex justify-between gap-2'>
+        <div className='flex items-center gap-2 flex-shrink-0'>
           <button
             onClick={handlePrev}
-            className={`border px-2 py-2 rounded-full flex items-center justify-center ${
-              startIndex > 0
-                ? 'border-paragraph bg-white'
-                : 'opacity-50 cursor-not-allowed'
-            }`}
             disabled={startIndex === 0}
+            className={`p-2 rounded-full border bg-white text-black transition ${
+              startIndex === 0
+                ? 'opacity-40 cursor-not-allowed'
+                : 'hover:bg-gray-100'
+            }`}
           >
-            <ChevronLeft className='w-[20px] h-[20px]' />
+            <ChevronLeft className='w-4 h-4' />
           </button>
-
           <button
             onClick={handleNext}
-            className={`border px-2 py-2 rounded-full flex items-center justify-center ${
-              startIndex + visibleCount < tags.length
-                ? 'border-paragraph bg-white'
-                : 'opacity-50 cursor-not-allowed'
-            }`}
             disabled={startIndex + visibleCount >= tags.length}
+            className={`p-2 rounded-full border bg-white text-black transition ${
+              startIndex + visibleCount >= tags.length
+                ? 'opacity-40 cursor-not-allowed'
+                : 'hover:bg-gray-100'
+            }`}
           >
-            <ChevronRight className='w-[20px] h-[20px]' />
+            <ChevronRight className='w-4 h-4' />
           </button>
         </div>
       )}
