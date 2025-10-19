@@ -7,6 +7,7 @@ import p3 from '../../public/assets/portfolio/p3.jpg'
 import p4 from '../../public/assets/portfolio/p4.jpg'
 import p5 from '../../public/assets/portfolio/p5.jpg'
 import p6 from '../../public/assets/portfolio/p6.jpg'
+import Link from 'next/link'
 
 const portfolios = [
   {
@@ -107,15 +108,13 @@ const AllPortfolio = () => {
                     </p>
 
                     {/* Button with transition */}
-                    <a
-                      href={project.link}
-                      target='_blank'
-                      rel='noopener noreferrer'
+                    <Link
+                      href={`portfolio/${project.id}`}
                       className='inline-block text-sm py-[5px] transition-all duration-300
                         group-hover:bg-white group-hover:text-black font-semibold group-hover:px-5 group-hover:py-2 group-hover:rounded-full uppercase transform group-hover:scale-105 group-hover:shadow-md'
                     >
                       View Details
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

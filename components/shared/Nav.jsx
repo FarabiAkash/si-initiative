@@ -22,10 +22,12 @@ const Nav = ({ openContactModal }) => {
   }, [])
 
   const shouldShowWhiteBg =
-    isScrolled ||
-    pathname === '/about-us' ||
-    pathname.startsWith('/blogs/') ||
-    pathname.startsWith('/case-studies/')
+  isScrolled ||
+  pathname === '/about-us' ||
+  pathname.startsWith('/blogs/') ||
+  pathname.startsWith('/case-studies/') ||
+  (pathname.startsWith('/portfolio/') && pathname !== '/portfolio')
+
 
   const isActive = path =>
     pathname === path || pathname.startsWith(`${path}/`)

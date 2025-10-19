@@ -11,8 +11,8 @@ const page = () => {
     return (
         <>
             <PageHeader
-                title={'Our Innovations in Action Across the Industries'}
-                subtitle={'Sharing real-world stories of how we transform bold, ambitious ideas into meaningful, impactful outcomes for everyone.'}
+                title={'Where Ideas Take Shape Through Our Innovation'}
+                subtitle={'Explore a collection of projects where creativity, technology, and strategy converge to build unique brands and powerful digital solutions.'}
                 pageHeaderBg={pageHeaderBg}
                 tags={['All', 'HealthTech', 'FinTech', 'EdTech', 'E-Commerce', 'Energy & Resource',]}
                 selectedTag={selectedTag}
