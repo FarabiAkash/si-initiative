@@ -9,19 +9,20 @@ const page = () => {
     const { id } = useParams()
 
     return (
-        <div> 
-        {/* Breadcrumb */}
-          <div className='flex items-center gap-2 sm:gap-4 text-sm sm:text-base font-medium  custom-container pt-28 2xl-custom:w-[1580px] 2xl-custom:mx-auto'>
-            <Link href='/'>
-              <span className='text-primary hover:underline'>Home</span>
-            </Link>
-            <span className='text-[#F05232]'>/</span>
-            <span className='whitespace-nowrap'>Portfolio</span>
-            <span className='text-[#F05232]'>/</span>
-            <span className='whitespace-nowrap'>SmartHealth Connect</span>
-          </div>
-
-        <PortfolioDetails />
+        <div > 
+            {/* Breadcrumb */}
+            <div className='w-full h-[56px] flex justify-between gap-4 border-t border-b border-t-[#ffffff33] border-b-[#ffffff33]'>
+            <p className='lg:w-1/5 py-[16px] leading-[24px] text-[16px] font-[500] flex justify-start items-center gap-[16px]'>
+              <Link href='/'>
+                <span className='text-primary hover:underline'>Home</span>
+              </Link>
+              <span className='text-[#F05232]'>/</span>
+              <span className='whitespace-nowrap'>Portfolio</span>
+              <span className='text-[#F05232]'>/</span>
+              <span className='whitespace-nowrap'>SmartHealth Connect</span>
+            </p>
+            </div>
+            <PortfolioDetails />
         </div>
     )
 }

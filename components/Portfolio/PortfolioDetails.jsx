@@ -36,12 +36,12 @@ const PortfolioDetails = () => {
             Production Releases
           </h2>
           <div className="flex items-center flex-col justify-center gap-3">
-            <div className='px-2 py3 bg-black rounded-lg flex items-center justify-center'>
+            <a href='#' className='px-2 py3 bg-black rounded-lg flex items-center justify-center'>
               <Image src={appStore} alt="App Store" className="h-[56px] w-[166px]" />
-            </div>
-            <div className='px-2 py3 bg-black rounded-lg flex items-center justify-center'>
+            </a>
+            <a href='#' className='px-2 py3 bg-black rounded-lg flex items-center justify-center'>
             <Image src={googlePlay} alt="Google Play" className="h-[56px] w-[166px]" />
-            </div>
+            </a>
         </div>
       </div>
 
