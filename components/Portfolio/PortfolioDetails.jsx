@@ -57,7 +57,7 @@ const PortfolioDetails = () => {
           <p className="text-[#0B3641] leading-relaxed max-w-2xl mx-auto text-xl font-medium mb-6 text-center">
           A quick snapshot of key project details for SmartHealth Connect.
         </p>
-          <table className="w-1/2 mx-auto border border-[#DDF1F7] rounded-lg overflow-hidden">
+          <table className="sm:w-1/2 mx-auto border border-[#DDF1F7] rounded-lg overflow-hidden">
             <tbody>
               {[
                 ['Project Title', 'SmartHealth Connect'],
