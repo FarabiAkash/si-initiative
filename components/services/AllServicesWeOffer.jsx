@@ -88,7 +88,7 @@ const AllServicesWeOffer = () => {
             All the Services We Offer
           </h1>
           <p className='text-[#677A7E] text-[18px] font-[400] leading-[24px] mt-2'>
-            Empowering Healthcare with Innovation, Expertise, and Trust.
+            Empowering Industries with Innovation, Expertise, and Trust.
           </p>
           <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 pb-0 sm:pb-6 mt-4'>
             {services.map((service, index) => (

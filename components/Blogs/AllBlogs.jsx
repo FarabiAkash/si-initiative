@@ -18,7 +18,6 @@ const AllBlogs = ({ selectedTag }) => {
           process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID,
           process.env.NEXT_PUBLIC_APPWRITE_BLOGS_COLLECTION_ID
         )
-        console.log(response, 'response')
         // Sort by latest
         const sortedBlogs = response.documents.sort(
           (a, b) => new Date(b.updateDate) - new Date(a.updateDate)

@@ -77,13 +77,13 @@ const WhatWeDo = () => {
           'linear-gradient(to bottom, #FAFEFF80, #F5FDFF, #F5FDFF, #FAFEFF80)'
       }}
     >
-      <section className='custom-container text-center  2xl-custom:w-[1580px] 2xl-custom:mx-auto'>
+      <section className='custom-container text-center 2xl-custom:w-[1580px] 2xl-custom:mx-auto'>
         <div className='container mx-auto'>
           <h1 className='text-[32px] font-[700] text-[#0B3641] leading-[40px]'>
             What We Do
           </h1>
           <p className='text-[#677A7E] text-[18px] font-[400] leading-[24px] mt-2'>
-            Explore Our Core Innovations
+            Explore Our Core Innovations & strengths
           </p>
 
           {/* Icons Section */}
@@ -93,12 +93,14 @@ const WhatWeDo = () => {
             ))}
           </div>
         </div>
-        <Link
+        <div className='mt-8'>
+          <Link
           href={'/services'}
-          className='mt-4 bg-[#19BCE50D] uppercase border border-[#19BCE533] px-[40px] py-[12px] rounded-[28px] text-sm font-semibold leading-[24px] text-[#19BCE5]'
+          className='bg-[#19BCE50D] uppercase border border-[#19BCE533] px-[40px] py-[12px] rounded-[28px] text-sm font-semibold leading-[24px] text-[#19BCE5]'
         >
           View all services
         </Link>
+        </div>
       </section>
     </div>
   )

@@ -2,13 +2,15 @@
 
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { databases } from '@/lib/appwrite'
+import { useRouter } from 'next/navigation'
 
 const MostReadArticle = () => {
   const [blogs, setBlogs] = useState([])
   const [loading, setLoading] = useState(true)
   const scrollRef = useRef(null)
+
+  const router = useRouter()
 
   const handleScroll = direction => {
     if (scrollRef.current) {
@@ -58,20 +60,6 @@ const MostReadArticle = () => {
               Stay informed with the latest trends, breakthroughs, and expert
               insights shaping the future.
             </p>
-            <div className='flex justify-center items-center gap-2'>
-              <button
-                className='w-[32px] h-[32px] flex justify-center items-center bg-[#F1F3F4] p-1 rounded-[4px]'
-                onClick={() => handleScroll('left')}
-              >
-                <ChevronLeft size={20} className='text-[#586A78]' />
-              </button>
-              <button
-                className='w-[32px] h-[32px] flex justify-center items-center bg-[#F1F3F4] p-1 rounded-[4px]'
-                onClick={() => handleScroll('right')}
-              >
-                <ChevronRight size={20} className='text-[#586A78]' />
-              </button>
-            </div>
           </div>
         </div>
 
@@ -85,8 +73,9 @@ const MostReadArticle = () => {
             {blogs.map((blog, index) => (
               <div
                 key={index}
-                className='min-w-[320px] max-w-[392px] space-y-2 rounded-[8px] overflow-hidden'
+                className='min-w-[320px] max-w-[392px] space-y-2 rounded-[8px] overflow-hidden cursor-pointer'
                 style={{ scrollSnapAlign: 'start' }}
+                onClick={() => router.push(`/blogs/${blog.$id}`)}
               >
                 <div className='relative w-full h-52'>
                   <Image

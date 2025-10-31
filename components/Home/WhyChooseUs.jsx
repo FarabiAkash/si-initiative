@@ -45,7 +45,7 @@ const WhyChooseUs = () => {
           Why Choose Us
         </h1>
         <p className='text-paragraph text-[18px] font-[400] leading-[24px]'>
-          Empowering Healthcare with Innovation, Expertise, and Trust.
+          Empowering with Innovation, Expertise, and Trust.
         </p>
         <div className='grid grid-cols-1 lg:grid-cols-2 pb-0 sm:pb-6 mt-4'>
           {features.map((feature, index) => (
