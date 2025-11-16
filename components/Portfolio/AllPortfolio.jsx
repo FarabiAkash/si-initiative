@@ -6,7 +6,7 @@ import Link from "next/link";
 import { databases } from "@/lib/appwrite";
 import { Query } from "appwrite";
 
-export default function AllPortfolio() {
+export default function AllPortfolio({ selectedTag = "All" }) {
   const [portfolios, setPortfolios] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -14,55 +14,59 @@ export default function AllPortfolio() {
   const COLLECTION_PORTFOLIO = process.env.NEXT_PUBLIC_APPWRITE_PORTFOLIO_COLLECTION_ID;
 
   useEffect(() => {
+    let mounted = true;
     async function fetchData() {
       try {
+        setLoading(true);
         const res = await databases.listDocuments(DB_ID, COLLECTION_PORTFOLIO, [
           Query.orderDesc("$createdAt"),
         ]);
 
-        const formatted = res.documents.map((doc) => ({
+        const formatted = (res.documents || []).map((doc) => ({
           id: doc.$id,
-          img: doc.imgUrl || "/placeholder.jpg", // fallback
+          img: doc.imgUrl || "/placeholder.jpg",
           name: doc.name,
           type: doc.type,
           desc: doc.desc,
         }));
 
-        setPortfolios(formatted);
+        if (mounted) setPortfolios(formatted);
       } catch (err) {
         console.error("Failed to fetch portfolio:", err);
       } finally {
-        setLoading(false);
+        if (mounted) setLoading(false);
       }
     }
 
     fetchData();
-  }, []);
+    return () => {
+      mounted = false;
+    };
+  }, [DB_ID, COLLECTION_PORTFOLIO]);
 
   if (loading) return <p className="p-10 text-center">Loading portfolios...</p>;
-  if (!portfolios.length) return <p className="p-10">No portfolio found.</p>;
 
-  const rows = portfolios.reduce((acc, item, index) => {
-    if (index % 2 === 0) acc.push([item, portfolios[index + 1]]);
+  // Apply filter
+  const filtered =
+    !selectedTag || selectedTag === "All"
+      ? portfolios
+      : portfolios.filter((p) => (p.type || "").toString() === selectedTag);
+
+  if (!filtered.length) return <p className="p-10 text-center">No portfolio found for “{selectedTag}”.</p>;
+
+  const rows = filtered.reduce((acc, item, index) => {
+    if (index % 2 === 0) acc.push([item, filtered[index + 1]]);
     return acc;
   }, []);
 
   return (
     <div className="custom-container 2xl-custom:w-[1580px] 2xl-custom:mx-auto mt-10 space-y-8">
       {rows.map((pair, rowIndex) => (
-        <div
-          key={rowIndex}
-          className="flex flex-col md:flex-row gap-6 md:h-[440px]"
-        >
+        <div key={rowIndex} className="flex flex-col md:flex-row gap-6 md:h-[440px]">
           {pair.map(
             (project, colIndex) =>
-              project && ( // guard against undefined
-                <Card
-                  key={project.id}
-                  project={project}
-                  rowIndex={rowIndex}
-                  colIndex={colIndex}
-                />
+              project && (
+                <Card key={project.id} project={project} rowIndex={rowIndex} colIndex={colIndex} />
               )
           )}
         </div>
@@ -101,9 +105,7 @@ function Card({ project, rowIndex, colIndex }) {
         </div>
 
         <div>
-          <p className="text-base mb-4 max-w-lg leading-[20px]">
-            {project.desc}
-          </p>
+          <p className="text-base mb-4 max-w-lg leading-[20px]">{project.desc}</p>
           <Link
             href={`/portfolio/${project.id}`}
             className="inline-block text-sm py-[5px] transition-all duration-300

@@ -13,23 +13,29 @@ const Page = () => {
   useEffect(() => {
     async function loadCategories() {
       try {
-        const DB_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
-        const COLLECTION_TECH = process.env.NEXT_PUBLIC_APPWRITE_TECH_STACK_COLLECTION_ID;
+        const DB_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID
+        const COLLECTION_PORTFOLIO = process.env.NEXT_PUBLIC_APPWRITE_PORTFOLIO_COLLECTION_ID
 
-        const res = await databases.listDocuments(DB_ID, COLLECTION_TECH);
+        // Fetch portfolios
+        const res = await databases.listDocuments(DB_ID, COLLECTION_PORTFOLIO)
 
-        const uniqueCats = [
+        // Extract unique non-empty type values
+        const uniqueTypes = [
           'All',
-          ...new Set(res.documents.map(item => item.title))
-        ];
+          ...new Set(
+            res.documents
+              .map(item => item.type?.trim())
+              .filter(Boolean)
+          )
+        ]
 
-        setCategories(uniqueCats);
+        setCategories(uniqueTypes)
       } catch (err) {
-        console.error("Failed to load categories:", err);
+        console.error("Failed to load categories:", err)
       }
     }
 
-    loadCategories();
+    loadCategories()
   }, [])
 
   return (
@@ -38,13 +44,13 @@ const Page = () => {
         title={'Where Ideas Take Shape Through Our Innovation'}
         subtitle={'Explore a collection of projects where creativity and technology converge to build amazing solutions.'}
         pageHeaderBg={pageHeaderBg}
-        tags={categories}        // ⬅ dynamic categories here!
+        tags={categories}     // 👈 now shows type list dynamically
         selectedTag={selectedTag}
         setSelectedTag={setSelectedTag}
       />
 
-      <AllPortfolio selectedTag={selectedTag} />
-
+      <AllPortfolio selectedTag={selectedTag} /> 
+      
       <ReadyToTransform />
     </>
   )
