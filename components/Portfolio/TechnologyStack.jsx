@@ -1,45 +1,32 @@
-'use client'
-import Image from 'next/image'
-import { useState } from 'react'
+"use client";
 
-// Import your tech logos
-import flutter from '../../public/assets/portfolio/flutter.png'
-import nextjs from '../../public/assets/portfolio/next.png'
+import { useState } from "react";
 
-const TechnologyStack = () => {
-  const [activeTab, setActiveTab] = useState('Front-end')
+export default function TechnologyStack({ groups = [] }) {
+  // Convert groups from Appwrite → Expected Tab Structure
+  const techData = groups.length
+    ? groups.reduce((acc, group) => {
+        acc[group.title] = group.items || [];
+        return acc;
+      }, {})
+    : {
+        "Front-end": ["Flutter", "Next.js"],
+        "Back-end": ["Node.js", "Firebase"],
+        Database: ["MongoDB", "Firebase DB"],
+        Cloud: ["AWS", "Firebase Hosting"],
+        Integration: ["Zapier", "REST APIs"],
+        Tools: ["Git", "VS Code"],
+      };
 
-  const techData = {
-    'Front-end': [
-      { name: 'Flutter', img: flutter },
-      { name: 'Next.js', img: nextjs },
-    ],
-    'Back-end': [
-      { name: 'Node.js', img: nextjs },
-      { name: 'Firebase', img: flutter },
-    ],
-    Database: [
-      { name: 'MongoDB', img: nextjs },
-      { name: 'Firebase DB', img: flutter },
-    ],
-    Cloud: [
-      { name: 'AWS', img: flutter },
-      { name: 'Firebase Hosting', img: nextjs },
-    ],
-    Integration: [
-      { name: 'Zapier', img: flutter },
-      { name: 'REST APIs', img: nextjs },
-    ],
-    Tools: [
-      { name: 'Git', img: flutter },
-      { name: 'VS Code', img: nextjs },
-    ],
-  }
+  const tabs = Object.keys(techData);
+  const [activeTab, setActiveTab] = useState(tabs[0]);
 
   return (
-    <section className="custom-container">
+    <section className="custom-container py-16">
       <div className="max-w-3xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-gray-900 mb-3">Technology Stack</h2>
+        <h2 className="text-3xl md:text-[48px] font-bold text-gray-900 mb-3">
+          Technology Stack
+        </h2>
         <p className="text-gray-600 max-w-2xl mx-auto mb-10">
           Tools and technologies used to build scalable, secure, and high-performing
           digital solutions.
@@ -47,14 +34,14 @@ const TechnologyStack = () => {
 
         {/* Tabs */}
         <div className="flex flex-wrap justify-center items-center gap-8 border-b border-gray-200 mb-10">
-          {Object.keys(techData).map((tab) => (
+          {tabs.map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
               className={`pb-3 text-base font-medium relative ${
                 activeTab === tab
-                  ? 'text-black after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-sky-400'
-                  : 'text-gray-500 hover:text-gray-800'
+                  ? "text-black after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-sky-400"
+                  : "text-gray-500 hover:text-gray-800"
               }`}
             >
               {tab}
@@ -64,25 +51,25 @@ const TechnologyStack = () => {
 
         {/* Tech grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 justify-items-center">
-          {techData[activeTab].map((tech, index) => (
+          {techData[activeTab].map((item, index) => (
             <div
               key={index}
               className="flex flex-col items-center justify-center bg-[#F9FDFF] border border-[#DDF1F7] rounded-2xl p-6 shadow-sm hover:shadow-md transition w-[184px] h-[144px]"
             >
-              <div className='h-24 w-24'>
-                <Image
-                src={tech.img}
-                alt={tech.name}
-                className="h-full w-full mb-3 object-cover"
-              />
+              {/* Circle with First Letter */}
+              <div className="!h-16 !w-16 rounded-full bg-[#19BCE5]/10 border border-[#19BCE5] flex items-center justify-center mb-3">
+                <span className="text-3xl font-bold text-[#19BCE5]">
+                  {item.charAt(0).toUpperCase()}
+                </span>
               </div>
-              <p className="text-sm font-medium text-gray-800">{tech.name}</p>
+
+              <p className="text-sm font-medium text-gray-800 text-center px-2">
+                {item}
+              </p>
             </div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
-
-export default TechnologyStack
