@@ -59,18 +59,18 @@ const ContactModal = ({ isOpen, onClose }) => {
         </button>
 
         {/* Header */}
-        <h2 className='text-[24px] font-bold mb-2 text-[#0B3641] leading-[32px]'>
+        <h2 className='text-[24px] font-bold mb-2 text-[#0B3641] leading-[32px] text-left'>
           Get in Touch
         </h2>
         <hr className='border-t-[1px] border-[#19BCE5] w-full mb-2' />
-        <p className='text-[#0B3641] mb-6 text-[16px] leading-[20px] font-normal'>
+        <p className='text-[#0B3641] mb-6 text-[16px] leading-[20px] font-normal text-left'>
           If you need more information or have any queries, feel free to reach
           out.
         </p>
 
         {/* Form */}
         <form className='space-y-4' onSubmit={handleSubmit}>
-          <div>
+          <div className='flex flex-col items-start'>
             <label className='text-[16px] leading-[24px] font-semibold text-[#0B3641]'>
               Full Name
             </label>
@@ -84,7 +84,7 @@ const ContactModal = ({ isOpen, onClose }) => {
             />
           </div>
 
-          <div>
+          <div className='flex flex-col items-start'>
             <label className='text-[16px] leading-[24px] font-semibold text-[#0B3641]'>
               Email
             </label>
@@ -98,7 +98,7 @@ const ContactModal = ({ isOpen, onClose }) => {
             />
           </div>
 
-          <div>
+          <div className='flex flex-col items-start'>
             <label className='text-[16px] leading-[24px] font-semibold text-[#0B3641]'>
               Message
             </label>
@@ -112,13 +112,15 @@ const ContactModal = ({ isOpen, onClose }) => {
             />
           </div>
 
-          <button
+          <div className='flex items-start justify-start'>
+            <button
             type='submit'
             disabled={loading}
             className='bg-[#19bce6] text-white font-medium text-sm px-6 py-2 rounded-full hover:bg-[#0ea5e9] cursor-pointer'
           >
             {loading ? 'Sending...' : 'Send Message'}
           </button>
+          </div>
         </form>
       </div>
     </div>

@@ -93,7 +93,7 @@ const AllServicesWeOffer = () => {
           <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 pb-0 sm:pb-6 mt-4'>
             {services.map((service, index) => (
               <div
-                className={`flex flex-col justify-center items-center gap-4 pt-4 pr-[24px] w-full sm:w-[400px] pb-[10px] sm:pb-[32px] sm:border-offWhite border-white 
+                className={`flex flex-col justify-center items-center gap-4 pt-4 pr-[20px] w-full sm:w-[380px] pb-[10px] sm:pb-[32px] sm:border-offWhite border-white 
                  ${
                    (index + 1) % 3 === 0 ? 'pl-0 sm:pl-4' : ' xl:border-r-[1px]'
                  }

@@ -50,7 +50,6 @@ const Page = () => {
       />
 
       <AllPortfolio selectedTag={selectedTag} /> 
-      
       <ReadyToTransform />
     </>
   )

@@ -103,7 +103,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className='mt-8 border-t border-[#C2D2D6] pt-4 flex flex-col md:flex-row justify-between text-paragraph text-base font[400]'>
           <div className='flex justify-start items-center gap-2'>
-            <p>© 2025 SI Initiative. All Rights Reserved</p>
+            <p>© 2025 CMED Innovation. All Rights Reserved</p>
           </div>
           <div className='flex gap-4'>
             <a href='#' className='hover:text-[#E5533C] transition'>

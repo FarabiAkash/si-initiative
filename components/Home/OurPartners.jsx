@@ -22,27 +22,12 @@ const OurPartners = () => {
         {/* partners images */}
         <div className='flex flex-wrap justify-center items-center gap-10  py-8'>
           <Image
-            src={p1}
-            alt='Partner Logo'
-            className='w-[120px] lg:w-[180px] h-full lg:h-[64px]'
-          />
-          <Image
             src={p2}
             alt='Partner Logo'
             className='w-[120px] lg:w-[180px] h-full lg:h-[64px]'
           />
           <Image
-            src={p3}
-            alt='Partner Logo'
-            className='w-[120px] lg:w-[180px] h-full lg:h-[64px]'
-          />
-          <Image
-            src={p4}
-            alt='Partner Logo'
-            className='w-[120px] lg:w-[180px] h-full lg:h-[64px]'
-          />
-          <Image
-            src={p5}
+            src={p7}
             alt='Partner Logo'
             className='w-[120px] lg:w-[180px] h-full lg:h-[64px]'
           />
@@ -52,15 +37,29 @@ const OurPartners = () => {
             className='w-[120px] lg:w-[180px] h-full lg:h-[64px]'
           />
           <Image
-            src={p7}
+            src={p5}
+            alt='Partner Logo'
+            className='w-[120px] lg:w-[180px] h-full lg:h-[64px]'
+          />
+          <Image
+            src={p4}
+            alt='Partner Logo'
+            className='w-[120px] lg:w-[180px] h-full lg:h-[64px]'
+          />
+          <Image
+            src={p3}
+            alt='Partner Logo'
+            className='w-[120px] lg:w-[180px] h-full lg:h-[64px]'
+          />
+          <Image
+            src={p1}
             alt='Partner Logo'
             className='w-[120px] lg:w-[180px] h-full lg:h-[64px]'
           />
         </div>
 
         <p className='text-titleSubtitle text-[18px] font-[500] leading-[24px] w-full sm:w-[60vw] xl:w-[38vw] 2xl:w-[30vw] text-center'>
-          Interested in partnering with us? Let’s work together to shape the
-          future of healthcare?
+          Interested in partnering with us? Let’s work together to shape the future.
         </p>
         <button className='text-[14px] rounded-[28px] bg-primary text-white font-[600] leading-[24px] tracking-[1.4px] shadow-[0px_16px_16px_0px_rgba(25,188,229,0.20)] px-[40px] py-[16px] uppercase'>
           Become Our Partner
