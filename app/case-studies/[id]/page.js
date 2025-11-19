@@ -4,11 +4,14 @@ import { useParams } from 'next/navigation'
 import Image from 'next/image'
 import { databases } from '@/lib/appwrite'
 import Link from 'next/link'
+import ContactModal from '@/components/shared/ContactModal'
 
 export default function CaseStudyDetailsPage() {
     const { id } = useParams()
     const [caseStudy, setCaseStudy] = useState(null)
     const [loading, setLoading] = useState(true)
+    const [showContact, setShowContact] = useState(false)
+
 
     useEffect(() => {
         const fetchCaseStudy = async () => {
@@ -83,10 +86,16 @@ export default function CaseStudyDetailsPage() {
                         Would you like any additional elements, such as a visual timeline or
                         success comparison charts?
                     </p>
-                    <button className='sm:w-1/3 mx-auto mt-8 text-[14px] rounded-[28px] bg-primary text-white font-[600] leading-[24px] tracking-[1.4px] shadow-[0px_16px_16px_0px_rgba(25,188,229,0.20)] px-[24px] py-[12px] sm:py-[16px] uppercase'>
+                    <button 
+                    onClick={() => setShowContact(true)}
+                    className='sm:w-1/3 mx-auto mt-8 text-[14px] rounded-[28px] bg-primary text-white font-[600] leading-[24px] tracking-[1.4px] shadow-[0px_16px_16px_0px_rgba(25,188,229,0.20)] px-[24px] py-[12px] sm:py-[16px] uppercase'>
                         Get In Touch
                     </button>
                 </div>
+                <ContactModal
+                    isOpen={showContact}
+                    onClose={() => setShowContact(false)}
+                />
             </div>
         </div>
     )
