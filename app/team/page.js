@@ -9,7 +9,7 @@ const page = () => {
         <>
             <PageHeader
                 title={'Meet the Team Powering CMED Tech’s Innovation'}
-                subtitle={'A dynamic team of 100+ thinkers, builders, and innovators working together to create next-gen digital solutions across industries.'}
+                subtitle={'A dynamic team of 100+ thinkers, builders, and innovators working together to create next-gen digital solutions across industries'}
                 pageHeaderBg={pageHeaderBg}
             />
             <VisionaryLeadership />

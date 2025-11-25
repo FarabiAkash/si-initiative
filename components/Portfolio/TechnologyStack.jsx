@@ -50,7 +50,7 @@ export default function TechnologyStack({ groups = [] }) {
         </div>
 
         {/* Tech grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 justify-items-center">
+        <div className="flex justify-center items-center gap-6 justify-items-center">
           {techData[activeTab].map((item, index) => (
             <div
               key={index}

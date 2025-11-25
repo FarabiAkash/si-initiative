@@ -1,3 +1,7 @@
+'use client'
+import { useState } from 'react'
+import ContactModal from '../shared/ContactModal'
+
 const journeyData = [
   {
     year: '2016-2017',
@@ -30,6 +34,7 @@ const journeyData = [
 ]
 
 const OurJourney = () => {
+  const [showContact, setShowContact] = useState(false)
   return (
     <div className='bg-titleSubtitle'>
       <div className='custom-container  text-white  flex flex-col justify-center items-center gap-10 lg:gap-20  2xl-custom:w-[1580px] 2xl-custom:mx-auto'>
@@ -128,17 +133,26 @@ const OurJourney = () => {
 
         <div className='flex flex-col justify-center text-center lg:px-44 text-white'>
           <h2 className='text-center text-[24px] lg:text-[32px] font-[700] leading-[32px] lg:leading-[40px]  mb-4'>
-            Would you like to add visuals or impact metrics for each milestone?
+            Together, We Transform Innovative Ideas Into Impact
           </h2>
           <p className='text-center text-[20px] font-[400] leading-[32px]'>
             As we move forward, we remain committed to innovation, research, and
             global impact, ensuring that technology continues to shape the
             future.
           </p>
-          <button className='mx-auto mt-10 text-[14px] rounded-[28px] bg-[#F05232]  font-[600] leading-[24px] tracking-[1.4px] px-[40px] py-[16px] sm:py-[16px] uppercase'>
+          <button
+            onClick={() => setShowContact(true)}
+            className='mx-auto mt-10 text-[14px] rounded-[28px] bg-[#F05232]  font-[600] leading-[24px] tracking-[1.4px] px-[40px] py-[16px] sm:py-[16px] uppercase'
+          >
             Collaborate with us
           </button>
         </div>
+        <ContactModal
+          isOpen={showContact}
+          onClose={() => setShowContact(false)}
+          title={'Collaborate with us'}
+          source={'Collaborate with us'}
+        />
       </div>
     </div>
   )

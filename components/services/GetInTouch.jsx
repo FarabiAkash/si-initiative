@@ -1,17 +1,18 @@
 'use client'
 
 import { useState } from 'react'
-import ContactModal from '../shared/ContactModal'
+import ScheduleCallModal from '../Home/ScheduleCallModal'
 
 const GetInTouch = () => {
   const [showContact, setShowContact] = useState(false)
   return (
     <div className='custom-container bg-primary flex flex-col items-center justify-center gap-[16px] text-white !py-[100px]'>
       <h2 className='text-[32px] font-[700] leading-[40px]'>
-        Ready to Transform Healthcare with Us?
+        Start Your Tech Journey
       </h2>
       <p className='text-[18px] font-[400] leading-[24px]'>
-        Let’s collaborate to create impactful digital healthcare solutions.
+        A simple call to align on your needs, priorities, and the smartest way
+        to move ahead
       </p>
       <button
         onClick={() => setShowContact(true)}
@@ -19,10 +20,12 @@ const GetInTouch = () => {
       >
         Schedule a call
       </button>
-      <ContactModal
-        isOpen={showContact}
-        onClose={() => setShowContact(false)}
-      />
+      <div className='text-black'>
+        <ScheduleCallModal
+          isOpen={showContact}
+          onClose={() => setShowContact(false)}
+        />
+      </div>
     </div>
   )
 }

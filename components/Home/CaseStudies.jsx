@@ -57,7 +57,7 @@ const CaseStudies = () => {
           </h1>
           <p className='text-paragraph text-[18px] font-[400] leading-[24px] w-[75vw] xl:w-[38vw] 2xl:w-[30vw] text-center pt-3'>
             Explore how our innovative solutions have transformed the industries,
-            improved efficiency, and driven meaningful change.
+            improved efficiency, and driven meaningful change
           </p>
         </div>
 

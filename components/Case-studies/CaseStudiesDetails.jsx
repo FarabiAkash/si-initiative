@@ -1,6 +1,7 @@
 'use client'
 import Image from 'next/image'
 import { useState } from 'react'
+import ContactModal from '../shared/ContactModal'
 
 const CaseStudiesDetails = ({ caseStudy }) => {
   const [showContact, setShowContact] = useState(false)
@@ -38,11 +39,10 @@ const CaseStudiesDetails = ({ caseStudy }) => {
 
         <div className='flex flex-col justify-center text-center lg:px-24 pt-6 pb-12'>
           <h2 className='text-[24px] lg:text-[32px] font-[700] leading-[32px] lg:leading-[40px] text-titleSubtitle mb-4'>
-            Want to implement AI diagnostics in your healthcare facility?
+            Connect With Us to Bring Your Ideas to Life
           </h2>
           <p className='text-center text-paragraph text-[18px] font-[400] leading-[28px]'>
-            Would you like any additional elements, such as a visual timeline or
-            success comparison charts?
+            Share your challenges or concepts, and our team will guide you toward a clear, actionable plan.
           </p>
           <button
             onClick={() => setShowContact(true)}
@@ -54,6 +54,7 @@ const CaseStudiesDetails = ({ caseStudy }) => {
         <ContactModal
           isOpen={showContact}
           onClose={() => setShowContact(false)}
+          source={'Get In Touch'}
         />
       </div>
     </div>

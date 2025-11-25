@@ -12,7 +12,7 @@ const page = () => {
         <>
             <PageHeader
                 title={'Empowering Businesses with Innovation and Expertise'}
-                subtitle={'Delivering innovative solutions that seamlessly adapt, scale efficiently, and empower businesses to thrive tomorrow.'}
+                subtitle={'Delivering innovative solutions that seamlessly adapt, scale efficiently, and empower businesses to thrive tomorrow'}
                 pageHeaderBg={pageHeaderBg}
             />
             <AllServicesWeOffer />

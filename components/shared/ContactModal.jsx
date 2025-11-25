@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { toast } from 'react-hot-toast'
 import emailjs from '@emailjs/browser'
 
-const ContactModal = ({ isOpen, onClose }) => {
+const ContactModal = ({ isOpen, onClose, title, subtitle, source }) => {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
   const [loading, setLoading] = useState(false)
 
@@ -31,7 +31,7 @@ const ContactModal = ({ isOpen, onClose }) => {
         {
           from_name: form.name,
           from_email: form.email,
-          message: form.message
+          message: `From ${source} - ` + form.message
         },
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
       )
@@ -60,12 +60,11 @@ const ContactModal = ({ isOpen, onClose }) => {
 
         {/* Header */}
         <h2 className='text-[24px] font-bold mb-2 text-[#0B3641] leading-[32px] text-left'>
-          Get in Touch
+          {title ? title : 'Get in Touch'}
         </h2>
         <hr className='border-t-[1px] border-[#19BCE5] w-full mb-2' />
         <p className='text-[#0B3641] mb-6 text-[16px] leading-[20px] font-normal text-left'>
-          If you need more information or have any queries, feel free to reach
-          out.
+          {subtitle ? subtitle : 'If you need more information or have any queries, feel free to reach out.'}
         </p>
 
         {/* Form */}

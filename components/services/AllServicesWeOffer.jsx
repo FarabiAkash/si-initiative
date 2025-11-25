@@ -16,84 +16,84 @@ const services = [
   {
     icon: s5,
     title: 'R&D Innovation',
-    desc: 'Turning ideas into impactful solutions through research, prototyping, and cutting-edge technology.'
+    desc: 'Turning ideas into impactful solutions through research, prototyping, and cutting-edge technology'
   },
   {
     icon: s2,
     title: 'AI Integration',
-    desc: 'Empowering businesses with intelligent automation, predictive insights, and smarter decision-making.'
+    desc: 'Empowering businesses with intelligent automation, predictive insights, and smarter decision-making'
   },
   {
     icon: s7,
-    title: 'IT consultations',
-    desc: 'Expert guidance to align your IT strategy with your business goals.'
+    title: 'IT & AI Consultations',
+    desc: 'Expert guidance to align your IT & AI strategy with your business goals'
   },
   {
     icon: s1,
     title: 'Custom Software Development',
-    desc: 'Tailored software solutions designed to meet your unique business needs.'
+    desc: 'Tailored software solutions designed to meet your unique business needs'
   },
 
   {
     icon: s3,
-    title: 'Web and Mobile App Development',
-    desc: 'Engaging, scalable, and user-friendly applications for web and mobile platforms.'
+    title: 'Web & Mobile App Development',
+    desc: 'Engaging, scalable, and user-friendly applications for web and mobile platforms'
   },
   {
     icon: s12,
     title: 'Quality Assurance',
-    desc: 'Comprehensive testing to ensure flawless performance and reliability of your products.'
+    desc: 'Comprehensive testing to ensure flawless performance and reliability of your products'
   },
 
   {
     icon: s8,
     title: 'IT Infrastructure Management',
-    desc: 'Reliable management and optimization of your IT systems and networks.'
+    desc: 'Reliable management and optimization of your IT systems and networks'
   },
 
   {
     icon: s9,
     title: 'Data Analysis',
-    desc: 'Transforming  raw data into actionable insights for smarter decision-making.'
+    desc: 'Transforming  raw data into actionable insights for smarter decision-making'
   },
   {
     icon: s10,
     title: 'DevOps and CI/CD',
-    desc: 'Accelerate software delivery with automated, efficient, and collaborative workflows.'
+    desc: 'Accelerate software delivery with automated, efficient, and collaborative workflows'
   },
 
   {
     icon: s11,
     title: 'Communication Solutions',
-    desc: 'Cost-effective and seamless communication systems for businesses.'
+    desc: 'Cost-effective and seamless communication systems for businesses'
   },
   {
     icon: s6,
     title: 'Cloud Computing Services',
-    desc: 'Secure, scalable, and flexible cloud solutions to modernize operations and drive business agility.'
+    desc: 'Secure, scalable, and flexible cloud solutions to modernize operations and drive business agility'
   },
   {
     icon: s4,
     title: 'Cybersecurity Services',
-    desc: ' End-to-end protection with proactive strategies to safeguard your data, systems, and digital assets.'
+    desc: ' End-to-end protection with proactive strategies to safeguard your data, systems, and digital assets'
   }
 ]
 
 const AllServicesWeOffer = () => {
   return (
     <div className='bg-gradient-to-bl from-white to-[#F5FDFF]'>
-      <div className=' custom-container 2xl-custom:w-[1580px] 2xl-custom:mx-auto'>
+      <div className='custom-container 2xl-custom:w-[1580px] 2xl-custom:mx-auto'>
         <div className='flex flex-col justify-center items-center gap-4'>
           <h1 className='text-[32px] font-[700] text-[#0B3641] leading-[40px]'>
             All the Services We Offer
           </h1>
           <p className='text-[#677A7E] text-[18px] font-[400] leading-[24px] mt-2'>
-            Empowering Industries with Innovation, Expertise, and Trust.
+            Empowering Industries with Innovation, Expertise, and Trust
           </p>
           <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 pb-0 sm:pb-6 mt-4'>
             {services.map((service, index) => (
               <div
-                className={`flex flex-col justify-center items-center gap-4 pt-4 pr-[20px] w-full sm:w-[380px] pb-[10px] sm:pb-[32px] sm:border-offWhite border-white 
+                className={`flex flex-col justify-center items-center gap-4 pt-4 pr-[20px] w-full sm:max-w-[380px] pb-[10px] sm:pb-[32px] sm:border-offWhite border-white 
                  ${
                    (index + 1) % 3 === 0 ? 'pl-0 sm:pl-4' : ' xl:border-r-[1px]'
                  }

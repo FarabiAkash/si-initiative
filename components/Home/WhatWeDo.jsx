@@ -11,37 +11,37 @@ const data = [
   {
     title: 'R&D Innovation',
     description:
-      'Turning ideas into impactful solutions through research, prototyping, and cutting-edge technology.',
+      'Turning ideas into impactful solutions through research, prototyping, and cutting-edge technology',
     icon: w5
   },
   {
-    title: 'AI integration',
+    title: 'AI Integration',
     description:
-      'Empowering businesses with intelligent automation, predictive insights, and smarter decision-making.',
+      'Empowering businesses with intelligent automation, predictive insights, and smarter decision-making',
     icon: w2
   },
   {
-    title: 'IT consultations',
+    title: 'IT & AI Consultations',
     description:
-      'Expert guidance to align your IT strategy with your business goals.',
+      'Expert guidance to align your IT & AI strategy with your business goals',
     icon: w4
   },
   {
     title: 'Custom Software Development',
     description:
-      'Tailored software solutions designed to meet your unique business needs.',
+      'Tailored software solutions designed to meet your unique business needs',
     icon: w1
   },
   {
-    title: 'Web and Mobile App Development',
+    title: 'Web & Mobile App Development',
     description:
-      'Engaging, scalable, and user-friendly applications for web and mobile platforms.',
+      'Engaging, scalable, and user-friendly applications for web and mobile platforms',
     icon: w3
   },
   {
     title: 'Quality Assurance',
     description:
-      'Comprehensive testing to ensure flawless performance and reliability of your products.',
+      'Comprehensive testing to ensure flawless performance and reliability of your products',
     icon: w6
   }
 ]

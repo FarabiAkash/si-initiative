@@ -107,7 +107,7 @@ const IndustryWeWorkWith = () => {
           </h1>
           <p className='text-[#677A7E] text-[18px] font-[400] leading-[24px] mt-2 text-center max-w-md'>
             Driving innovation across industries with intelligent, scalable
-            technology solutions.
+            technology solutions
           </p>
 
           {/* Domain Sections */}

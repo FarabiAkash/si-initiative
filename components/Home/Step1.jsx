@@ -87,7 +87,7 @@ const Step1 = ({ formData, handleData, next, onClose }) => {
 
   return (
     <div>
-      <div className='flex justify-between items-center py-4'>
+      <div className='flex justify-between items-center pb-4'>
         <h1 className='text-2xl font-bold text-gray-800'>Schedule a Call</h1>
         {/* buttons */}
         <div className='flex justify-between gap-4 items-center'>

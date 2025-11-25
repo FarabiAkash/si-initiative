@@ -6,9 +6,9 @@ const steps = [
   {
     title: 'Understanding Needs & Research',
     points: [
-      'AI-Driven Market Analysis',
-      'Real-Time Project Monitoring',
-      'Centralized Data Management'
+      'AI-driven market analysis',
+      'Real-time project monitoring',
+      'Centralized data management'
     ]
   },
   {
@@ -22,9 +22,9 @@ const steps = [
   {
     title: 'Development & Integration',
     points: [
-      'AI, IoT & Cloud-Enabled Solutions',
-      'Secure API & System Interoperability',
-      'Adherence to Industry Standards & Regulations'
+      'AI, IoT & Cloud-Enabled solutions',
+      'Secure API & system interoperability',
+      'Adherence to industry standards & regulations'
     ]
   },
   {
@@ -38,9 +38,9 @@ const steps = [
   {
     title: 'Deployment & Implementation',
     points: [
-      'Scalable Rollout Across Platforms & User Groups',
-      'Comprehensive Onboarding & Continuous Support',
-      'Effortless Data Migration & System Integration'
+      'Scalable rollout across platforms & user groups',
+      'Comprehensive onboarding & continuous support',
+      'Effortless data migration & system integration'
     ]
   },
   {
@@ -62,19 +62,19 @@ const WorkProcess = () => {
         </h2>
         <p className='text-[18px] font-[400] leading-[24px] text-paragraph'>
           Streamlined, research-driven, and technology-powered—our process
-          ensures seamless execution and impactful solutions.
+          ensures seamless execution and impactful solutions
         </p>
       </div>
 
       <div className='relative w-full'>
         {/* Timeline Line */}
-        <div className='absolute left-1/2 transform -translate-x-1/2 w-[1px] bg-[#C2D2D6] h-[90%] hidden md:block' />
+        <div className='absolute left-1/2 transform -translate-x-1/2 w-[1px] bg-[#C2D2D6] h-[95%] hidden md:block' />
 
         {/* Timeline Items */}
         {steps.map((step, index) => (
           <div
             key={index}
-            className='mb-6 md:mb-12 flex flex-col md:flex-row items-center relative'
+            className='-mb-10 flex flex-col md:flex-row items-center relative'
           >
             {/* Left Side Text for Odd Indexes */}
             {index % 2 !== 0 ? (

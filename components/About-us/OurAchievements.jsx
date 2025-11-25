@@ -28,8 +28,7 @@ const OurAchievements = () => {
             Our Achievements
           </h1>
           <p className='text-paragraph text-[18px] font-[400] leading-[24px] pt-3'>
-            Award-Winning Excellence & Life-Changing Impact in Healthcare
-            Innovation
+            Award-Winning Excellence & Life-Changing Impact in Innovation
           </p>
         </div>
       </div>

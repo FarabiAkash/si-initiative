@@ -50,7 +50,7 @@ const MembersWithVision = () => {
         <p className='text-[#677A7E] text-[18px] font-[400] leading-[24px] mt-2 text-center'>
           AI engineers to UX designers, data scientists to project managers;
           <br />
-          our diverse team works as one to build solutions that matter.
+          our diverse team works as one to build solutions that matter
         </p>
 
         <div className='grid grid-cols-1 pb-0 sm:pb-6 mt-4 gap-6'>

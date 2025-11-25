@@ -43,27 +43,19 @@ const CustomNextArrow = ({ onClick }) => (
 const reviews = [
   {
     id: 1,
-    name: 'Mahfuz Alam Khandakar',
-    position: 'CEO, Urban Tech Clinic',
+    name: 'Shekh Ershad uddin',
+    position: 'Managing Director, Leaf Grade Casualwear Ltd',
     review:
-      'Using the AI diagnostic tool, our clinic detected early-stage breast cancer in a patient, enabling timely treatment. The tool has since been adopted in 50+ underserved communities, improving survival rates and healthcare access.',
-    image: '/assets/home/reviews/alam.jpg'
-  },
-  {
-    id: 2,
-    name: 'Dr. Shaila Rahman',
-    position: 'Medical Director, Lifecare Hospital',
-    review:
-      'The AI system streamlined our radiology workflow, reducing diagnostic errors and report turnaround time by 40%. Patients now receive faster, more accurate diagnoses, transforming our quality of care across departments.',
-    image: '/assets/home/reviews/shaila.jpg'
+      'CMED Innovation delivered exactly what we needed, providing smart, efficient, and reliable solutions. Their team understood our requirements quickly and executed the project with professionalism and clarity. A truly dependable tech partner.',
+    image: '/assets/home/reviews/ershad.png'
   },
   {
     id: 3,
-    name: 'Engr. Tanvir Hossain',
-    position: 'CTO, MediLink Innovations',
+    name: 'Dr. AKM Nazmul Islam',
+    position: 'Head of Operations, Neuroscience & Psychiatry Hub Ltd',
     review:
-      'Integrating this AI tool into our telemedicine platform enhanced early disease detection and remote consultation accuracy. It’s now supporting thousands of virtual check-ups monthly, bridging healthcare gaps in rural areas.',
-    image: '/assets/home/reviews/tanvir.jpg'
+      'CMED Innovation provided exceptional support and delivered a solution that perfectly met our operational needs. Their team was professional, responsive, and highly skilled, making the entire process smooth and efficient. A reliable technology partner we trust.',
+    image: '/assets/home/reviews/nazmul.png'
   }
 ]
 const SuccessStories = ({ pageName }) => {
@@ -111,15 +103,15 @@ const SuccessStories = ({ pageName }) => {
                     className='absolute top-4 right-4'
                   />
 
-                  <div className='flex-col sm:flex-row sm:flex justify-center sm:justify-start  items-center gap-2 sm:gap-4'>
+                  <div className='flex-col sm:flex-row sm:flex justify-center sm:justify-center  items-center gap-2 sm:gap-4 mb-4'>
                     {/* Profile Image */}
-                    <div className='w-[64px] h-[64px]'>
+                    <div className='w-[54px] h-[54px]'>
                       <Image
                         src={review.image}
                         alt={review.name}
                         width={64}
                         height={64}
-                        className='rounded-full mb-4 object-cover w-full h-full'
+                        className='rounded-full object-cover w-full h-full'
                       />
                     </div>
 
@@ -128,7 +120,7 @@ const SuccessStories = ({ pageName }) => {
                       <h3 className='text-titleSubtitle font-semibold text-[18px]'>
                         {review.name}
                       </h3>
-                      <p className='text-paragraph text-sm  mb-4'>
+                      <p className='text-paragraph text-sm'>
                         {review.position}
                       </p>
                     </div>

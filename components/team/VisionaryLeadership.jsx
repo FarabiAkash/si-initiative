@@ -46,7 +46,7 @@ const VisionaryLeadership = () => {
           </h1>
           <p className='text-[#677A7E] text-[18px] font-[400] leading-[24px] mt-2 text-center'>
             Meet the minds shaping our strategy, guiding innovation, and leading
-            CMED Innovation toward a smarter future.
+            CMED Innovation toward a smarter future
           </p>
           <div className='grid grid-cols-1 lg:grid-cols-2 pb-0 sm:pb-6 mt-4 gap-6'>
             {leaders.map((leader, idx) => {

@@ -19,7 +19,7 @@ export default function AllPortfolio({ selectedTag = "All" }) {
       try {
         setLoading(true);
         const res = await databases.listDocuments(DB_ID, COLLECTION_PORTFOLIO, [
-          Query.orderDesc("$createdAt"),
+          Query.orderAsc("$createdAt"),
         ]);
 
         const formatted = (res.documents || []).map((doc) => ({

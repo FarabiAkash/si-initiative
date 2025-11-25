@@ -46,7 +46,7 @@ const NewHeader = () => {
           </h2>
           <p className='text-white font-poppins text-[20px] font-[400] leading-[32px] text-center lg:text-start'>
             Empowering your business with innovative, tailored tech solutions to
-            drive growth, efficiency, and success.
+            drive growth, efficiency, and success
           </p>
           <ScheduleCallModal
             isOpen={modalOpen}

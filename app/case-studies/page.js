@@ -6,6 +6,7 @@ import PageHeader from '../../components/shared/PageHeader'
 import pageHeaderBg from '../../public/assets/case-studies/banner.jpg'
 import MostReadArticle from '@/components/Blogs/MostReadArticle'
 import { databases } from '@/lib/appwrite'
+import ReadyToTransform from '@/components/shared/ReadyToTransform'
 
 const Page = () => {
   const [selectedTag, setSelectedTag] = useState('All')
@@ -44,7 +45,7 @@ const Page = () => {
       <PageHeader
         title={'Our Innovations in Action Across the Industries'}
         subtitle={
-          'Sharing real-world stories of how we transform bold, ambitious ideas into meaningful, impactful outcomes for everyone.'
+          'Sharing real-world stories of how we transform bold, ambitious ideas into meaningful, impactful outcomes for everyone'
         }
         pageHeaderBg={pageHeaderBg}
         tags={tags}
@@ -59,7 +60,8 @@ const Page = () => {
 
       <CaseStudies selectedTag={selectedTag} />
 
-      <MostReadArticle />
+      {/* <MostReadArticle /> */} 
+      <ReadyToTransform />
     </>
   )
 }

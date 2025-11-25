@@ -6,6 +6,7 @@ import AllBlogs from '../../components/Blogs/AllBlogs.jsx'
 import MostReadArticle from '../../components/Blogs/MostReadArticle.jsx'
 import pageHeaderBg from '../../public/assets/case-studies/banner.jpg'
 import { databases } from '@/lib/appwrite'
+import ReadyToTransform from '@/components/shared/ReadyToTransform'
 
 const Page = () => {
   const [selectedTag, setSelectedTag] = useState('All')
@@ -44,7 +45,7 @@ const Page = () => {
     <div>
       <PageHeader
         title='Stay Ahead With Expert Perspectives'
-        subtitle='Providing valuable insights, emerging trends, and expert perspectives that are shaping and driving the next wave of innovation.'
+        subtitle='Providing valuable insights, emerging trends, and expert perspectives that are shaping and driving the next wave of innovation'
         pageHeaderBg={pageHeaderBg}
         tags={tags}
         selectedTag={selectedTag}
@@ -64,7 +65,8 @@ const Page = () => {
       ) : (
         <>
           <AllBlogs selectedTag={selectedTag} />
-          <MostReadArticle />
+          {/* <MostReadArticle /> */}
+             <ReadyToTransform />
         </>
       )}
     </div>

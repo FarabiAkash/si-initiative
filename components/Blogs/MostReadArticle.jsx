@@ -58,7 +58,7 @@ const MostReadArticle = () => {
           <div className='flex justify-between items-center pt-3'>
             <p className='text-paragraph text-[18px] font-normal leading-[24px]'>
               Stay informed with the latest trends, breakthroughs, and expert
-              insights shaping the future.
+              insights shaping the future
             </p>
           </div>
         </div>

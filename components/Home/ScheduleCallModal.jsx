@@ -1,8 +1,10 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
+import toast from 'react-hot-toast'
 import Step1 from './Step1'
 import Step2 from './Step2'
 import Step3 from './Step3'
+import { scheduleCall } from '@/lib/scheduleCall'
 
 const ScheduleCallModal = ({ isOpen, onClose }) => {
   const initialFormData = {
@@ -16,6 +18,7 @@ const ScheduleCallModal = ({ isOpen, onClose }) => {
   const [step, setStep] = useState(1)
   const [formData, setFormData] = useState(initialFormData)
   const [showTransition, setShowTransition] = useState(true)
+  const [loading, setLoading] = useState(false)
   const modalRef = useRef(null)
 
   // Trap focus + ESC close
@@ -53,27 +56,31 @@ const ScheduleCallModal = ({ isOpen, onClose }) => {
     }
   }, [isOpen])
 
-  // Reset form after step 3
+  // Reset form after step 3 (confirmation shown)
   useEffect(() => {
     if (step === 3) {
-      console.log('Scheduled Call:', formData)
-      setTimeout(() => {
+      // keep confirmation visible for 3s then reset + close
+      const t = setTimeout(() => {
         setFormData(initialFormData)
         setStep(1)
         onClose()
       }, 3000)
+      return () => clearTimeout(t)
     }
-  }, [step])
+  }, [step, onClose])
 
   const handleData = (key, value) => {
     setFormData(prev => ({ ...prev, [key]: value }))
   }
 
-  const next = () => {
+  const next = async () => {
+    // Step 1 validation: date/time
     if (step === 1 && (!formData.date || !formData.time)) {
       alert('Please select both date and time.')
       return
     }
+
+    // Step 2 validation + schedule creation
     if (step === 2) {
       if (!formData.name || !formData.email) {
         alert('Please enter your name and email.')
@@ -84,8 +91,28 @@ const ScheduleCallModal = ({ isOpen, onClose }) => {
         alert('Invalid email address.')
         return
       }
+
+      // Create schedule in Appwrite
+      setLoading(true)
+      try {
+        await scheduleCall(formData)
+        toast.success('Call scheduled successfully!')
+        // transition to the confirmation step
+        setShowTransition(false)
+        setTimeout(() => {
+          setStep(prev => prev + 1)
+          setShowTransition(true)
+        }, 150)
+      } catch (err) {
+        console.error('Schedule error:', err)
+        toast.error(err.message || 'Failed to schedule the call. Try again later.')
+      } finally {
+        setLoading(false)
+      }
+      return
     }
 
+    // default transition for other steps
     setShowTransition(false)
     setTimeout(() => {
       setStep(prev => prev + 1)
@@ -94,6 +121,7 @@ const ScheduleCallModal = ({ isOpen, onClose }) => {
   }
 
   const back = () => {
+    if (loading) return
     setShowTransition(false)
     setTimeout(() => {
       setStep(prev => prev - 1)
@@ -116,7 +144,7 @@ const ScheduleCallModal = ({ isOpen, onClose }) => {
       aria-labelledby='modal-title'
       ref={modalRef}
     >
-      <div className='bg-white rounded-[12px] w-full max-w-[95%] md:max-w-[80%] xl:max-w-[40%] p-6 shadow-lg max-h-[90vh] overflow-y-auto transition-all duration-300'>
+      <div className='bg-white rounded-[12px]  w-[90%] md:w-[80%] xl:w-[40%] p-6 shadow-lg h-[90vh] xl:h-[60vh] overflow-y-auto transition-all duration-300'>
         <div
           key={step}
           className={`transition duration-300 ease-in-out transform ${
@@ -137,9 +165,10 @@ const ScheduleCallModal = ({ isOpen, onClose }) => {
               back={back}
               formData={formData}
               handleData={handleData}
+              loading={loading} // optional: show spinner on Step2
             />
           )}
-          {step === 3 && <Step3 onClose={onClose} />}
+          {step === 3 && <Step3 onClose={onClose} scheduled={formData} />}
         </div>
       </div>
     </div>

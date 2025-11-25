@@ -42,7 +42,7 @@ const Page = () => {
     <>
       <PageHeader
         title={'Where Ideas Take Shape Through Our Innovation'}
-        subtitle={'Explore a collection of projects where creativity and technology converge to build amazing solutions.'}
+        subtitle={'Explore a collection of projects where creativity and technology converge to build amazing solutions'}
         pageHeaderBg={pageHeaderBg}
         tags={categories}     // 👈 now shows type list dynamically
         selectedTag={selectedTag}
