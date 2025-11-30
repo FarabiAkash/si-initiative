@@ -1,5 +1,8 @@
+'use client'
+
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { useState } from 'react'
+import TimezoneSelect from 'react-timezone-select'
 
 const times = [
   '9:00 am',
@@ -85,6 +88,8 @@ const Step1 = ({ formData, handleData, next, onClose }) => {
 
   const days = getDaysInMonth(currentMonth, currentYear)
 
+  const canGoNext = selectedDate && selectedTime && formData.timeZone
+
   return (
     <div>
       <div className='flex justify-between items-center pb-4'>
@@ -96,9 +101,9 @@ const Step1 = ({ formData, handleData, next, onClose }) => {
           </button>
           <button
             onClick={next}
-            disabled={!selectedDate || !selectedTime}
+            disabled={!canGoNext}
             className={`px-6 py-2 rounded-full text-white ${
-              selectedDate && selectedTime
+              canGoNext
                 ? 'bg-[#00C2FF]'
                 : 'bg-[#19BCE51A] cursor-not-allowed text-[#9DADB1]'
             }`}
@@ -166,15 +171,15 @@ const Step1 = ({ formData, handleData, next, onClose }) => {
                   onClick={() => handleDateClick(date)}
                   disabled={isPast}
                   className={`p-2 w-[32px] h-[32px] rounded-[8px] flex justify-center items-center text-sm transition
-  ${
-    isPast
-      ? 'text-gray-300 cursor-not-allowed'
-      : isSelected
-      ? 'bg-[#00C2FF] text-white'
-      : 'hover:bg-gray-100'
-  }
-  ${isToday && !isSelected ? 'border-2 border-[#00C2FF]' : ''}
-`}
+                    ${
+                      isPast
+                        ? 'text-gray-300 cursor-not-allowed'
+                        : isSelected
+                        ? 'bg-[#00C2FF] text-white'
+                        : 'hover:bg-gray-100'
+                    }
+                    ${isToday && !isSelected ? 'border-2 border-[#00C2FF]' : ''}
+                  `}
                 >
                   {date.getDate()}
                 </button>
@@ -183,22 +188,42 @@ const Step1 = ({ formData, handleData, next, onClose }) => {
           </div>
         </div>
 
-        {/* Time Picker */}
-        <div className='h-[300px] overflow-y-scroll pr-2'>
-          <p className='font-medium text-base mb-2'>Select Time</p>
-          {times.map(time => (
-            <button
-              key={time}
-              onClick={() => handleTimeClick(time)}
-              className={`block w-full text-left border px-3 py-[6px] rounded mb-2 ${
-                selectedTime === time
-                  ? 'bg-[#00C2FF] text-white'
-                  : 'hover:bg-gray-100'
-              }`}
-            >
-              {time}
-            </button>
-          ))}
+        {/* Time + Timezone */}
+        <div className='h-[300px] overflow-y-scroll pr-2 flex flex-col gap-4 w-full max-w-xs md:max-w-sm'>
+          <div>
+            <p className='font-medium text-base mb-2'>Your Timezone</p>
+            <div className='text-sm'>
+              <TimezoneSelect
+                value={formData.timeZone}
+                onChange={tz => {
+                  // react-timezone-select returns an object with .value
+                  const value = typeof tz === 'string' ? tz : tz.value
+                  handleData('timeZone', value)
+                }}
+              />
+            </div>
+            <p className='text-xs text-gray-500 mt-1'>
+              We’ll use this timezone to schedule your call accurately.
+            </p>
+          </div>
+          <div>
+            <p className='font-medium text-base mb-2'>Select Time</p>
+            {times.map(time => (
+              <button
+                key={time}
+                onClick={() => handleTimeClick(time)}
+                className={`block w-full text-left border px-3 py-[6px] rounded mb-2 ${
+                  selectedTime === time
+                    ? 'bg-[#00C2FF] text-white'
+                    : 'hover:bg-gray-100'
+                }`}
+              >
+                {time}
+              </button>
+            ))}
+          </div>
+
+          
         </div>
       </div>
     </div>

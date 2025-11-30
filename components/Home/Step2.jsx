@@ -6,7 +6,7 @@ const Step2 = ({ formData, handleData, next, back }) => {
   const formattedDate = (() => {
     if (!formData.date) return ''
     const [y, m, d] = formData.date.split('-').map(Number)
-    const dateObj = new Date(y, m - 1, d)
+    const dateObj = new Date(y, m - 1, d) // avoid UTC shift
     return dateObj.toLocaleDateString('en-US', {
       month: 'long',
       day: 'numeric',
@@ -72,15 +72,22 @@ const Step2 = ({ formData, handleData, next, back }) => {
               Meeting with CMED <br /> Innovation Team
             </p>
           </div>
+
           <div className='flex items-center gap-2 text-[#00C2FF]'>
             <Calendar size={18} />
             <p className='text-[#001A2E]'>{formattedDate}</p>
           </div>
 
-          <div className='flex items-center gap-2 text-[#00C2FF]'>
-            <Clock size={18} />
-            <p className='text-[#001A2E]'>
-              {formData.time} – {getEndTime(formData.time)}
+          <div className='flex flex-col gap-1 text-[#00C2FF]'>
+            <div className='flex items-center gap-2'>
+              <Clock size={18} />
+              <p className='text-[#001A2E]'>
+                {formData.time} – {getEndTime(formData.time)}
+              </p>
+            </div>
+            <p className='text-xs text-[#001A2E]'>
+              Timezone:{' '}
+              <span className='font-semibold'>{formData.timeZone}</span>
             </p>
           </div>
         </div>

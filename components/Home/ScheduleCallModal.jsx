@@ -18,7 +18,7 @@ const ScheduleCallModal = ({ isOpen, onClose }) => {
     name: '',
     email: '',
     notes: '',
-    timeZone: browserTimeZone, // auto-detected, hidden from user
+    timeZone: browserTimeZone, // initial timezone (can be changed in UI)
   }
 
   const [step, setStep] = useState(1)
@@ -79,10 +79,12 @@ const ScheduleCallModal = ({ isOpen, onClose }) => {
   }
 
   const next = async () => {
-    // Step 1 validation: date/time only (timezone is auto)
-    if (step === 1 && (!formData.date || !formData.time)) {
-      alert('Please select both date and time.')
-      return
+    // Step 1 validation: date/time/timeZone
+    if (step === 1) {
+      if (!formData.date || !formData.time || !formData.timeZone) {
+        alert('Please select date, time and timezone.')
+        return
+      }
     }
 
     // Step 2 validation + schedule creation
@@ -99,9 +101,9 @@ const ScheduleCallModal = ({ isOpen, onClose }) => {
 
       setLoading(true)
       try {
-        // timeZone is included in formData
-        await scheduleCall(formData)
+        await scheduleCall(formData) // includes timeZone
         toast.success('Call scheduled successfully!')
+
         setShowTransition(false)
         setTimeout(() => {
           setStep(prev => prev + 1)
@@ -148,7 +150,7 @@ const ScheduleCallModal = ({ isOpen, onClose }) => {
       aria-labelledby='modal-title'
       ref={modalRef}
     >
-      <div className='bg-white rounded-[12px]  w-[90%] md:w-[80%] xl:w-[40%] p-6 shadow-lg h-[90vh] xl:h-[60vh] overflow-y-auto transition-all duration-300'>
+      <div className='bg-white rounded-[12px] w-[90%] md:w-[80%] xl:w-[60%] p-6 shadow-lg h-[90vh] xl:h-[60vh] overflow-y-auto transition-all duration-300'>
         <div
           key={step}
           className={`transition duration-300 ease-in-out transform ${
