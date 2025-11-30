@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import Image from "next/image";
 import { databases } from "@/lib/appwrite";
 import { Query } from "appwrite";
