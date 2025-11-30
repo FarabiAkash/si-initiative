@@ -3,31 +3,31 @@ const features = [
     id: 1,
     title: 'Research-Driven Innovation',
     description:
-      'Our dedicated R&D fuels innovation, transforming bold ideas into practical solutions that deliver lasting value.'
+      'Our dedicated R&D fuels innovation, transforming bold ideas into practical solutions that deliver lasting value'
   },
   {
     id: 2,
     title: 'Decision Support Systems',
     description:
-      'Our smart, data-driven platforms simplify complexity, empowering your business to make faster, better decisions.'
+      'Our smart, data-driven platforms simplify complexity, empowering your business to make faster, better decisions'
   },
   {
     id: 3,
     title: 'Proven Expertise',
     description:
-      'Our team of 100+ AI & IT experts is committed to excellence, delivering proven success across all sectors.'
+      'Our team of 100+ AI & IT experts is committed to excellence, delivering proven success across all sectors'
   },
   {
     id: 4,
     title: 'Client-Centric Approach',
     description:
-      'Our client-centric approach means we own your challenges, guaranteeing a smooth and collaborative journey to success.'
+      'Our client-centric approach means we own your challenges, guaranteeing a smooth and collaborative journey to success'
   },
   {
     id: 5,
     title: 'Scalable & Reliable',
     description:
-      'We build scalable and reliable solutions, designed to seamlessly grow with your business and deliver lasting value.'
+      'We build scalable and reliable solutions, designed to seamlessly grow with your business and deliver lasting value'
   },
   {
     id: 6,
