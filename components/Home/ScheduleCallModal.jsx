@@ -7,12 +7,18 @@ import Step3 from './Step3'
 import { scheduleCall } from '@/lib/scheduleCall'
 
 const ScheduleCallModal = ({ isOpen, onClose }) => {
+  const browserTimeZone =
+    typeof Intl !== 'undefined'
+      ? Intl.DateTimeFormat().resolvedOptions().timeZone
+      : 'UTC'
+
   const initialFormData = {
     date: '',
     time: '',
     name: '',
     email: '',
-    notes: ''
+    notes: '',
+    timeZone: browserTimeZone, // auto-detected, hidden from user
   }
 
   const [step, setStep] = useState(1)
@@ -35,10 +41,10 @@ const ScheduleCallModal = ({ isOpen, onClose }) => {
       if (e.key === 'Tab') {
         if (e.shiftKey && document.activeElement === firstEl) {
           e.preventDefault()
-          lastEl.focus()
+          lastEl?.focus()
         } else if (document.activeElement === lastEl) {
           e.preventDefault()
-          firstEl.focus()
+          firstEl?.focus()
         }
       }
     }
@@ -59,7 +65,6 @@ const ScheduleCallModal = ({ isOpen, onClose }) => {
   // Reset form after step 3 (confirmation shown)
   useEffect(() => {
     if (step === 3) {
-      // keep confirmation visible for 3s then reset + close
       const t = setTimeout(() => {
         setFormData(initialFormData)
         setStep(1)
@@ -74,7 +79,7 @@ const ScheduleCallModal = ({ isOpen, onClose }) => {
   }
 
   const next = async () => {
-    // Step 1 validation: date/time
+    // Step 1 validation: date/time only (timezone is auto)
     if (step === 1 && (!formData.date || !formData.time)) {
       alert('Please select both date and time.')
       return
@@ -92,12 +97,11 @@ const ScheduleCallModal = ({ isOpen, onClose }) => {
         return
       }
 
-      // Create schedule in Appwrite
       setLoading(true)
       try {
+        // timeZone is included in formData
         await scheduleCall(formData)
         toast.success('Call scheduled successfully!')
-        // transition to the confirmation step
         setShowTransition(false)
         setTimeout(() => {
           setStep(prev => prev + 1)
@@ -165,10 +169,10 @@ const ScheduleCallModal = ({ isOpen, onClose }) => {
               back={back}
               formData={formData}
               handleData={handleData}
-              loading={loading} // optional: show spinner on Step2
+              loading={loading}
             />
           )}
-          {step === 3 && <Step3 onClose={onClose} scheduled={formData} />}
+          {step === 3 && <Step3 onClose={onClose} />}
         </div>
       </div>
     </div>

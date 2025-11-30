@@ -34,7 +34,7 @@ const Step1 = ({ formData, handleData, next, onClose }) => {
 
     const offset = (firstDay + 6) % 7 // convert to Mon=0...Sun=6
     for (let i = 0; i < offset; i++) {
-      days.push(null) // empty slots before the first day
+      days.push(null)
     }
 
     for (let i = 1; i <= daysInMonth; i++) {

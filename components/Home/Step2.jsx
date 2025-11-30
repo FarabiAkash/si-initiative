@@ -3,11 +3,17 @@ import logo from '../../public/assets/logo.png'
 import Image from 'next/image'
 
 const Step2 = ({ formData, handleData, next, back }) => {
-  const formattedDate = new Date(formData.date).toLocaleDateString('en-US', {
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric'
-  })
+  const formattedDate = (() => {
+    if (!formData.date) return ''
+    const [y, m, d] = formData.date.split('-').map(Number)
+    const dateObj = new Date(y, m - 1, d)
+    return dateObj.toLocaleDateString('en-US', {
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric'
+    })
+  })()
+
   const getEndTime = startTime => {
     if (!startTime) return ''
 
