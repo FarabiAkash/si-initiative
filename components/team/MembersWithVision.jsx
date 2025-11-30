@@ -1,5 +1,6 @@
+"use client";
 
-
+import { useEffect, useState, useCallback } from "react";
 import Image from "next/image";
 import { databases } from "@/lib/appwrite";
 import { Query } from "appwrite";
@@ -7,6 +8,8 @@ import { Query } from "appwrite";
 const DB_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID || "";
 const COLLECTION_ID =
   process.env.NEXT_PUBLIC_APPWRITE_MEMBERS_COLLECTION_ID || "";
+
+const PAGE_SIZE = 12;
 
 /* ------------------------
    UI components unchanged
@@ -55,30 +58,66 @@ const SingleMemberCard = ({ card }) => {
 };
 
 /* -----------------------------------
-   MAIN COMPONENT – uses Appwrite data
+   MAIN COMPONENT – with pagination
 ----------------------------------- */
 
-const MembersWithVision = async () => {
-  let members = [];
+const MembersWithVision = () => {
+  const [members, setMembers] = useState([]);
+  const [cursor, setCursor] = useState(null);
+  const [hasMore, setHasMore] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [initialLoadDone, setInitialLoadDone] = useState(false);
 
-  if (!DB_ID || !COLLECTION_ID) {
-    console.error("Members collection not configured.");
-  } else {
+  const fetchPage = useCallback(async () => {
+    if (!DB_ID || !COLLECTION_ID) {
+      console.error("Members collection not configured.");
+      return;
+    }
+    if (isLoading) return;
+
     try {
-      const res = await databases.listDocuments(DB_ID, COLLECTION_ID, [
-        Query.orderAsc("$createdAt"), // ✅ oldest first
-      ]);
+      setIsLoading(true);
 
-      members = res.documents || [];
+      const queries = [
+        Query.orderAsc("$createdAt"),
+        Query.limit(PAGE_SIZE),
+      ];
+
+      if (cursor) {
+        queries.push(Query.cursorAfter(cursor));
+      }
+
+      const res = await databases.listDocuments(DB_ID, COLLECTION_ID, queries);
+      const newDocs = res.documents || [];
+
+      setMembers((prev) => [...prev, ...newDocs]);
+
+      if (newDocs.length < PAGE_SIZE) {
+        setHasMore(false);
+      }
+
+      if (newDocs.length > 0) {
+        const lastDoc = newDocs[newDocs.length - 1];
+        setCursor(lastDoc.$id);
+      }
+
+      setInitialLoadDone(true);
     } catch (err) {
       console.error("Failed to load members:", err);
+      setHasMore(false);
+      setInitialLoadDone(true);
+    } finally {
+      setIsLoading(false);
     }
-  }
+  }, [cursor, isLoading]);
 
-  /* ------------------------
-     Group members by domain
-     ------------------------ */
+  useEffect(() => {
+    fetchPage();
+  }, [fetchPage]);
+
   const groupedByDomain = members.reduce((acc, m) => {
+    if (!m.domain) return acc;
+
     if (!acc[m.domain]) {
       acc[m.domain] = [];
     }
@@ -110,17 +149,45 @@ const MembersWithVision = async () => {
           our diverse team works as one to build solutions that matter
         </p>
 
-        {domainGroups.length === 0 ? (
+        {/* Empty state */}
+        {initialLoadDone && domainGroups.length === 0 && (
           <p className="text-sm text-gray-500 mt-6">
             Members will appear here once added.
           </p>
-        ) : (
-          <div className="grid grid-cols-1 pb-0 sm:pb-6 mt-4 gap-6">
+        )}
+
+        {/* Members grid */}
+        {domainGroups.length > 0 && (
+          <div className="grid grid-cols-1 pb-0 sm:pb-6 mt-4 gap-6 w-full">
             {domainGroups.map((member, idx) => (
               <SingleMember key={idx} member={member} />
             ))}
           </div>
         )}
+
+        {/* Bottom controls – fixed height to avoid flicker */}
+        <div className="mt-4 mb-8 min-h-[40px] flex items-center justify-center">
+          {hasMore ? (
+            <button
+              onClick={fetchPage}
+              disabled={isLoading}
+              className={`px-6 py-2 rounded-full border border-[#19BCE5] text-sm font-medium transition
+                ${
+                  isLoading
+                    ? "bg-[#19BCE5] text-white opacity-70 cursor-not-allowed"
+                    : "text-[#19BCE5] hover:bg-[#19BCE5] hover:text-white"
+                }`}
+            >
+              {isLoading ? "Loading members..." : "Load more members"}
+            </button>
+          ) : (
+            domainGroups.length > 0 && (
+              <p className="text-xs text-gray-400">
+                You’ve reached the end of the list.
+              </p>
+            )
+          )}
+        </div>
       </div>
     </div>
   );
