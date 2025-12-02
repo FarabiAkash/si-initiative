@@ -1,4 +1,6 @@
+"use client";
 
+import { useEffect, useState, useCallback } from "react";
 import Image from "next/image";
 import linkedInIcon from "../../public/assets/teams/linkedin.png";
 
@@ -8,6 +10,8 @@ import { Query } from "appwrite";
 const DB_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID || "";
 const COLLECTION_ID =
   process.env.NEXT_PUBLIC_APPWRITE_LEADERS_COLLECTION_ID || "";
+
+const PAGE_SIZE = 6; // change if you want more/less per page
 
 // Single leader card – UI unchanged
 const SingleLeader = ({ leader }) => {
@@ -52,23 +56,60 @@ const SingleLeader = ({ leader }) => {
   );
 };
 
-// MAIN SECTION – now async server component using Appwrite
-const VisionaryLeadership = async () => {
-  let leaders = [];
+// MAIN SECTION – now client component with pagination (like members)
+const VisionaryLeadership = () => {
+  const [leaders, setLeaders] = useState([]);
+  const [cursor, setCursor] = useState(null);
+  const [hasMore, setHasMore] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [initialLoadDone, setInitialLoadDone] = useState(false);
 
-  if (!DB_ID || !COLLECTION_ID) {
-    console.error("Leaders collection not configured in env.");
-  } else {
+  const fetchPage = useCallback(async () => {
+    if (!DB_ID || !COLLECTION_ID) {
+      console.error("Leaders collection not configured in env.");
+      return;
+    }
+    if (isLoading) return;
+
     try {
-      const res = await databases.listDocuments(DB_ID, COLLECTION_ID, [
-        // sort however you prefer: by name or latest first
-          Query.orderAsc("$createdAt"), 
-      ]);
-      leaders = res.documents || [];
+      setIsLoading(true);
+
+      const queries = [
+        Query.orderAsc("$createdAt"),
+        Query.limit(PAGE_SIZE),
+      ];
+
+      if (cursor) {
+        queries.push(Query.cursorAfter(cursor));
+      }
+
+      const res = await databases.listDocuments(DB_ID, COLLECTION_ID, queries);
+      const newDocs = res.documents || [];
+
+      setLeaders((prev) => [...prev, ...newDocs]);
+
+      if (newDocs.length < PAGE_SIZE) {
+        setHasMore(false);
+      }
+
+      if (newDocs.length > 0) {
+        const lastDoc = newDocs[newDocs.length - 1];
+        setCursor(lastDoc.$id);
+      }
+
+      setInitialLoadDone(true);
     } catch (err) {
       console.error("Failed to load leaders:", err);
+      setHasMore(false);
+      setInitialLoadDone(true);
+    } finally {
+      setIsLoading(false);
     }
-  }
+  }, [cursor, isLoading]);
+
+  useEffect(() => {
+    fetchPage();
+  }, [fetchPage]);
 
   return (
     <div className="bg-gradient-to-bl from-white to-[#F5FDFF]">
@@ -82,12 +123,16 @@ const VisionaryLeadership = async () => {
             CMED Innovation toward a smarter future
           </p>
 
-          {leaders.length === 0 ? (
+          {/* Empty state */}
+          {initialLoadDone && leaders.length === 0 && (
             <p className="text-sm text-gray-500 mt-6">
               Leaders will appear here once added.
             </p>
-          ) : (
-            <div className="grid grid-cols-1 lg:grid-cols-2 pb-0 sm:pb-6 mt-4 gap-6">
+          )}
+
+          {/* Leaders grid */}
+          {leaders.length > 0 && (
+            <div className="grid grid-cols-1 lg:grid-cols-2 pb-0 sm:pb-6 mt-4 gap-6 w-full">
               {leaders.map((leader, idx) => {
                 const isLastOdd =
                   leaders.length % 2 === 1 && idx === leaders.length - 1;
@@ -105,6 +150,30 @@ const VisionaryLeadership = async () => {
               })}
             </div>
           )}
+
+          {/* Bottom controls – like members */}
+          <div className="mt-4 mb-8 min-h-[40px] flex items-center justify-center">
+            {hasMore ? (
+              <button
+                onClick={fetchPage}
+                disabled={isLoading}
+                className={`px-6 py-2 rounded-full border border-[#19BCE5] text-sm font-medium transition
+                  ${
+                    isLoading
+                      ? "bg-[#19BCE5] text-white opacity-70 cursor-not-allowed"
+                      : "text-[#19BCE5] hover:bg-[#19BCE5] hover:text-white"
+                  }`}
+              >
+                {isLoading ? "Loading leaders..." : "Load more leaders"}
+              </button>
+            ) : (
+              leaders.length > 0 && (
+                <p className="text-xs text-gray-400">
+                  You’ve reached the end of the list.
+                </p>
+              )
+            )}
+          </div>
         </div>
       </div>
     </div>
