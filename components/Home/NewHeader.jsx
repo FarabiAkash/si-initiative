@@ -5,7 +5,7 @@ import professionalsIcon from '../../public/assets/home/headers/user-group.png'
 import experienceIcon from '../../public/assets/home/headers/calendar-02.png'
 import projectsIcon from '../../public/assets/home/headers/command-line.png'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import ScheduleCallModal from './ScheduleCallModal'
 
 const cards = [
@@ -31,9 +31,15 @@ const SingleCard = ({ item }) => {
 const NewHeader = () => {
   const router = useRouter() 
   const searchParams = useSearchParams()
-
   const scheduleCall = searchParams.get('scheduleCall')
-    const [modalOpen, setModalOpen] = useState(scheduleCall === 'true')
+
+  const [modalOpen, setModalOpen] = useState(false)
+
+  useEffect(() => {
+    if (scheduleCall === 'true') {
+      setModalOpen(true)
+    }
+  }, [scheduleCall])
 
   return (
     <div
