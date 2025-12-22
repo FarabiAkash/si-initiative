@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import Blogs from "../components/Home/Blogs";
 import CaseStudies from "../components/Home/CaseStudies";
 import ContactUs from "../components/Home/ContactUs";
