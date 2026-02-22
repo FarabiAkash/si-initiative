@@ -24,14 +24,12 @@ const Page = () => {
 
     const handleSubmit = async e => {
         e.preventDefault()
-
+        setLoading(true)
         if (!form.name || !form.email || !form.message) {
             toast.error('Please fill out all fields')
+            setLoading(false)
             return
         }
-
-        setLoading(true)
-
         try {
             await sendEmailWithCaptcha({
                 templateSlug: 'get-in-touch',
@@ -114,7 +112,7 @@ const Page = () => {
                             <button
                                 type='submit'
                                 disabled={loading}
-                                className='rounded-[28px] bg-primary text-white text-[14px] font-[500] leading-[24px] px-[49px] py-[8px]'
+                                className='rounded-[28px] bg-primary text-white text-[14px] font-[500] leading-[24px] px-[49px] py-[8px] disabled:opacity-70 disabled:cursor-not-allowed'
                             >
                                 {loading ? 'Sending...' : 'Send Message'}
                             </button>

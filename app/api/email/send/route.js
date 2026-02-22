@@ -18,9 +18,16 @@ export async function POST(request) {
     }
 
     for (const field of REQUIRED) {
-      if (body[field] === undefined || body[field] === null) {
+      const value = body[field]
+      if (value === undefined || value === null) {
         return Response.json(
           { status: 'error', message: `Missing required field: ${field}` },
+          { status: 400 }
+        )
+      }
+      if (field === 'captcha_token' && (typeof value !== 'string' || !value.trim())) {
+        return Response.json(
+          { status: 'error', message: 'captcha_token is required and must be non-empty' },
           { status: 400 }
         )
       }

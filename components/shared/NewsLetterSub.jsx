@@ -12,29 +12,24 @@ const NewsLetterSub = () => {
   const isValidEmail = email => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
 
   const handleSubscribe = async () => {
+    setLoading(true)
     if (!email) {
       toast.error('Please enter your email')
+      setLoading(false)
       return
     }
-
     if (!isValidEmail(email)) {
       toast.error('Please enter a valid email address')
+      setLoading(false)
       return
     }
-
-    setLoading(true)
     try {
+      await sendEmailWithCaptcha({
+        templateSlug: 'subscribe-to-newsletter',
+        replyTo: email,
+        params: { email },
+      })
       await subscribeToNewsletter(email)
-      try {
-        await sendEmailWithCaptcha({
-          templateSlug: 'subscribe-to-newsletter',
-          replyTo: email,
-          params: { email },
-        })
-      } catch (emailErr) {
-        console.error('Newsletter email error:', emailErr)
-        toast.error('Subscribed but notification email failed.')
-      }
       toast.success('Thank you for subscribing!')
       setEmail('')
     } catch (err) {
@@ -71,9 +66,10 @@ const NewsLetterSub = () => {
             className='w-full border border-[#C2D2D6] focus:ring-2 focus:ring-primary outline-none px-[32px] py-[8px] rounded-[4px]'
           />
           <button
+            type='button'
             disabled={loading}
             onClick={handleSubscribe}
-            className='bg-primary text-white px-[20px] sm:px-[32px] py-[8px] rounded-[4px]'
+            className='bg-primary text-white px-[20px] sm:px-[32px] py-[8px] rounded-[4px] disabled:opacity-70 disabled:cursor-not-allowed'
           >
             {loading ? 'Subscribing...' : 'Subscribe'}
           </button>

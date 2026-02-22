@@ -106,39 +106,35 @@ const ScheduleCallModal = ({ isOpen, onClose }) => {
 
     // Step 2 validation + schedule creation
     if (step === 2) {
+      setLoading(true)
       if (!formData.name || !formData.email) {
         alert('Please enter your name and email.')
+        setLoading(false)
         return
       }
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
       if (!emailPattern.test(formData.email)) {
         alert('Invalid email address.')
+        setLoading(false)
         return
       }
-
-      setLoading(true)
       try {
-        await scheduleCall(formData)
         const timeRange = `${formData.time} – ${getEndTime(formData.time)}`
-        try {
-          await sendEmailWithCaptcha({
-            templateSlug: 'schedule-a-call',
-            replyTo: formData.email,
-            params: {
-              name: formData.name,
-              email: formData.email,
-              notes: formData.notes || '',
-              schedule: {
-                date: formData.date,
-                time_range: timeRange,
-                time_zone: formData.timeZone,
-              },
+        await sendEmailWithCaptcha({
+          templateSlug: 'schedule-a-call',
+          replyTo: formData.email,
+          params: {
+            name: formData.name,
+            email: formData.email,
+            notes: formData.notes || '',
+            schedule: {
+              date: formData.date,
+              time_range: timeRange,
+              time_zone: formData.timeZone,
             },
-          })
-        } catch (emailErr) {
-          console.error('Schedule email error:', emailErr)
-          toast.error('Call scheduled but notification email failed.')
-        }
+          },
+        })
+        await scheduleCall(formData)
         toast.success('Call scheduled successfully!')
 
         setShowTransition(false)

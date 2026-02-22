@@ -17,13 +17,12 @@ const ContactModal = ({ isOpen, onClose, title, subtitle, source, templateSlug =
 
   const handleSubmit = async e => {
     e.preventDefault()
-
+    setLoading(true)
     if (!form.name || !form.email || !form.message) {
       toast.error('Please fill out all fields')
+      setLoading(false)
       return
     }
-
-    setLoading(true)
     try {
       await sendEmailWithCaptcha({
         templateSlug,
@@ -114,7 +113,7 @@ const ContactModal = ({ isOpen, onClose, title, subtitle, source, templateSlug =
             <button
             type='submit'
             disabled={loading}
-            className='bg-[#19bce6] text-white font-medium text-sm px-6 py-2 rounded-full hover:bg-[#0ea5e9] cursor-pointer'
+            className='bg-[#19bce6] text-white font-medium text-sm px-6 py-2 rounded-full hover:bg-[#0ea5e9] cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed'
           >
             {loading ? 'Sending...' : 'Send Message'}
           </button>
