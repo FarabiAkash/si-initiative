@@ -75,7 +75,9 @@ const OurPartners = () => {
         isOpen={showContact}
         onClose={() => setShowContact(false)}
         title={'Become Our Partner'}
-        source={'partner'}
+        subtitle={'Partner with us to innovate and accelerate your tech vision.'}
+        source={'Become Our Partner'}
+        templateSlug={'become-our-partner'}
       />
     </div>
   )

@@ -5,6 +5,23 @@ import Step1 from './Step1'
 import Step2 from './Step2'
 import Step3 from './Step3'
 import { scheduleCall } from '@/lib/scheduleCall'
+import { sendEmailWithCaptcha } from '@/lib/emailClient'
+
+/** Format end time 30 min after start (e.g. "9:00 am" -> "9:30 am") */
+function getEndTime(startTime) {
+  if (!startTime) return ''
+  const [time, modifier] = startTime.split(' ')
+  let [hours, minutes] = time.split(':').map(Number)
+  if (modifier?.toLowerCase() === 'pm' && hours !== 12) hours += 12
+  if (modifier?.toLowerCase() === 'am' && hours === 12) hours = 0
+  const d = new Date()
+  d.setHours(hours)
+  d.setMinutes(minutes + 30)
+  const endHours = d.getHours()
+  const endMinutes = d.getMinutes()
+  const endMod = endHours >= 12 ? 'pm' : 'am'
+  return `${endHours % 12 || 12}:${String(endMinutes).padStart(2, '0')} ${endMod}`
+}
 
 const ScheduleCallModal = ({ isOpen, onClose }) => {
   const browserTimeZone =
@@ -101,7 +118,27 @@ const ScheduleCallModal = ({ isOpen, onClose }) => {
 
       setLoading(true)
       try {
-        await scheduleCall(formData) // includes timeZone
+        await scheduleCall(formData)
+        const timeRange = `${formData.time} – ${getEndTime(formData.time)}`
+        try {
+          await sendEmailWithCaptcha({
+            templateSlug: 'schedule-a-call',
+            replyTo: formData.email,
+            params: {
+              name: formData.name,
+              email: formData.email,
+              notes: formData.notes || '',
+              schedule: {
+                date: formData.date,
+                time_range: timeRange,
+                time_zone: formData.timeZone,
+              },
+            },
+          })
+        } catch (emailErr) {
+          console.error('Schedule email error:', emailErr)
+          toast.error('Call scheduled but notification email failed.')
+        }
         toast.success('Call scheduled successfully!')
 
         setShowTransition(false)
@@ -111,7 +148,7 @@ const ScheduleCallModal = ({ isOpen, onClose }) => {
         }, 150)
       } catch (err) {
         console.error('Schedule error:', err)
-        toast.error(err.message || 'Failed to schedule the call. Try again later.')
+        toast.error(err?.message || 'Failed to schedule the call. Try again later.')
       } finally {
         setLoading(false)
       }

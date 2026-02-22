@@ -1,10 +1,15 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Nav from './Nav'
 import ContactModal from './ContactModal'
 
 const ClientWrapper = ({ children }) => {
   const [showContact, setShowContact] = useState(false)
+
+  // Warm email service key on first load (login once, cache server-side)
+  useEffect(() => {
+    fetch('/api/email/init').catch(() => {})
+  }, [])
 
   return (
     <>

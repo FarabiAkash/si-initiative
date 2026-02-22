@@ -2,7 +2,8 @@
 import { useState } from 'react'
 import toast from 'react-hot-toast'
 import { Facebook, Linkedin, Twitter, Youtube } from 'lucide-react'
-import { subscribeToNewsletter } from '@/lib/newsletter' // ✅ import the function
+import { subscribeToNewsletter } from '@/lib/newsletter'
+import { sendEmailWithCaptcha } from '@/lib/emailClient'
 
 const NewsLetterSub = () => {
   const [email, setEmail] = useState('')
@@ -24,6 +25,16 @@ const NewsLetterSub = () => {
     setLoading(true)
     try {
       await subscribeToNewsletter(email)
+      try {
+        await sendEmailWithCaptcha({
+          templateSlug: 'subscribe-to-newsletter',
+          replyTo: email,
+          params: { email },
+        })
+      } catch (emailErr) {
+        console.error('Newsletter email error:', emailErr)
+        toast.error('Subscribed but notification email failed.')
+      }
       toast.success('Thank you for subscribing!')
       setEmail('')
     } catch (err) {
@@ -31,7 +42,7 @@ const NewsLetterSub = () => {
         toast.error(err.message)
       } else {
         console.error('Subscription error:', err)
-        toast.error('Failed to subscribe. Please try again later.')
+        toast.error(err?.message || 'Failed to subscribe. Please try again later.')
       }
     } finally {
       setLoading(false)

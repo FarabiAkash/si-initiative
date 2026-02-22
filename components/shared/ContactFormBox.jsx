@@ -2,7 +2,7 @@
 
 import { Mail, Phone, MapPin } from 'lucide-react'
 import { useState } from 'react'
-import emailjs from '@emailjs/browser'
+import { sendEmailWithCaptcha } from '@/lib/emailClient'
 import { toast } from 'react-hot-toast'
 
 const ContactFormBox = ({ title }) => {
@@ -23,21 +23,20 @@ const ContactFormBox = ({ title }) => {
 
     setLoading(true)
     try {
-      await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-        {
-          from_name: form.name,
-          from_email: form.email,
-          message: form.message
+      await sendEmailWithCaptcha({
+        templateSlug: 'contact-us',
+        replyTo: form.email,
+        params: {
+          name: form.name,
+          email: form.email,
+          message: form.message,
         },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-      )
+      })
       toast.success('Message sent successfully!')
       setForm({ name: '', email: '', message: '' })
     } catch (err) {
-      console.error('EmailJS Error:', err)
-      toast.error('Failed to send message. Try again later.')
+      console.error('Contact form email error:', err)
+      toast.error(err?.message || 'Failed to send message. Try again later.')
     } finally {
       setLoading(false)
     }
