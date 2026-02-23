@@ -2,9 +2,9 @@
 import { X } from 'lucide-react'
 import { useState } from 'react'
 import { toast } from 'react-hot-toast'
-import emailjs from '@emailjs/browser'
+import { sendEmailWithCaptcha } from '@/lib/emailClient'
 
-const ContactModal = ({ isOpen, onClose, title, subtitle, source }) => {
+const ContactModal = ({ isOpen, onClose, title, subtitle, source, templateSlug = 'get-in-touch' }) => {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
   const [loading, setLoading] = useState(false)
 
@@ -17,31 +17,29 @@ const ContactModal = ({ isOpen, onClose, title, subtitle, source }) => {
 
   const handleSubmit = async e => {
     e.preventDefault()
-
+    setLoading(true)
     if (!form.name || !form.email || !form.message) {
       toast.error('Please fill out all fields')
+      setLoading(false)
       return
     }
-
-    setLoading(true)
     try {
-      const res = await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-        {
-          from_name: form.name,
-          from_email: form.email,
-          message: `From ${source} - ` + form.message
+      await sendEmailWithCaptcha({
+        templateSlug,
+        replyTo: form.email,
+        params: {
+          name: form.name,
+          email: form.email,
+          message: source ? `From ${source} - ${form.message}` : form.message,
         },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-      )
+      })
 
       toast.success('Message sent successfully!')
       setForm({ name: '', email: '', message: '' })
       onClose()
     } catch (error) {
-      console.error('EmailJS error:', error)
-      toast.error('Something went wrong. Please try again.')
+      console.error('Contact modal email error:', error)
+      toast.error(error?.message || 'Something went wrong. Please try again.')
     } finally {
       setLoading(false)
     }
@@ -115,7 +113,7 @@ const ContactModal = ({ isOpen, onClose, title, subtitle, source }) => {
             <button
             type='submit'
             disabled={loading}
-            className='bg-[#19bce6] text-white font-medium text-sm px-6 py-2 rounded-full hover:bg-[#0ea5e9] cursor-pointer'
+            className='bg-[#19bce6] text-white font-medium text-sm px-6 py-2 rounded-full hover:bg-[#0ea5e9] cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed'
           >
             {loading ? 'Sending...' : 'Send Message'}
           </button>

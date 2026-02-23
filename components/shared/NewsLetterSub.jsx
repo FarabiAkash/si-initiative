@@ -2,7 +2,8 @@
 import { useState } from 'react'
 import toast from 'react-hot-toast'
 import { Facebook, Linkedin, Twitter, Youtube } from 'lucide-react'
-import { subscribeToNewsletter } from '@/lib/newsletter' // ✅ import the function
+import { subscribeToNewsletter } from '@/lib/newsletter'
+import { sendEmailWithCaptcha } from '@/lib/emailClient'
 
 const NewsLetterSub = () => {
   const [email, setEmail] = useState('')
@@ -11,18 +12,23 @@ const NewsLetterSub = () => {
   const isValidEmail = email => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
 
   const handleSubscribe = async () => {
+    setLoading(true)
     if (!email) {
       toast.error('Please enter your email')
+      setLoading(false)
       return
     }
-
     if (!isValidEmail(email)) {
       toast.error('Please enter a valid email address')
+      setLoading(false)
       return
     }
-
-    setLoading(true)
     try {
+      await sendEmailWithCaptcha({
+        templateSlug: 'subscribe-to-newsletter',
+        replyTo: email,
+        params: { email },
+      })
       await subscribeToNewsletter(email)
       toast.success('Thank you for subscribing!')
       setEmail('')
@@ -31,7 +37,7 @@ const NewsLetterSub = () => {
         toast.error(err.message)
       } else {
         console.error('Subscription error:', err)
-        toast.error('Failed to subscribe. Please try again later.')
+        toast.error(err?.message || 'Failed to subscribe. Please try again later.')
       }
     } finally {
       setLoading(false)
@@ -60,9 +66,10 @@ const NewsLetterSub = () => {
             className='w-full border border-[#C2D2D6] focus:ring-2 focus:ring-primary outline-none px-[32px] py-[8px] rounded-[4px]'
           />
           <button
+            type='button'
             disabled={loading}
             onClick={handleSubscribe}
-            className='bg-primary text-white px-[20px] sm:px-[32px] py-[8px] rounded-[4px]'
+            className='bg-primary text-white px-[20px] sm:px-[32px] py-[8px] rounded-[4px] disabled:opacity-70 disabled:cursor-not-allowed'
           >
             {loading ? 'Subscribing...' : 'Subscribe'}
           </button>
