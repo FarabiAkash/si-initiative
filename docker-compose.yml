@@ -1,0 +1,13 @@
+# Local: http://127.0.0.1:3000
+# Shared server: keep 127.0.0.1 so this is not public; nginx proxies cmedinnovation.com here.
+# .env is required at build time (NEXT_PUBLIC_*) and at runtime (EMAIL_SERVICE_*).
+# Do not commit .env.
+services:
+  web:
+    build: .
+    image: si-initiative:latest
+    ports:
+      - "127.0.0.1:3000:3000"
+    env_file:
+      - .env
+    restart: unless-stopped
